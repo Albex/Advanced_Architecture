@@ -1,34 +1,130 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[T1]{fontenc}
+\documentclass{egpubl}
+
+% --- for  Annual CONFERENCE
+% \ConferenceSubmission % uncomment for Conference submission
+% \ConferencePaper      % uncomment for (final) Conference Paper
+% \STAR                 % uncomment for STAR contribution
+% \Tutorial             % uncomment for Tutorial contribution
+% \ShortPresentation    % uncomment for (final) Short Conference Presentation
+%
+% --- for  CGF Journal
+% \JournalSubmission    % uncomment for submission to Computer Graphics Forum
+% \JournalPaper         % uncomment for final version of Journal Paper
+%
+% --- for  EG Workshop Proceedings
+% \WsSubmission    % uncomment for submission to EG Workshop
+ \WsPaper         % uncomment for final version of EG Workshop contribution
+%
+ \electronicVersion % can be used both for the printed and electronic version
+
+% !! *please* don't change anything above
+% !! unless you REALLY know what you are doing
+% ------------------------------------------------------------------------
+
+% for including postscript figures
+% mind: package option 'draft' will replace PS figure by a filename within a frame
+\ifpdf \usepackage[pdftex]{graphicx} \pdfcompresslevel=9
+\else \usepackage[dvips]{graphicx} \fi
+
+\PrintedOrElectronic
+
+% prepare for electronic version of your document
+\usepackage{t1enc,dfadobe}
 \usepackage[utf8]{inputenc}
+
 \usepackage[french,english]{babel}
+
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsthm}
+
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{pgf}
-\usepackage{tikz}
-\usetikzlibrary{mindmap,trees,positioning,automata}
-\usepackage{lmodern}
+
+% Fonts packages (if needed)
 %\usepackage[nott,fullsumlimits]{kpfonts}
-%\renewcommand{\ttdefault}{txtt}
-\usepackage{geometry}
-	\geometry{body={160mm,220mm}}
+%\usepackage{lmodern}
 
-%\sectionfont{\sffamily}
-%\chapterfont{\sffamily}
-%\subsectionfont{\sffamily}
-%\subsubsectionfont{\sffamily}
+\usepackage{egweblnk}
+\usepackage{cite}
 
-\title{C332: Advanced Computer Architecture \\ Coursework 2}
-\date{08-03-2013}
-\author{Alexandre \textsc{Camus} \and Romain \textsc{Brault}}
+% ---------------------------------------------------------------------
+\title[ACA: The ``Smooth'' Challenge]{Advanced Computer Architecture: The ``Smooth'' Challenge}
 
+\author[R. Brault \& A. Camus]{Romain Brault and Alexandre Camus}
+
+
+
+% ------------------------------------------------------------------------
 \begin{document}
 
+% \teaser{
+%  \includegraphics[width=\linewidth]{eg_new}
+%  \centering
+%   \caption{New EG Logo}
+% \label{fig:teaser}
+% }
+
 \maketitle
+
+\begin{abstract}
+   The ABSTRACT is to be in fully-justified italicized text, 
+   between two horizontal lines,
+   in one-column format, 
+   below the author and affiliation information. 
+   Use the word ``Abstract'' as the title, in 9-point Times, boldface type, 
+   left-aligned to the text, initially capitalized. 
+   The abstract is to be in 9-point, single-spaced type.
+   The abstract may be up to 3 inches (7.62 cm) long. \\
+   Leave one blank line after the abstract, 
+   then add the subject categories according to the ACM Classification Index 
+   (see http://www.acm.org/class/1998/).
+
+\begin{classification} % according to http://www.acm.org/class/1998/
+\CCScat{Computer Graphics}{I.3.3}{Picture/Image Generation}{Line and curve generation}
+\end{classification}
+
+\end{abstract}
+
+
+
+
+
+%-------------------------------------------------------------------------
+\section{Introduction}
+
+%% TODO
+
+%-------------------------------------------------------------------------
+\section{Hardware Considerations}
+
+The chosen hardware is not one of the machine from the Lab. They do not have any interesting GPUs. But one of our laptops is very powerful with an interesting GPU. This is the chosen one.
+
+Here are the details of this hardware:
+
+
+%-------------------------------------------------------------------------
+\section{Software Considerations}
+
+The machine used for this coursework runs a Fedora distribution.
+
+%-------------------------------------------------------------------------
+\section{The Sequential Issue}
+
+\subsection{Analysis}
+
+\subsection{Optimization}
+
+
+%------------------------------------------------------------------------
+\section{CPU Parallelization}
+
+\subsection{Analysis}
+
+\subsection{Optimization}
+
+%-------------------------------------------------------------------------
+
 
 \end{document}
