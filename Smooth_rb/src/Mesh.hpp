@@ -46,13 +46,13 @@ public:
    *                            = (-1.0,0.0) if vid is on the left surface
    * For all other vertices, the normal vector is (0.0,0.0).
    */
-  std::vector<double> normals;
+  std::vector< double > normals;
 
   // For every vertex i, NNList[i] contains the IDs of all adjacent vertices.
-  std::vector< std::vector<size_t> > NNList;
+  std::vector< std::vector< size_t > > NNList;
 
   // For every vertex i, NEList[i] contains the IDs of all adjacent elements.
-  std::vector< std::set<size_t> > NEList;
+  std::vector< std::vector< size_t > > NEList;
 
   bool isSurfaceNode(size_t vid) const;
   bool isCornerNode(size_t vid) const;
@@ -61,9 +61,9 @@ public:
   Quality get_mesh_quality() const;
 
 private:
-  void create_adjacency();
-  void find_surface();
-  void set_orientation();
+  void create_adjacency( );
+  void find_surface( );
+  void set_orientation( );
 
   int orientation;
 };

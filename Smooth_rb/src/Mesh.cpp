@@ -78,6 +78,9 @@ void Mesh::create_adjacency(){
   NNList.resize(NNodes);
   NEList.resize(NNodes);
 
+  std::vector< std::set< size_t > > temp_sets;
+  temp_sets.resize( NNodes );
+
   for(size_t eid=0; eid<NElements; ++eid){
     // Get a pointer to the three vertices comprising element eid.
     const size_t * __restrict__ n = &ENList[3*eid];
@@ -88,8 +91,11 @@ void Mesh::create_adjacency(){
       NNList[n[i]].push_back(n[(i+1)%3]);
       NNList[n[i]].push_back(n[(i+2)%3]);
 
-      NEList[n[i]].insert(eid);
+      temp_sets[n[i]].insert(eid);
     }
+  }
+  for(size_t i=0; i<NNodes; ++i){
+    NEList[ i ].assign( temp_sets[ i ].begin( ), temp_sets[ i ].end( ) );
   }
 }
 
