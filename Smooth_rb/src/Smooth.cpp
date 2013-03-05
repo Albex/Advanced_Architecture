@@ -12,8 +12,8 @@
 
 void smooth( Mesh & mesh, size_t niter ) {
     // For the specified number of iterations, loop over all mesh vertices.
-    int max = 0;
-    for ( int i = 0; i < mesh.NEList.size( ); ++i ) {
+    uint32_t max = 0;
+    for ( uint32_t i = 0; i < mesh.NEList.size( ); ++i ) {
         if ( mesh.NEList[ i ].size( ) > max ) {
             max = mesh.NEList[ i ].size( );
         }
@@ -29,12 +29,12 @@ void smooth( Mesh & mesh, size_t niter ) {
             if( mesh.isCornerNode( vid ) ) continue;
 
             // Find the quality of the worst element adjacent to vid
-            int const size = mesh.NEList[ vid ].size( );
-            for( int it = 0; it < size; ++it ) {
+            uint32_t const size = mesh.NEList[ vid ].size( );
+            for( uint32_t it = 0; it < size; ++it ) {
                 buffer[ it ] = mesh.element_quality( vid, it );
             }
             double worst_q = 1.0;
-            for( int it = 0; it < size; ++it ) {
+            for( uint32_t it = 0; it < size; ++it ) {
                 worst_q = std::min( worst_q, buffer[ it ] );
             }
 
@@ -48,26 +48,27 @@ void smooth( Mesh & mesh, size_t niter ) {
             * the two metric tensors of the vertices defining the edge.
             */
 
-            const double * __restrict__ m0 = &mesh.metric[ 3 * vid ];
-
             double x0 = mesh.coords[ 2 * vid     ];
             double y0 = mesh.coords[ 2 * vid + 1 ];
 
-            double A[ 4 ] = { 0.0, 0.0, 0.0, 0.0 };
-            double q[ 2 ] = { 0.0, 0.0 };
+            double A[ 4 ]; std::memset( A, 0, 4 * sizeof( double ) );
+            double q[ 2 ]; std::memset( A, 0, 2 * sizeof( double ) );
 
             // Iterate over all edges and assemble matrices A and q.
-            int const size_nnlist = mesh.NNList[ vid ].size( );
-            for( int it = 0; it < size_nnlist; ++it ) {
+            uint32_t const vid_offset  = 3 * vid;
+            uint32_t const size_nnlist = mesh.NNList[ vid ].size( );
+            for( uint32_t it = 0; it < size_nnlist; ++it ) {
 
-                size_t il = mesh.NNList[ vid ][ it ];
-
-                const double * __restrict__ m1 = &mesh.metric[ 3 * il ];
+                size_t   const il         = mesh.NNList[ vid ][ it ];
+                uint32_t const met_offset = 3 * il;
 
                 // Find the metric in the middle of the edge.
-                double ml00 = 0.5 * ( m0[ 0 ] + m1[ 0 ] );
-                double ml01 = 0.5 * ( m0[ 1 ] + m1[ 1 ] );
-                double ml11 = 0.5 * ( m0[ 2 ] + m1[ 2 ] );
+                double ml00 = 0.5 * ( mesh.metric[ vid_offset     ] +
+                    mesh.metric[ met_offset + 0 ] );
+                double ml01 = 0.5 * ( mesh.metric[ vid_offset + 1 ] +
+                    mesh.metric[ met_offset + 1 ] );
+                double ml11 = 0.5 * ( mesh.metric[ vid_offset + 2 ] +
+                    mesh.metric[ met_offset + 2 ] );
 
                 double x = mesh.coords[ 2 * il     ] - x0;
                 double y = mesh.coords[ 2 * il + 1 ] - y0;
@@ -126,11 +127,11 @@ void smooth( Mesh & mesh, size_t niter ) {
             * negative number. In such a case, the smoothing operation has to be
             * rejected.
             */
-            for( int it = 0; it < size; ++it ) {
+            for( uint32_t it = 0; it < size; ++it ) {
                 buffer[ it ] = mesh.element_quality( vid, it );
             }
             double new_worst_q = 1.0;
-            for( int it = 0; it < size; ++it ) {
+            for( uint32_t it = 0; it < size; ++it ) {
                 new_worst_q = std::min( new_worst_q, buffer[ it ] );
             }
             /* If quality is worse than before, either because of element inversion

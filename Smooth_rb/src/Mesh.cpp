@@ -40,7 +40,7 @@ Mesh::Mesh(const char * __restrict__ filename){
   // Get the coordinates of each mesh vertex. There is no z coordinate in 2D,
   // but VTK treats 2D and 3D meshes uniformly, so we have to provide memory
   // for z as well (r[2] will always be zero and we ignore it).
-  for(size_t i=0;i<NNodes;++i){
+  for(uint32_t i=0;i<NNodes;++i){
     double r[3];
     ug->GetPoints()->GetPoint(i, r);
     coords.push_back(r[0]);
@@ -49,7 +49,7 @@ Mesh::Mesh(const char * __restrict__ filename){
   assert(coords.size() == 2*NNodes);
 
   // Get the metric at each vertex.
-  for(size_t i=0;i<NNodes;++i){
+  for(uint32_t i=0;i<NNodes;++i){
     double * __restrict__ tensor = ug->GetPointData()->GetArray("Metric")->GetTuple4(i);
     metric.push_back(tensor[0]);
     metric.push_back(tensor[1]);
@@ -59,7 +59,7 @@ Mesh::Mesh(const char * __restrict__ filename){
   assert(metric.size() == 3*NNodes);
 
   // Get the 3 vertices comprising each element.
-  for(size_t i=0;i<NElements;++i){
+  for(uint32_t i=0;i<NElements;++i){
     vtkCell * __restrict__ cell = ug->GetCell(i);
     for(int j=0;j<3;j++){
       ENList.push_back(cell->GetPointId(j));
@@ -78,23 +78,23 @@ void Mesh::create_adjacency(){
   NNList.resize(NNodes);
   NEList.resize(NNodes);
 
-  std::vector< std::set< size_t > > temp_sets;
+  std::vector< std::set< uint32_t > > temp_sets;
   temp_sets.resize( NNodes );
 
-  for(size_t eid=0; eid<NElements; ++eid){
+  for(uint32_t eid=0; eid<NElements; ++eid){
     // Get a pointer to the three vertices comprising element eid.
-    const size_t * __restrict__ n = &ENList[3*eid];
+    const uint32_t * __restrict__ n = &ENList[3*eid];
 
     // For each vertex, add the other two vertices to its node-node adjacency
     // list and element eid to its node-element adjacency list.
-    for(size_t i=0; i<3; ++i){
+    for(uint32_t i=0; i<3; ++i){
       NNList[n[i]].push_back(n[(i+1)%3]);
       NNList[n[i]].push_back(n[(i+2)%3]);
 
       temp_sets[n[i]].insert(eid);
     }
   }
-  for(size_t i=0; i<NNodes; ++i){
+  for(uint32_t i=0; i<NNodes; ++i){
     NEList[ i ].assign( temp_sets[ i ].begin( ), temp_sets[ i ].end( ) );
   }
 }
@@ -107,8 +107,8 @@ void Mesh::find_surface(){
   // traverse all edges (vid0,vid1) and for each edge we find the intersection
   // of NEList[vid0] and NEList[vid1]. If the intersection size is 1, then
   // this edge belongs to only one element, so it lies on the mesh surface.
-  for(size_t vid=0; vid<NNodes; ++vid){
-    for(std::vector<size_t>::const_iterator it=NNList[vid].begin();
+  for(uint32_t vid=0; vid<NNodes; ++vid){
+    for(std::vector<uint32_t>::const_iterator it=NNList[vid].begin();
       it!=NNList[vid].end(); ++it){
       // In order to avoid processing an edge twice, one in the
       // form of (vid0,vid1) and one in the form of (vid1,vid0),
@@ -116,7 +116,7 @@ void Mesh::find_surface(){
       if(vid > *it)
         continue;
 
-      std::set<size_t> intersection;
+      std::set<uint32_t> intersection;
       std::set_intersection(NEList[vid].begin(), NEList[vid].end(),
           NEList[*it].begin(), NEList[*it].end(),
           std::inserter(intersection, intersection.begin()));
@@ -168,7 +168,7 @@ void Mesh::find_surface(){
  */
 void Mesh::set_orientation(){
   // Find the orientation for the first element
-  const size_t * __restrict__ n = &ENList[0];
+  const uint32_t * __restrict__ n = &ENList[0];
 
   // Pointers to the coordinates of each vertex
   const double *c0 = &coords[2*n[0]];
@@ -194,8 +194,8 @@ void Mesh::set_orientation(){
  * of two of the element's edges (e.g. AB and AC). The result is corrected by
  * the orientation factor ±1.0, so that the area is always a positive number.
  */
-double Mesh::element_area(size_t eid) const{
-  const size_t * __restrict__ n = &ENList[3*eid];
+double Mesh::element_area(uint32_t eid) const{
+  const uint32_t * __restrict__ n = &ENList[3*eid];
 
   // Pointers to the coordinates of each vertex
   const double * __restrict__ c0 = &coords[2*n[0]];
@@ -215,7 +215,7 @@ Quality Mesh::get_mesh_quality() const{
   double mean_q = 0.0;
   double min_q = 1.0;
 
-  for(size_t i=0;i<NElements;++i){
+  for(uint32_t i=0;i<NElements;++i){
     double ele_q = element_quality(i);
 
     mean_q += ele_q;

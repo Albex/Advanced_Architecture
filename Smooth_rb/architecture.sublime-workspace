@@ -519,86 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "CMakeLists.txt",
-			"settings":
-			{
-				"buffer_size": 2837,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "CMake/Compiler/Compiler.cmake",
-			"settings":
-			{
-				"buffer_size": 3095,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/ACA2-2013.cpp",
-			"settings":
-			{
-				"buffer_size": 1468,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Mesh.cpp",
-			"settings":
-			{
-				"buffer_size": 7633,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Mesh.hpp",
-			"settings":
-			{
-				"buffer_size": 4821,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Smooth.cpp",
-			"settings":
-			{
-				"buffer_size": 6296,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Smooth.hpp",
-			"settings":
-			{
-				"buffer_size": 399,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/SVD2x2.hpp",
-			"settings":
-			{
-				"buffer_size": 607,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_1/Mesh.hpp",
-			"settings":
-			{
-				"buffer_size": 2100,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "install.sh",
-			"settings":
-			{
-				"buffer_size": 3139,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/User/install_script.sublime-build",
 	"command_palette":
@@ -644,6 +564,17 @@
 	},
 	"file_history":
 	[
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/CMakeLists.txt",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/CMake/libs/blitz.cmake",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/CMake/Compiler/Compiler.cmake",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/ACA2-2013.cpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.hpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.hpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/SVD2x2.hpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_1/Mesh.hpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/install.sh",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_1/SVD2x2.cpp",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/SVD2x2.cpp",
 		"/home/romain/Downloads/assignment_2/homework_example.pl",
@@ -760,18 +691,7 @@
 		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/CMake/Compiler/Compiler.cmake",
 		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.cpp",
 		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.hpp",
-		"/home/romain/Downloads/Z9jBLggC.html.part",
-		"/home/romain/Dropbox/imageviewer.cpp",
-		"/home/romain/Dropbox/imageviewer.hpp",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/build/ui_browser.h",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/Browser.ui",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.ui.autosave",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.ui",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/Results/Question 1/Dynamic range",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/include/HDRimage.hpp",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/Specs/CO417-HW1/ExampleCode/Untitled Document",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/bin/usr/local/bin/result_hist.pfm",
-		"/home/romain/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap"
+		"/home/romain/Downloads/Z9jBLggC.html.part"
 	],
 	"find":
 	{
@@ -789,6 +709,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"size_t",
 			"iscor",
 			"isCornerNode",
 			"iter",
@@ -915,8 +836,7 @@
 			"we",
 			"Ko",
 			"cache",
-			"cache size",
-			"footno"
+			"cache size"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -924,6 +844,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"uint32_t",
 			"__restrict__",
 			"mesh.",
 			"mesh.\n",
@@ -1050,8 +971,7 @@
 			"policy",
 			"bitmask::get( )",
 			"bitmask::free( );",
-			"this->",
-			"std::string"
+			"this->"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1062,289 +982,8 @@
 	"groups":
 	[
 		{
-			"selected": 7,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "CMakeLists.txt",
-					"settings":
-					{
-						"buffer_size": 2837,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2348,
-								2348
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CMake/CMake.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "CMake/Compiler/Compiler.cmake",
-					"settings":
-					{
-						"buffer_size": 3095,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1986,
-								1986
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CMake/CMake.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/ACA2-2013.cpp",
-					"settings":
-					{
-						"buffer_size": 1468,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								745,
-								745
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 168.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Mesh.cpp",
-					"settings":
-					{
-						"buffer_size": 7633,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7507,
-								7507
-							]
-						],
-						"settings":
-						{
-							"rulers":
-							[
-								80
-							],
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 932.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/Mesh.hpp",
-					"settings":
-					{
-						"buffer_size": 4821,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2884,
-								2884
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 563.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/Smooth.cpp",
-					"settings":
-					{
-						"buffer_size": 6296,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								471,
-								471
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/Smooth.hpp",
-					"settings":
-					{
-						"buffer_size": 399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								351,
-								351
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/SVD2x2.hpp",
-					"settings":
-					{
-						"buffer_size": 607,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								584,
-								584
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_1/Mesh.hpp",
-					"settings":
-					{
-						"buffer_size": 2100,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								612,
-								612
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 84.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "install.sh",
-					"settings":
-					{
-						"buffer_size": 3139,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

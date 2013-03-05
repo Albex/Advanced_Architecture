@@ -26,7 +26,7 @@ ELSEIF(${CMAKE_C_COMPILER} MATCHES gcc)
 ENDIF()
 IF(${CMAKE_CXX_COMPILER} MATCHES icpc)
     SET(CXX_COMPILER "INTEL_CXX_COMPILER")
-    SET(CMAKE_CXX_FLAGS "-g -Wcheck -Wall -fno-common -std=c++0x -ansi -fno-gnu-keywords -openmp"
+    SET(CMAKE_CXX_FLAGS "-g -Wno-deprecated -Wcheck -Wall -fno-common -std=c++0x -ansi -fno-gnu-keywords -openmp"
                                                   CACHE STRING
         ${CMAKE_FLAGS_HELP} FORCE)
     SET(CMAKE_CXX_FLAGS_DEBUG "-O0 -g"            CACHE STRING
@@ -39,7 +39,7 @@ IF(${CMAKE_CXX_COMPILER} MATCHES icpc)
         ${CMAKE_FLAGS_HELP} FORCE)
 ELSEIF(${CMAKE_CXX_COMPILER} MATCHES g\\+\\+)
     SET(CXX_COMPILER "GNU_CXX_COMPILER")
-    SET(CMAKE_CXX_FLAGS "-g -Wall -fno-common -Wextra -ansi -pedantic -std=c++0x -fopenmp"
+    SET(CMAKE_CXX_FLAGS "-g -Wno-deprecated -Wall -fno-common -Wextra -ansi -pedantic -std=c++0x -fopenmp"
                                                   CACHE STRING
         ${CMAKE_FLAGS_HELP} FORCE)
     SET(CMAKE_CXX_FLAGS_DEBUG "-O0 -g"            CACHE STRING

@@ -40,9 +40,13 @@ endif()
 
 target_link_libraries(smooth ${MPI_LIBRARIES})
 
+# Require BLITZ
+include("${CMAKE_SOURCE_DIR}/CMake/libs/blitz.cmake")
+
 # Require VTK
 FIND_PACKAGE(VTK)
 IF(VTK_FOUND)
+  message("VTK FOUND")
 	INCLUDE(${VTK_USE_FILE})
 ELSE(VTK_FOUND)
 	MESSAGE(FATAL_ERROR
