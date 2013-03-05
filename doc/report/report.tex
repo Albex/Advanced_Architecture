@@ -41,6 +41,7 @@
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{listings}
 
 % Fonts packages (if needed)
 %\usepackage[nott,fullsumlimits]{kpfonts}
@@ -59,8 +60,18 @@
 % ------------------------------------------------------------------------
 \begin{document}
 
+
+% % listings options
+\lstset{
+basicstyle=\ttfamily,
+keywordstyle=\color{blue},
+identifierstyle=,
+commentstyle=\color[rgb]{.2,.4,.5},
+stringstyle=\ttfamily\color{gray},
+language=C++}
+
 % \teaser{
-%  \includegraphics[width=\linewidth]{eg_new}
+%  \includegraphics[scale=0.3&]{Imperial__4_colour_process.jpg}
 %  \centering
 %   \caption{New EG Logo}
 % \label{fig:teaser}
@@ -81,14 +92,10 @@
    then add the subject categories according to the ACM Classification Index 
    (see http://www.acm.org/class/1998/).
 
-\begin{classification} % according to http://www.acm.org/class/1998/
-\CCScat{Computer Graphics}{I.3.3}{Picture/Image Generation}{Line and curve generation}
-\end{classification}
-
 \end{abstract}
 
 
-
+%\tableofcontents
 
 
 %-------------------------------------------------------------------------
@@ -96,18 +103,80 @@
 
 %% TODO
 
-%-------------------------------------------------------------------------
-\section{Hardware Considerations}
+\subsection{Hardware Considerations}
 
 The chosen hardware is not one of the machine from the Lab. They do not have any interesting GPUs. But one of our laptops is very powerful with an interesting GPU. This is the chosen one.
 
-Here are the details of this hardware:
+The table \ref{CPUspec} contains the details of this hardware.
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|}
+\hline
+Model Name & Intel Core i7 CPU Q720 \\
+\hline
+Clock Speed & 1.597 GHz \\
+\hline
+Max Turbo Frequency & 2.8 GHz \\
+\hline
+Cache size & 6144 KB \\
+\hline
+CPU cores & 4 \\
+\hline
+CPU Threads & 8 \\
+\hline
+Integrated GPU & No \\
+\hline
+Memory Channels & 2 \\
+\hline
+Max Memory Bandwith & 21 GB/s \\
+\hline
+\end{tabular}
+\caption{CPU Specifications}
+\label{CPUspec}
+\end{table}
+
+The GPU specifications are shown in the table \ref{GPUspecs}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|}
+\hline
+Model Name & NVIDIA GeForce GTX 260M \\
+\hline
+Clock Speed & 1.375 GHz \\
+\hline
+Multiprocessors & 14 \\
+\hline
+Global CUDA cores & 112 \\
+\hline
+Allocated Memory & 1 GB \\
+\hline
+Memory Clock Speed & 950 MHz \\
+\hline
+\end{tabular}
+\caption{GPU Specifications}
+\label{GPUspecs}
+\end{table}
+
+To summarize, the figure \ref{topo} gives a quick overview of the hardware topology. The GPU is connected on the PCI port \verb+10de:0618+.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{topo.png}
+\caption{Topology}
+\label{topo}
+\end{figure}
+
+\subsection{Software Considerations}
+
+The machine used for this coursework runs a Fedora 18 distribution. This is the exact information:
+\begin{lstlisting}
+$ uname -a
+Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC
+2013 x86_64 x86_64 x86_64 GNU/Linux
+\end{lstlisting}
 
 
-%-------------------------------------------------------------------------
-\section{Software Considerations}
-
-The machine used for this coursework runs a Fedora distribution.
 
 %-------------------------------------------------------------------------
 \section{The Sequential Issue}
@@ -125,6 +194,11 @@ The machine used for this coursework runs a Fedora distribution.
 \subsection{Optimization}
 
 %-------------------------------------------------------------------------
+\section{GPU Acceleration}
+
+\subsection{Analysis}
+
+\subsection{Optimization}
 
 
 \end{document}
