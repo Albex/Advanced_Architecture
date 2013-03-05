@@ -99,14 +99,6 @@ void Mesh::create_adjacency(){
   }
 }
 
-bool Mesh::isSurfaceNode(size_t vid) const{
-  return NEList[vid].size() < NNList[vid].size();
-}
-
-bool Mesh::isCornerNode(size_t vid) const{
-  return fabs(normals[2*vid])==1.0 && fabs(normals[2*vid+1]==1.0);
-}
-
 void Mesh::find_surface(){
   // Initialise all normal vectors to (0.0,0.0).
   normals.resize(2*NNodes, 0.0);

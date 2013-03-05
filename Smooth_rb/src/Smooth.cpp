@@ -19,6 +19,9 @@ void smooth( Mesh & mesh, size_t niter ) {
         }
     }
     double * buffer = new double[ max ];
+    if ( buffer == nullptr ) {
+        return;
+    }
     for( size_t iter = 0; iter < niter; ++iter ) {
         for( size_t vid = 0; vid < mesh.NNodes; ++vid ) {
 
@@ -26,12 +29,12 @@ void smooth( Mesh & mesh, size_t niter ) {
             if( mesh.isCornerNode( vid ) ) continue;
 
             // Find the quality of the worst element adjacent to vid
-            int size = mesh.NEList[ vid ].size( );
+            int const size = mesh.NEList[ vid ].size( );
             for( int it = 0; it < size; ++it ) {
                 buffer[ it ] = mesh.element_quality( mesh.NEList[ vid ][ it ] );
             }
             double worst_q = 1.0;
-            for( int it = 0; it < mesh.NEList[ vid ].size( ); ++it ) {
+            for( int it = 0; it < size; ++it ) {
                 worst_q = std::min( worst_q, buffer[ it ] );
             }
 
@@ -45,7 +48,7 @@ void smooth( Mesh & mesh, size_t niter ) {
             * the two metric tensors of the vertices defining the edge.
             */
 
-            const double * m0 = &mesh.metric[ 3 * vid ];
+            const double * __restrict__ m0 = &mesh.metric[ 3 * vid ];
 
             double x0 = mesh.coords[ 2 * vid     ];
             double y0 = mesh.coords[ 2 * vid + 1 ];
@@ -54,14 +57,12 @@ void smooth( Mesh & mesh, size_t niter ) {
             double q[ 2 ] = { 0.0, 0.0 };
 
             // Iterate over all edges and assemble matrices A and q.
-            for(
-                std::vector< size_t >::const_iterator it = mesh.NNList[ vid ].begin();
-                it != mesh.NNList[ vid ].end( );
-                ++it
-            ){
-                size_t il = *it;
+            int const size_nnlist = mesh.NNList[ vid ].size( );
+            for( int it = 0; it < size_nnlist; ++it ) {
 
-                const double *m1 = &mesh.metric[ 3 * il ];
+                size_t il = mesh.NNList[ vid ][ it ];
+
+                const double * __restrict__ m1 = &mesh.metric[ 3 * il ];
 
                 // Find the metric in the middle of the edge.
                 double ml00 = 0.5 * ( m0[ 0 ] + m1[ 0 ] );
@@ -78,12 +79,11 @@ void smooth( Mesh & mesh, size_t niter ) {
 
                 A[ 0 ] += ml00;
                 A[ 1 ] += ml01;
-                A[ 2 ] += ml01;
                 A[ 3 ] += ml11;
             }
 
             // The metric tensor is symmetric, i.e. ml01=ml10, so A[2]=A[1].
-            // A[ 2 ] = A[ 1 ];
+            A[ 2 ] = A[ 1 ];
 
             // Displacement vector for vid
             double p[ 2 ];
@@ -102,8 +102,8 @@ void smooth( Mesh & mesh, size_t niter ) {
             * of the old displacement on the surface.
             */
             if( mesh.isSurfaceNode( vid ) ){
-                p[ 0 ] -= p[ 0 ] * fabs( mesh.normals[ 2 * vid    ] );
-                p[ 1 ] -= p[ 1 ] * fabs( mesh.normals[ 2 * vid + 1] );
+                p[ 0 ] -= p[ 0 ] * std::abs( mesh.normals[ 2 * vid    ] );
+                p[ 1 ] -= p[ 1 ] * std::abs( mesh.normals[ 2 * vid + 1] );
             }
 
             // Update the coordinates
@@ -130,7 +130,7 @@ void smooth( Mesh & mesh, size_t niter ) {
                 buffer[ it ] = mesh.element_quality( mesh.NEList[ vid ][ it ] );
             }
             double new_worst_q = 1.0;
-            for( int it = 0; it < mesh.NEList[ vid ].size( ); ++it ) {
+            for( int it = 0; it < size; ++it ) {
                 new_worst_q = std::min( new_worst_q, buffer[ it ] );
             }
             /* If quality is worse than before, either because of element inversion

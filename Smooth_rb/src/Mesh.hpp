@@ -54,8 +54,8 @@ public:
   // For every vertex i, NEList[i] contains the IDs of all adjacent elements.
   std::vector< std::vector< size_t > > NEList;
 
-  bool isSurfaceNode(size_t vid) const;
-  bool isCornerNode(size_t vid) const;
+  inline bool isSurfaceNode(size_t vid) const;
+  inline bool isCornerNode(size_t vid) const;
   double element_area(size_t eid) const;
   inline double element_quality(size_t eid) const;
   Quality get_mesh_quality() const;
@@ -67,6 +67,18 @@ private:
 
   int orientation;
 };
+
+bool
+Mesh::isSurfaceNode( size_t vid ) const {
+  return NEList[ vid ].size( ) < NNList[ vid ].size( );
+}
+
+bool
+Mesh::isCornerNode( size_t vid ) const{
+  return std::abs(
+    normals[ 2 * vid] ) == 1.0 && std::abs( normals[ 2 * vid + 1 ] == 1.0
+  );
+}
 
 /* This function evaluates the quality of an element, based on the 2D quality
  * functional proposed by Lipnikov et. al.. The description for the functional
