@@ -1,0 +1,19 @@
+
+<SVD2x2.cpp;-1:-1;PGO;_Z13svd_solve_2x2PKdPdS0_;0>
+  DYN-VAL:SVD2x2.cpp  _Z13svd_solve_2x2PKdPdS0_
+
+<SVD2x2.cpp;-1:-1;PGO;_Z17calc_eigenvectorsPKdS0_Pd;0>
+  DYN-VAL:SVD2x2.cpp  _Z17calc_eigenvectorsPKdS0_Pd
+
+<SVD2x2.cpp;-1:-1;PGO;_Z16calc_eigenvaluesPKdPd;0>
+  DYN-VAL:SVD2x2.cpp  _Z16calc_eigenvaluesPKdPd
+
+<SVD2x2.cpp;-1:-1;PGO;;0>
+
+      3 FUNCTIONS HAD VALID DYNAMIC PROFILES
+
+  FILE CURRENT  QUALITY METRIC: 100.0%
+  FILE POSSIBLE QUALITY METRIC: 100.0%
+  FILE QUALITY  METRIC RATIO:   100.0%
+
+

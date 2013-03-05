@@ -48,7 +48,7 @@ void calc_eigenvectors(const double A[4],
    * │              │ x │    │ = │   │
    * │ A[2]   A[3]-λ│   │X[1]│   │ 0 │
    * └─            ─┘   └    ┘   └   ┘
-   * In order to solve it, we impose one additional restriction:
+   * In order to solve it, we impose one additional __restrict__ion:
    * X[0]^2 + X[1]^2 = 1
    */
 
@@ -183,7 +183,7 @@ void svd_solve_2x2(const double A[4], double p[2], const double q[2]){
   /*
    * Calculate the left singular vector U:
    * Singular vectors U and V are unique, up to a free choice of sign. Once V
-   * has been defined, the choice for the sign of U is restricted. So, instead
+   * has been defined, the choice for the sign of U is __restrict__ed. So, instead
    * of calculating the eigenvectors of A*AT, U is formed using the formula:
    * uj = σ_inv(j)*A*vj, where uj (resp. vj) is the j-th column of U (resp. V).
    *

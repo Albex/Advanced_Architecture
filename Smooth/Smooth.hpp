@@ -9,6 +9,6 @@
 
 #include "Mesh.hpp"
 
-void smooth(Mesh *mesh, size_t niter);
+void smooth(Mesh * __restrict__ mesh, size_t niter);
 
 #endif /* SMOOTH_HPP_ */

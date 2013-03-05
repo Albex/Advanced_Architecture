@@ -20,7 +20,7 @@
 
 #include "Mesh.hpp"
 
-Mesh::Mesh(const char *filename){
+Mesh::Mesh(const char * __restrict__ filename){
   // Check whether the provided file exists.
   ifstream ifile(filename);
   if(!ifile){
@@ -32,7 +32,7 @@ Mesh::Mesh(const char *filename){
   reader->SetFileName(filename);
   reader->Update();
 
-  vtkUnstructuredGrid *ug = reader->GetOutput();
+  vtkUnstructuredGrid * __restrict__ ug = reader->GetOutput();
 
   NNodes = ug->GetNumberOfPoints();
   NElements = ug->GetNumberOfCells();
@@ -40,7 +40,7 @@ Mesh::Mesh(const char *filename){
   // Get the coordinates of each mesh vertex. There is no z coordinate in 2D,
   // but VTK treats 2D and 3D meshes uniformly, so we have to provide memory
   // for z as well (r[2] will always be zero and we ignore it).
-  for(size_t i=0;i<NNodes;i++){
+  for(size_t i=0;i<NNodes;++i){
     double r[3];
     ug->GetPoints()->GetPoint(i, r);
     coords.push_back(r[0]);
@@ -49,8 +49,8 @@ Mesh::Mesh(const char *filename){
   assert(coords.size() == 2*NNodes);
 
   // Get the metric at each vertex.
-  for(size_t i=0;i<NNodes;i++){
-    double *tensor = ug->GetPointData()->GetArray("Metric")->GetTuple4(i);
+  for(size_t i=0;i<NNodes;++i){
+    double * __restrict__ tensor = ug->GetPointData()->GetArray("Metric")->GetTuple4(i);
     metric.push_back(tensor[0]);
     metric.push_back(tensor[1]);
     assert(tensor[1] == tensor[2]);
@@ -59,8 +59,8 @@ Mesh::Mesh(const char *filename){
   assert(metric.size() == 3*NNodes);
 
   // Get the 3 vertices comprising each element.
-  for(size_t i=0;i<NElements;i++){
-    vtkCell *cell = ug->GetCell(i);
+  for(size_t i=0;i<NElements;++i){
+    vtkCell * __restrict__ cell = ug->GetCell(i);
     for(int j=0;j<3;j++){
       ENList.push_back(cell->GetPointId(j));
     }
@@ -80,7 +80,7 @@ void Mesh::create_adjacency(){
 
   for(size_t eid=0; eid<NElements; ++eid){
     // Get a pointer to the three vertices comprising element eid.
-    const size_t *n = &ENList[3*eid];
+    const size_t * __restrict__ n = &ENList[3*eid];
 
     // For each vertex, add the other two vertices to its node-node adjacency
     // list and element eid to its node-element adjacency list.
@@ -170,7 +170,7 @@ void Mesh::find_surface(){
  */
 void Mesh::set_orientation(){
   // Find the orientation for the first element
-  const size_t *n = &ENList[0];
+  const size_t * __restrict__ n = &ENList[0];
 
   // Pointers to the coordinates of each vertex
   const double *c0 = &coords[2*n[0]];
@@ -197,65 +197,16 @@ void Mesh::set_orientation(){
  * the orientation factor ±1.0, so that the area is always a positive number.
  */
 double Mesh::element_area(size_t eid) const{
-  const size_t *n = &ENList[3*eid];
+  const size_t * __restrict__ n = &ENList[3*eid];
 
   // Pointers to the coordinates of each vertex
-  const double *c0 = &coords[2*n[0]];
-  const double *c1 = &coords[2*n[1]];
-  const double *c2 = &coords[2*n[2]];
+  const double * __restrict__ c0 = &coords[2*n[0]];
+  const double * __restrict__ c1 = &coords[2*n[1]];
+  const double * __restrict__ c2 = &coords[2*n[2]];
 
   return orientation * 0.5 *
             ( (c0[1] - c2[1]) * (c0[0] - c1[0]) -
               (c0[1] - c1[1]) * (c0[0] - c2[0]) );
-}
-
-/* This function evaluates the quality of an element, based on the 2D quality
- * functional proposed by Lipnikov et. al.. The description for the functional
- * is taken from: Yu. V. Vasileskii and K. N. Lipnikov, An Adaptive Algorithm
- * for Quasioptimal Mesh Generation, Computational Mathematics and Mathematical
- * Physics, Vol. 39, No. 9, 1999, pp. 1468 - 1486.
- */
-double Mesh::element_quality(size_t eid) const{
-  const size_t *n = &ENList[3*eid];
-
-  // Pointers to the coordinates of each vertex
-  const double *c0 = &coords[2*n[0]];
-  const double *c1 = &coords[2*n[1]];
-  const double *c2 = &coords[2*n[2]];
-
-  // Pointers to the metric tensor at each vertex
-  const double *m0 = &metric[3*n[0]];
-  const double *m1 = &metric[3*n[1]];
-  const double *m2 = &metric[3*n[2]];
-
-  // Metric tensor averaged over the element
-  double m00 = (m0[0] + m1[0] + m2[0])/3;
-  double m01 = (m0[1] + m1[1] + m2[1])/3;
-  double m11 = (m0[2] + m1[2] + m2[2])/3;
-
-  // l is the length of the perimeter, measured in metric space
-  double l =
-    sqrt((c0[1] - c1[1])*((c0[1] - c1[1])*m11 + (c0[0] - c1[0])*m01) +
-         (c0[0] - c1[0])*((c0[1] - c1[1])*m01 + (c0[0] - c1[0])*m00))+
-    sqrt((c0[1] - c2[1])*((c0[1] - c2[1])*m11 + (c0[0] - c2[0])*m01) +
-         (c0[0] - c2[0])*((c0[1] - c2[1])*m01 + (c0[0] - c2[0])*m00))+
-    sqrt((c2[1] - c1[1])*((c2[1] - c1[1])*m11 + (c2[0] - c1[0])*m01) +
-         (c2[0] - c1[0])*((c2[1] - c1[1])*m01 + (c2[0] - c1[0])*m00));
-
-  // Area in physical space
-  double a = element_area(eid);
-
-  // Area in metric space
-  double a_m = a*sqrt(m00*m11 - m01*m01);
-
-  // Function
-  double f = std::min(l/3.0, 3.0/l);
-  double F = pow(f * (2.0 - f), 3.0);
-
-  // This is the 2D Lipnikov functional.
-  double quality = 12.0 * sqrt(3.0) * a_m * F / (l*l);
-
-  return quality;
 }
 
 // Finds the mean quality, averaged over all mesh elements,
@@ -266,7 +217,7 @@ Quality Mesh::get_mesh_quality() const{
   double mean_q = 0.0;
   double min_q = 1.0;
 
-  for(size_t i=0;i<NElements;i++){
+  for(size_t i=0;i<NElements;++i){
     double ele_q = element_quality(i);
 
     mean_q += ele_q;
