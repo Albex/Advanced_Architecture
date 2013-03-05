@@ -31,7 +31,7 @@ void smooth( Mesh & mesh, size_t niter ) {
             // Find the quality of the worst element adjacent to vid
             int const size = mesh.NEList[ vid ].size( );
             for( int it = 0; it < size; ++it ) {
-                buffer[ it ] = mesh.element_quality( mesh.NEList[ vid ][ it ] );
+                buffer[ it ] = mesh.element_quality( vid, it );
             }
             double worst_q = 1.0;
             for( int it = 0; it < size; ++it ) {
@@ -127,7 +127,7 @@ void smooth( Mesh & mesh, size_t niter ) {
             * rejected.
             */
             for( int it = 0; it < size; ++it ) {
-                buffer[ it ] = mesh.element_quality( mesh.NEList[ vid ][ it ] );
+                buffer[ it ] = mesh.element_quality( vid, it );
             }
             double new_worst_q = 1.0;
             for( int it = 0; it < size; ++it ) {

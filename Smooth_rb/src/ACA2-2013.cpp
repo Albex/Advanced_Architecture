@@ -11,6 +11,10 @@
 #include "Mesh.hpp"
 #include "Smooth.hpp"
 
+extern "C" {
+#include <unistd.h>
+}
+
 double get_wtime(){
     struct timeval tic;
 
@@ -28,6 +32,8 @@ int main(int argc, char **argv){
   if(argc!=2){
     std::cerr << "Usage: " << argv[0] << " mesh_file" << std::endl;
   }
+
+  nice( 0 );
 
   Mesh mesh( argv[ 1 ] );
 

@@ -57,7 +57,8 @@ public:
   inline bool isSurfaceNode(size_t vid) const;
   inline bool isCornerNode(size_t vid) const;
   double element_area(size_t eid) const;
-  inline double element_quality(size_t eid) const;
+  inline double element_quality( int, int ) const;
+  inline double element_quality( size_t ) const;
   Quality get_mesh_quality() const;
 
 private:
@@ -86,7 +87,14 @@ Mesh::isCornerNode( size_t vid ) const{
  * for Quasioptimal Mesh Generation, Computational Mathematics and Mathematical
  * Physics, Vol. 39, No. 9, 1999, pp. 1468 - 1486.
  */
-double Mesh::element_quality(size_t eid) const{
+double Mesh::element_quality( int vid, int it ) const {
+
+  size_t eid = NEList[ vid ][ it ];
+  return element_quality( eid );
+}
+
+double Mesh::element_quality( size_t eid ) const{
+
   const int eid_off = 3*eid;
 
   // Pointers to the coordinates of each vertex
