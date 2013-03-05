@@ -1,0 +1,1371 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"m_",
+				"m_width"
+			],
+			[
+				"sampl",
+				"samples"
+			],
+			[
+				"hi",
+				"hist_temp"
+			],
+			[
+				"sam",
+				"samples"
+			],
+			[
+				"norm",
+				"norm2"
+			],
+			[
+				"nor",
+				"normal"
+			],
+			[
+				"p",
+				"phi"
+			],
+			[
+				"get",
+				"getCenterY"
+			],
+			[
+				"the",
+				"theta"
+			],
+			[
+				"no",
+				"normal"
+			],
+			[
+				"im",
+				"img_size"
+			],
+			[
+				"his",
+				"hist_X_s"
+			],
+			[
+				"delete_hist",
+				"delete_hist_X"
+			],
+			[
+				"hist",
+				"hist_temp"
+			],
+			[
+				"sa",
+				"samples"
+			],
+			[
+				"r",
+				"r_sphere"
+			],
+			[
+				"n_sam",
+				"n_sample"
+			],
+			[
+				"m",
+				"m_ks"
+			],
+			[
+				"m_k",
+				"m_ks"
+			],
+			[
+				"cen",
+				"center_z"
+			],
+			[
+				"w",
+				"m_w0"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"Pa",
+				"ParkMiller"
+			],
+			[
+				"u",
+				"uint64_t"
+			],
+			[
+				"Com",
+				"COMM_WORLD"
+			],
+			[
+				"lo",
+				"loop_min"
+			],
+			[
+				"loo",
+				"loop_max"
+			],
+			[
+				"nu",
+				"num_tasks"
+			],
+			[
+				"is",
+				"is_start"
+			],
+			[
+				"fi",
+				"fi1"
+			],
+			[
+				"omp",
+				"omp_get_num_threads"
+			],
+			[
+				"k_s",
+				"k_stop"
+			],
+			[
+				"k_",
+				"k_stop"
+			],
+			[
+				"wi",
+				"width_stop"
+			],
+			[
+				"ws",
+				"width_start"
+			],
+			[
+				"w_",
+				"wblock_index_stop"
+			],
+			[
+				"h",
+				"hist"
+			],
+			[
+				"max",
+				"max_L"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"wid",
+				"width_start"
+			],
+			[
+				"sp",
+				"sphere"
+			],
+			[
+				"xo",
+				"xorShift"
+			],
+			[
+				"lin",
+				"line_idx"
+			],
+			[
+				"ex",
+				"exp_rate"
+			],
+			[
+				"gre",
+				"grey_val"
+			],
+			[
+				"co",
+				"command_line"
+			],
+			[
+				"f",
+				"fbuff"
+			],
+			[
+				"a",
+				"atoi"
+			],
+			[
+				"Co",
+				"strCout"
+			],
+			[
+				"l",
+				"loop_min"
+			],
+			[
+				"m_m",
+				"m_max_pixel_chanel"
+			],
+			[
+				"min",
+				"min_L"
+			],
+			[
+				"mi",
+				"min_L"
+			],
+			[
+				"ci",
+				"cielab2rgb"
+			],
+			[
+				"maxP",
+				"maxPixelValue"
+			],
+			[
+				"rgb2",
+				"rgb2cielab"
+			],
+			[
+				"xy",
+				"xyz2rgb"
+			],
+			[
+				"hei",
+				"m_height"
+			],
+			[
+				"Y",
+				"y_offset"
+			],
+			[
+				"at",
+				"atof"
+			],
+			[
+				"M_",
+				"M_PI"
+			],
+			[
+				"getCe",
+				"getCenterX"
+			],
+			[
+				"copy",
+				"copy_range"
+			],
+			[
+				"getC",
+				"getCenterX"
+			],
+			[
+				"vec",
+				"vect"
+			],
+			[
+				"ce",
+				"center_x"
+			],
+			[
+				"HDR_",
+				"HDR_HT"
+			],
+			[
+				"sour",
+				"source_part2"
+			],
+			[
+				"e",
+				"exposure"
+			],
+			[
+				"n",
+				"n_inputs"
+			],
+			[
+				"pi",
+				"pix_p_blue"
+			],
+			[
+				"pix",
+				"pix_blue"
+			],
+			[
+				"pix_p",
+				"pix_p_red"
+			],
+			[
+				"pix_",
+				"pix_red"
+			],
+			[
+				"saveP",
+				"savePNM"
+			],
+			[
+				"g",
+				"grey_j"
+			],
+			[
+				"me",
+				"median"
+			],
+			[
+				"image",
+				"image"
+			],
+			[
+				"in",
+				"inputs"
+			],
+			[
+				"med",
+				"med_buf"
+			],
+			[
+				"hdr",
+				"hdr_in_range"
+			],
+			[
+				"H",
+				"H_SIZE"
+			],
+			[
+				"save",
+				"savePNM"
+			],
+			[
+				"m_da",
+				"m_data_1D"
+			],
+			[
+				"acc",
+				"acc_wblue"
+			],
+			[
+				"acc_",
+				"acc_blue"
+			],
+			[
+				"ac_wgr",
+				"acc_wgreen"
+			],
+			[
+				"ra",
+				"radiance_green"
+			],
+			[
+				"HDR",
+				"HDR_MERGE_BLOCK"
+			],
+			[
+				"ma",
+				"max_blue"
+			],
+			[
+				"exp",
+				"exposure_time"
+			],
+			[
+				"Sa",
+				"saveFormat"
+			],
+			[
+				"magi",
+				"magic_number"
+			],
+			[
+				"test",
+				"test1"
+			],
+			[
+				"tes",
+				"test1"
+			],
+			[
+				"c",
+				"cwfunc"
+			],
+			[
+				"al",
+				"alloc"
+			],
+			[
+				"uin",
+				"uint32_t"
+			],
+			[
+				"pfm",
+				"pfm_t"
+			],
+			[
+				"uint",
+				"uint32_t"
+			],
+			[
+				"grey",
+				"grey_val"
+			],
+			[
+				"sta",
+				"static"
+			],
+			[
+				"fil",
+				"file_path"
+			],
+			[
+				"un",
+				"uint8_t"
+			],
+			[
+				"m_blo",
+				"m_block_height"
+			],
+			[
+				"ERRO",
+				"ERROR_OPEN"
+			],
+			[
+				"mag",
+				"magic_number"
+			],
+			[
+				"pixe",
+				"pixelBlock"
+			],
+			[
+				"m_data",
+				"m_data_1D"
+			],
+			[
+				"hw",
+				"hwloc-1"
+			],
+			[
+				"det",
+				"dest"
+			],
+			[
+				"ru",
+				"ru_majflt"
+			],
+			[
+				"m_r",
+				"m_rusage_start"
+			],
+			[
+				"m_ma",
+				"m_minor_page_faults"
+			],
+			[
+				"be",
+				"bench"
+			],
+			[
+				"m_sta",
+				"m_core_start"
+			],
+			[
+				"m_core",
+				"m_core_end"
+			],
+			[
+				"m_ep",
+				"m_eplased_time"
+			],
+			[
+				"print",
+				"printCycleCounter"
+			],
+			[
+				"b",
+				"beginend	$1.begin(), $1.end()"
+			],
+			[
+				"sch",
+				"sched_priority"
+			],
+			[
+				"sys",
+				"syscall"
+			],
+			[
+				"def",
+				"defined"
+			],
+			[
+				"cpu",
+				"cpu"
+			],
+			[
+				"set",
+				"setBit"
+			],
+			[
+				"clea",
+				"clearAll"
+			],
+			[
+				"Alloc",
+				"allocCPUMask"
+			],
+			[
+				"cy",
+				"CycleOverhead"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 2837,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ACA2-2013.cpp",
+			"settings":
+			{
+				"buffer_size": 1433,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Mesh.cpp",
+			"settings":
+			{
+				"buffer_size": 7650,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Mesh.hpp",
+			"settings":
+			{
+				"buffer_size": 4255,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Smooth.cpp",
+			"settings":
+			{
+				"buffer_size": 6006,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Smooth.hpp",
+			"settings":
+			{
+				"buffer_size": 412,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/SVD2x2.cpp",
+			"settings":
+			{
+				"buffer_size": 6076,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/SVD2x2.hpp",
+			"settings":
+			{
+				"buffer_size": 414,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "install.sh",
+			"settings":
+			{
+				"buffer_size": 3139,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/install_script.sublime-build",
+	"command_palette":
+	{
+		"height": 72.0,
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:  in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/romain/Downloads/assignment_2/homework_example.pl",
+		"/home/romain/Downloads/tccv-master/tccv.cls",
+		"/home/romain/Downloads/tccv-master/nicola.it.tex",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part2.4/question4.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/HDRimage_processing.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/HDRimage.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/BRDF.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1.2/mainwindow_pt2.cpp",
+		"/home/romain/.cache/.fr-GJjNHV/raytracer/Shader.h",
+		"/home/romain/Downloads/squestion2.m",
+		"/home/romain/Dropbox/Imperial College/Computational Finance/doc/report.tex",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/doc/report 2/report.tex",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Sphere.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/Uniform.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/StdRand/StdRand.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/Congruential/Haynes.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/Random.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/LaggedFibonnacci/MichellMoore.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/Congruential/ParkMiller.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/MerseneTwister/MerseneTwister.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand/XorShift/XorShift.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part2.3/question2.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Rand.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/Phong.hpp",
+		"/run/media/romain/My Passport/Project C++/Saphir/librand/Random.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/rand/XorShift/XorShift.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/rand/Uniform.hpp",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/report.tex",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/pi.cpp",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/piwrap.cpp",
+		"/var/tmp/pi.cpp",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/install.sh",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/HDRimage_io.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/rand.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/rand.cpp",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res6_100.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res7_100.data",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1.1/mainwindow_pt1.cpp",
+		"/home/romain/Dropbox/Imperial College/Architecture/Pseudoknot/varyarch",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res7_100_omp.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/hybrid_omp_mpi_6.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res6_100_omp.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/hybrid_omp_mpi_8.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/hybrid_omp_mpi_7.data",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/CMakeLists.txt",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res8_100_omp.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res8_100.data",
+		"/home/romain/Dropbox/rust/llvm/x86_64-unknown-linux-gnu/lib/CodeGen/AsmPrinter/Release+Asserts/AsmPrinter.d",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res8_100omp.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res8_omp.data",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/bin/usr/local/bin/exe.sh",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/CMakeLists.txt",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/pi.cpp",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/doc/report.tex",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/doc/data/res6_100.data",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/piwrap.cpp",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/doc/data/res7_100.data",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/doc/data/res8_100.data",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/.gitignore",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/.gitignore",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/report.tex",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/report.toc",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetche256.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetche128.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetche64.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetche32.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetche16.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetche8.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsqe128.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetche4.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetch32.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetch64.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetch128.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetch256.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetch16.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetch8.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/fetch4.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsq4.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsq64.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsq128.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsq32.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsq2.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsqe64.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsqe32.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsqe16.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsqe8.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsqe4.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsqe2.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsq16.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/lsq8.data",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow_pt1.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/CO417-HW1/README",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/varyarch-energy-inorder",
+		"/home/romain/Dropbox/Imperial College/Architecture/Pseudoknot/varyarch-energy_cacheline",
+		"/home/romain/Dropbox/Imperial College/Architecture/Pseudoknot/varyarch-energy",
+		"/home/romain/Dropbox/Imperial College/Computer Vision/C418/report/report.tex",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/varyarch.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/Pseudoknot/varyarch-inorder.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report/data/varyarch-energy.data",
+		"/home/romain/Dropbox/Imperial College/Architecture/report.tex",
+		"/home/romain/Dropbox/Imperial College/Computer Vision/C418/report.pdf",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/biblio.bib",
+		"/home/romain/Dropbox/Imperial College/Parallel Algorithm/integration.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/src/sphere.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/question1.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part2/question2.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/AdvancedGraphicsConfig.hpp.in",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/License.txt",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/README.md",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/install.sh",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/CMake/Compiler/Compiler.cmake",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.hpp",
+		"/home/romain/Downloads/Z9jBLggC.html.part",
+		"/home/romain/Dropbox/imageviewer.cpp",
+		"/home/romain/Dropbox/imageviewer.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/build/ui_browser.h",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/Browser.ui",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.ui.autosave",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.ui",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/Results/Question 1/Dynamic range",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/include/HDRimage.hpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/Specs/CO417-HW1/ExampleCode/Untitled Document",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/bin/usr/local/bin/result_hist.pfm",
+		"/home/romain/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/Specs/CO417-HW1/ExampleCode/main.cpp",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/Report/Specs/CO417-HW1/ExampleCode/loadPNM.cpp"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"qualit",
+			"norm_s",
+			"perso",
+			"\\paragraph{}\\vspace{-2mm}",
+			"\\paragraph{}",
+			"cur",
+			"curicu",
+			"InitSeed",
+			"normal",
+			"polar2cartesian",
+			"integrate",
+			"cout",
+			"s.reflectanceXY( x_abs_pos, m_height - i, view );",
+			"normalXY",
+			"cartesian2polar",
+			"sampleEM",
+			"hist",
+			"hist_temp",
+			"toto",
+			"sampleEM",
+			"hist",
+			"sampleEM",
+			"points",
+			"sampleEM",
+			"sample",
+			"sampleEM",
+			"brdf",
+			"reflec",
+			"        free( );",
+			"free( );",
+			"!ui->radioButton_6->isChecked( )",
+			"radioButton_6",
+			"ui->radioButton_1->isChecked( )",
+			"ui->radioButton_2->isChecked( )",
+			"9cm",
+			"cout",
+			"rende",
+			"sampleEm",
+			"100",
+			"10000",
+			"1000",
+			"4",
+			"true eff",
+			"clear",
+			"&&",
+			"m_rng",
+			"is",
+			"m_rng.rand",
+			"xo",
+			"rng( ",
+			"rng.rand( ",
+			"rnd::Uniform< float > ",
+			"xorS",
+			"xorsj",
+			" = chr::start_time",
+			"SA_RAND_PAR",
+			"RAND_PAR",
+			" = chr::start_time",
+			"SA_INLINE ",
+			"m_s",
+			"m_m_rng",
+			"rng",
+			"m_m_ks",
+			"ks",
+			"m_m_kd",
+			"kd",
+			"nb_m_samples",
+			"samples",
+			"double",
+			"LAST_ERROR",
+			"Finalise",
+			"new",
+			"== 0",
+			"MPI",
+			"real",
+			"func",
+			"P_SIZE",
+			"wblock_index_stop",
+			"wblock_index_start",
+			"cou",
+			"fille",
+			"get",
+			"::num",
+			"::min",
+			"cout",
+			"sam",
+			"cou",
+			";\n",
+			"cou",
+			"cout",
+			"wblock_index_stop",
+			"width_start",
+			"cout",
+			"circleF",
+			"}\n",
+			"sampleEM",
+			"64",
+			"wblock_index_start",
+			"circleFi",
+			"width",
+			"width_start",
+			"reflec",
+			"circle",
+			"15",
+			"cout",
+			"cou",
+			"vect",
+			"/ 3",
+			"part2",
+			"part1",
+			"Time (s)",
+			"temp.data",
+			"argv",
+			"pi",
+			"section",
+			"chapter",
+			"seconds",
+			"we",
+			"Ko",
+			"cache",
+			"cache size",
+			"footno",
+			"$\\mu$",
+			"xlabel={Cache size (Ko).}",
+			"register",
+			"mark=o",
+			"decem",
+			"consummed"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\vspace{-5mm}\\paragraph{}",
+			"\\paragraph{}\\vspace{-2mm}",
+			"s.reflectanceXY( x_abs_pos, m_height - i - 1, view );",
+			"cout",
+			"!ui->radioButton_5->isChecked( )",
+			"ui->radioButton_1->isChecked( ) && !ui->radioButton_6->isChecked( )",
+			"ui->radioButton_2->isChecked( ) && !ui->radioButton_6->isChecked( )",
+			"8cm",
+			",\n",
+			"rng",
+			"m_rng",
+			"rng( 0, ",
+			"rng( ",
+			"",
+			"RAND_PAR",
+			"",
+			"m_rng",
+			"m_ks",
+			"m_kd",
+			"n_samples",
+			"m_samples",
+			"ERR_LASTCODE",
+			"Finalize",
+			"part1.2",
+			"part1.1",
+			"Run time (seconds)",
+			".temp.data",
+			"instructions",
+			"n",
+			"xlabel={RUU size (Ko).}",
+			"mark=+",
+			"consumed",
+			"trig_cwf",
+			"trig_cwg",
+			"Wtime",
+			"time_ep",
+			"uint32_t",
+			"100",
+			"0",
+			"b",
+			"a",
+			"L",
+			"b",
+			"a",
+			"L",
+			"Z",
+			"2",
+			"Y",
+			"X",
+			"B",
+			"G",
+			"R",
+			"m_max_pixel_chanel * ",
+			"- m_min_pixel_chanel",
+			"histEqToneMap( SIZE_BUFF_HIST_TONE_MAP )",
+			"float, 3",
+			"template< typename T, uint32_t DIM >",
+			"vect< uint32_t, 3 >",
+			"vect",
+			"HDR_HT",
+			"HDR_LT",
+			"HDR_HT",
+			"move_n",
+			"move_range",
+			"std::swap",
+			"y2",
+			"x2",
+			"y1",
+			"x1",
+			"mlt",
+			"wblock_end",
+			"wblock_index",
+			"",
+			"grey_val",
+			"HDR",
+			"hdr",
+			"HDRimage",
+			"",
+			"IF",
+			"SET",
+			"printCores_core",
+			"printBenchmark_core",
+			"printCycleCounter_core",
+			"printTimer_core",
+			"m_core_end",
+			"c++11",
+			"INLINE_F",
+			"__tscp_read",
+			"__tsc_read",
+			"__tes_read",
+			"name",
+			"op",
+			"getcycleOverhead",
+			"cycleOverhead",
+			"startCountCycles",
+			"eplasedTime",
+			"stopTimer",
+			"startTimer",
+			"rename",
+			"PURE",
+			"INLINE",
+			"",
+			"cpu::info::__cpuid",
+			"(",
+			"",
+			"cpu::",
+			"",
+			"cpu::info::feature",
+			"",
+			"cpu::info",
+			"GNU_CXX_COMPILER",
+			"INTEL_CXX_COMPILER",
+			"INTEL_C_COMPILER",
+			"GNU_C_COMPILER",
+			"CXX_COMPILER",
+			"C_COMPILER",
+			"CPUTOOLS",
+			"m_timer_end",
+			"m_timer_start",
+			"policy",
+			"bitmask::get( )",
+			"bitmask::free( );",
+			"this->",
+			"std::string",
+			"",
+			"SA_CPU::",
+			"",
+			"SA_CPU_FEAT_"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "CMakeLists.txt",
+					"settings":
+					{
+						"buffer_size": 2837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2348,
+								2348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CMake/CMake.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 840.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/ACA2-2013.cpp",
+					"settings":
+					{
+						"buffer_size": 1433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 294.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Mesh.cpp",
+					"settings":
+					{
+						"buffer_size": 7650,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7400,
+								7400
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2598.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Mesh.hpp",
+					"settings":
+					{
+						"buffer_size": 4255,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4198,
+								4198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Smooth.cpp",
+					"settings":
+					{
+						"buffer_size": 6006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1071,
+								1071
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 182.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Smooth.hpp",
+					"settings":
+					{
+						"buffer_size": 412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/SVD2x2.cpp",
+					"settings":
+					{
+						"buffer_size": 6076,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2544.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/SVD2x2.hpp",
+					"settings":
+					{
+						"buffer_size": 414,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "install.sh",
+					"settings":
+					{
+						"buffer_size": 3139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 423.0,
+	"status_bar_visible": true
+}
