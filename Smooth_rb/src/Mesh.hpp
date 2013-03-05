@@ -29,7 +29,7 @@ public:
 
   // Element eid is comprised of the vertices
   // ENList[3*eid], ENList[3*eid+1] and ENList[3*eid+2].
-  std::vector<uint32_t> ENList;
+  std::vector< uint32_t > ENList;
 
   // Vertex vid has coordinates x=coords[2*vid] and y=coords[2*vid+1].
   std::vector< double > coords;
