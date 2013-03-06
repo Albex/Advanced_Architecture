@@ -4,23 +4,9 @@
 // Description : Mesh implementation
 //============================================================================
 
-#include <algorithm>
-#include <cassert>
-#include <iostream>
-#include <cmath>
-#include <set>
-#include <vector>
+#include <Mesh.hpp>
 
-#include <vtkCell.h>
-#include <vtkCellData.h>
-#include <vtkPoints.h>
-#include <vtkPointData.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkXMLUnstructuredGridReader.h>
-
-#include "Mesh.hpp"
-
-Mesh::Mesh(const char * __restrict__ filename){
+Mesh::Mesh( std::string const & filename){
   // Check whether the provided file exists.
   ifstream ifile(filename);
   if(!ifile){
@@ -29,7 +15,7 @@ Mesh::Mesh(const char * __restrict__ filename){
   }
 
   vtkXMLUnstructuredGridReader *reader = vtkXMLUnstructuredGridReader::New();
-  reader->SetFileName(filename);
+  reader->SetFileName( filename.c_str( ) );
   reader->Update();
 
   vtkUnstructuredGrid * __restrict__ ug = reader->GetOutput();
@@ -41,7 +27,7 @@ Mesh::Mesh(const char * __restrict__ filename){
   // but VTK treats 2D and 3D meshes uniformly, so we have to provide memory
   // for z as well (r[2] will always be zero and we ignore it).
   for(uint32_t i=0;i<NNodes;++i){
-    double r[3];
+    double r[ 3 ];
     ug->GetPoints()->GetPoint(i, r);
     coords.push_back(r[0]);
     coords.push_back(r[1]);
@@ -49,14 +35,14 @@ Mesh::Mesh(const char * __restrict__ filename){
   assert(coords.size() == 2*NNodes);
 
   // Get the metric at each vertex.
+  metric.resize( 3 * NNodes );
   for(uint32_t i=0;i<NNodes;++i){
     double * __restrict__ tensor = ug->GetPointData()->GetArray("Metric")->GetTuple4(i);
-    metric.push_back(tensor[0]);
-    metric.push_back(tensor[1]);
+    metric[ 3 * i     ] = tensor[0];
+    metric[ 3 * i + 1 ] = tensor[1];
     assert(tensor[1] == tensor[2]);
-    metric.push_back(tensor[3]);
+    metric[ 3 * i + 2 ] = tensor[3];
   }
-  assert(metric.size() == 3*NNodes);
 
   // Get the 3 vertices comprising each element.
   for(uint32_t i=0;i<NElements;++i){
@@ -72,6 +58,10 @@ Mesh::Mesh(const char * __restrict__ filename){
   create_adjacency();
   find_surface();
   set_orientation();
+}
+
+Mesh::~Mesh( void ) {
+
 }
 
 void Mesh::create_adjacency(){
@@ -122,7 +112,7 @@ void Mesh::find_surface(){
           std::inserter(intersection, intersection.begin()));
 
       if(intersection.size()==1){ // We have found a surface edge
-        double x=coords[2*vid], y=coords[2*vid+1];
+        real x=coords[2*vid], y=coords[2*vid+1];
 
         // Find which surface vid and *it belong to and set the corresponding
         // coordinate of the normal vector to ±1.0. The other coordinate is
@@ -130,20 +120,20 @@ void Mesh::find_surface(){
         // vertices will be at the end (±1.0,±1.0), which enables us to detect
         // that they are corner vertices and are not allowed to be smoothed.
         if(fabs(y-1.0) < 1E-12){// vid is on the top surface
-          normals[2*vid+1] = 1.0;
-          normals[2*(*it)+1] = 1.0;
+          normals( 2 * vid + 1 ) = 1.0;
+          normals( 2 * ( *it ) + 1 ) = 1.0;
         }
         else if(fabs(y) < 1E-12){// vid is on the bottom surface
-          normals[2*vid+1] = -1.0;
-          normals[2*(*it)+1] = -1.0;
+          normals( 2 * vid + 1 ) = -1.0;
+          normals( 2 * ( *it ) + 1 ) = -1.0;
         }
         else if(fabs(x-1.0) < 1E-12){// vid is on the right surface
-          normals[2*vid] = 1.0;
-          normals[2*(*it)] = 1.0;
+          normals( 2 * vid ) = 1.0;
+          normals( 2 * ( *it ) ) = 1.0;
         }
         else if(fabs(x) < 1E-12){// vid is on the left surface
-          normals[2*vid] = -1.0;
-          normals[2*(*it)] = -1.0;
+          normals( 2 * vid ) = -1.0;
+          normals( 2 * ( *it ) ) = -1.0;
         }
         else{
           std::cerr << "Invalid surface vertex coordinates" << std::endl;
@@ -171,17 +161,17 @@ void Mesh::set_orientation(){
   const uint32_t * __restrict__ n = &ENList[0];
 
   // Pointers to the coordinates of each vertex
-  const double *c0 = &coords[2*n[0]];
-  const double *c1 = &coords[2*n[1]];
-  const double *c2 = &coords[2*n[2]];
+  const real *c0 = &coords[2*n[0]];
+  const real *c1 = &coords[2*n[1]];
+  const real *c2 = &coords[2*n[2]];
 
-  double x1 = (c0[0] - c1[0]);
-  double y1 = (c0[1] - c1[1]);
+  real x1 = (c0[0] - c1[0]);
+  real y1 = (c0[1] - c1[1]);
 
-  double x2 = (c0[0] - c2[0]);
-  double y2 = (c0[1] - c2[1]);
+  real x2 = (c0[0] - c2[0]);
+  real y2 = (c0[1] - c2[1]);
 
-  double A = x1*y2 - x2*y1;
+  real A = x1*y2 - x2*y1;
 
   if(A<0)
     orientation = -1;
@@ -189,34 +179,18 @@ void Mesh::set_orientation(){
     orientation = 1;
 }
 
-/* Element area in physical (Euclidean) space. Recall that the area of a
- * triangle ABC is calculated as area=0.5*(AB⋅AC), i.e. half the inner product
- * of two of the element's edges (e.g. AB and AC). The result is corrected by
- * the orientation factor ±1.0, so that the area is always a positive number.
- */
-double Mesh::element_area(uint32_t eid) const{
-  const uint32_t * __restrict__ n = &ENList[3*eid];
 
-  // Pointers to the coordinates of each vertex
-  const double * __restrict__ c0 = &coords[2*n[0]];
-  const double * __restrict__ c1 = &coords[2*n[1]];
-  const double * __restrict__ c2 = &coords[2*n[2]];
-
-  return orientation * 0.5 *
-            ( (c0[1] - c2[1]) * (c0[0] - c1[0]) -
-              (c0[1] - c1[1]) * (c0[0] - c2[0]) );
-}
 
 // Finds the mean quality, averaged over all mesh elements,
 // and the quality of the worst element.
 Quality Mesh::get_mesh_quality() const{
   Quality q;
 
-  double mean_q = 0.0;
-  double min_q = 1.0;
+  real mean_q = 0.0;
+  real min_q = 1.0;
 
   for(uint32_t i=0;i<NElements;++i){
-    double ele_q = element_quality(i);
+    real ele_q = element_quality(i);
 
     mean_q += ele_q;
     min_q = std::min(min_q, ele_q);

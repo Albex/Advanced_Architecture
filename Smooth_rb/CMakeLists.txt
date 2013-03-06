@@ -80,14 +80,14 @@ foreach(flag ${CXX11_FEATURE_LIST})
       APPEND PROPERTY COMPILE_DEFINITIONS ${flag})
 endforeach(flag ${CXX11_FEATURE_LIST})
 
+include("${CMAKE_SOURCE_DIR}/CMake/Compiler/Compiler.cmake")
+
 # configure a header file to pass some of the CMake settings
 # to the source code
 configure_file (
   "${PROJECT_SOURCE_DIR}/SmoothConfig.hpp.in"
   "${PROJECT_BINARY_DIR}/SmoothConfig.hpp"
   )
-
-include("${CMAKE_SOURCE_DIR}/CMake/Compiler/Compiler.cmake")
 
 # add the install targets
 install(TARGETS smooth    DESTINATION bin)

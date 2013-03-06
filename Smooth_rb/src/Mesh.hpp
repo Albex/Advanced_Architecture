@@ -7,67 +7,68 @@
 #ifndef MESH_HPP_
 #define MESH_HPP_
 
-#include <cstddef>
-#include <set>
-#include <vector>
-#include <cmath>
-#include <blitz/array.h>
+#include <SmoothConfig.hpp>
 
-struct Quality{
-  double mean;
-  double min;
-  double rms;
+struct Quality {
+    real mean;
+    real min;
+    real rms;
 };
 
 class Mesh{
 public:
-  // Constructor
-  Mesh(const char * __restrict__ filename);
+    // Constructor
+     Mesh( void ) = delete;
+     Mesh( std::string const & filename);
+    ~Mesh( void );
 
-  uint32_t NNodes;    // Number of mesh vertices.
-  uint32_t NElements; // Number of mesh elements.
+    INLINE bool isSurfaceNode   ( uint32_t ) const;
+    INLINE bool isCornerNode    ( uint32_t ) const;
+    INLINE real element_area    ( uint32_t ) const;
+    INLINE real element_quality ( int, int ) const;
+    INLINE real element_quality ( uint32_t ) const;
+    Quality     get_mesh_quality( void     ) const;
 
-  // Element eid is comprised of the vertices
-  // ENList[3*eid], ENList[3*eid+1] and ENList[3*eid+2].
-  std::vector< uint32_t > ENList;
-
-  // Vertex vid has coordinates x=coords[2*vid] and y=coords[2*vid+1].
-  std::vector< double > coords;
-
-  // The metric tensor at vertex vid is M_00 = metric[3*vid],
-  //                                    M_01 = M_10 = metric[3*vid+1] and
-  //                                    M_11 = metric[3*vid+2].
-  std::vector<double> metric;
-
-  /* If vid is on the surface, the normal vector
-   * (normals[2*vid],normals[2*vid+1] =
-   *                            = (0.0,1.0) if vid is on the top surface
-   *                            = (0.0,-1.0) if vid is on the bottom surface
-   *                            = (1.0,0.0) if vid is on the right surface
-   *                            = (-1.0,0.0) if vid is on the left surface
-   * For all other vertices, the normal vector is (0.0,0.0).
-   */
-  std::vector< double > normals;
-
-  // For every vertex i, NNList[i] contains the IDs of all adjacent vertices.
-  std::vector< std::vector< uint32_t > > NNList;
-
-  // For every vertex i, NEList[i] contains the IDs of all adjacent elements.
-  std::vector< std::vector< uint32_t > > NEList;
-
-  inline bool   isSurfaceNode   ( uint32_t ) const;
-  inline bool   isCornerNode    ( uint32_t ) const;
-         double element_area    ( uint32_t ) const;
-  inline double element_quality ( int, int ) const;
-  inline double element_quality ( uint32_t ) const;
-  Quality       get_mesh_quality( void     ) const;
+    void smooth( uint32_t niter );
 
 private:
-  void create_adjacency( void );
-  void find_surface    ( void );
-  void set_orientation ( void );
 
-  int orientation;
+    void create_adjacency( void );
+    void find_surface    ( void );
+    void set_orientation ( void );
+
+    uint32_t NNodes;    // Number of mesh vertices.
+    uint32_t NElements; // Number of mesh elements.
+
+    // Element eid is comprised of the vertices
+    // ENList[3*eid], ENList[3*eid+1] and ENList[3*eid+2].
+    std::vector< uint32_t > ENList;
+
+    // Vertex vid has coordinates x=coords[2*vid] and y=coords[2*vid+1].
+    std::vector< real > coords;
+
+    // The metric tensor at vertex vid is M_00 = metric[3*vid],
+    //                                    M_01 = M_10 = metric[3*vid+1] and
+    //                                    M_11 = metric[3*vid+2].
+    std::vector< real > metric;
+
+    /* If vid is on the surface, the normal vector
+    * (normals[2*vid],normals[2*vid+1] =
+    *                            = (0.0,1.0) if vid is on the top surface
+    *                            = (0.0,-1.0) if vid is on the bottom surface
+    *                            = (1.0,0.0) if vid is on the right surface
+    *                            = (-1.0,0.0) if vid is on the left surface
+    * For all other vertices, the normal vector is (0.0,0.0).
+    */
+    blitz::Array< real, 1 > normals;
+
+    // For every vertex i, NNList[i] contains the IDs of all adjacent vertices.
+    std::vector< std::vector< uint32_t > > NNList;
+
+    // For every vertex i, NEList[i] contains the IDs of all adjacent elements.
+    std::vector< std::vector< uint32_t > > NEList;
+
+    int orientation;
 };
 
 bool
@@ -78,8 +79,8 @@ Mesh::isSurfaceNode( uint32_t vid ) const {
 bool
 Mesh::isCornerNode( uint32_t vid ) const{
   return
-    std::abs( normals[ 2 * vid     ] ) == 1.0 &&
-    std::abs( normals[ 2 * vid + 1 ] ) == 1.0;
+    std::abs( normals( 2 * vid     ) ) == 1.0 &&
+    std::abs( normals( 2 * vid + 1 ) ) == 1.0;
 }
 
 /* This function evaluates the quality of an element, based on the 2D quality
@@ -88,76 +89,109 @@ Mesh::isCornerNode( uint32_t vid ) const{
  * for Quasioptimal Mesh Generation, Computational Mathematics and Mathematical
  * Physics, Vol. 39, No. 9, 1999, pp. 1468 - 1486.
  */
-double Mesh::element_quality( int vid, int it ) const {
+real Mesh::element_quality( int vid, int it ) const {
 
-  uint32_t eid = NEList[ vid ][ it ];
-  return element_quality( eid );
+    uint32_t eid = NEList[ vid ][ it ];
+    return element_quality( eid );
 }
 
-double Mesh::element_quality( uint32_t eid ) const{
+real Mesh::element_quality( uint32_t eid ) const{
 
-  uint32_t const eid_off = 3 * eid;
+    uint32_t const eid_off = 3 * eid;
 
-  // Pointers to the coordinates of each vertex
-  const double * __restrict__ c[ 3 ] = {
-    &coords[ 2 * ENList[ eid_off    ] ],
-    &coords[ 2 * ENList[ eid_off + 1] ],
-    &coords[ 2 * ENList[ eid_off + 2] ]
-  };
+    // Pointers to the coordinates of each vertex
+    const real * __restrict__ c[ 3 ] = {
+        &coords[ 2 * ENList[ eid_off     ] ],
+        &coords[ 2 * ENList[ eid_off + 1 ] ],
+        &coords[ 2 * ENList[ eid_off + 2 ] ]
+    };
 
-  // Pointers to the metric tensor at each vertex
-  const double * __restrict__ m[ 3 ] = {
-    &metric[ 3 * ENList[ eid_off    ] ],
-    &metric[ 3 * ENList[ eid_off + 1] ],
-    &metric[ 3 * ENList[ eid_off + 2] ]
-  };
+    // uint32_t const met_off[ 3 ] = {
+    //     3 * ENList[ eid_off     ],
+    //     3 * ENList[ eid_off + 1 ],
+    //     3 * ENList[ eid_off + 2 ]
+    // };
 
-  // Metric tensor averaged over the element
-  double m00;
-  double m01;
-  double m11;
-  for ( int i = 0; i < 3; ++i ) {
-    m00 += m[ i ][ 0 ];
-    m01 += m[ i ][ 1 ];
-    m11 += m[ i ][ 2 ];
-  }
-  // l is the length of the perimeter, measured in metric space
+    // // Metric tensor averaged over the element
+    real m00;
+    real m01;
+    real m11;
+    // for ( int i = 0; i < 3; ++i ) {
+    //     m00 += metric( met_off[ i ]     );
+    //     m01 += metric( met_off[ i ] + 1 );
+    //     m11 += metric( met_off[ i ] + 2 );
+    // }
 
-  double s1l1 = ( c[ 0 ][ 1 ] - c[ 1 ][ 1 ] );
-  double s2l1 = ( c[ 0 ][ 0 ] - c[ 1 ][ 0 ] );
-  double s1l2 = ( c[ 0 ][ 1 ] - c[ 2 ][ 1 ] );
-  double s2l2 = ( c[ 0 ][ 0 ] - c[ 2 ][ 0 ] );
-  double s1l3 = ( c[ 2 ][ 1 ] - c[ 1 ][ 1 ] );
-  double s2l3 = ( c[ 2 ][ 0 ] - c[ 1 ][ 0 ] );
+    const real * __restrict__ m[ 3 ] = {
+        &metric[ 3 * ENList[ eid_off     ] ],
+        &metric[ 3 * ENList[ eid_off + 1 ] ],
+        &metric[ 3 * ENList[ eid_off + 2 ] ]
+    };
 
-  double s2l3b = s2l3 * ( s1l3 * m01 + s2l3 * m00 );
-  double s2l2b = s2l2 * ( s1l2 * m01 + s2l2 * m00 );
-  double s2l1b = s2l1 * ( s1l1 * m01 + s2l1 * m00 );
-  double s1l3b = s1l3 * ( s1l3 * m11 + s2l3 * m01 );
-  double s1l2b = s1l2 * ( s1l2 * m11 + s2l2 * m01 );
-  double s1l1b = s1l1 * ( s1l1 * m11 + s2l1 * m01 );
+    for ( int i = 0; i < 3; ++i ) {
+        m00 += m[ i ][ 0 ];
+        m01 += m[ i ][ 1 ];
+        m11 += m[ i ][ 2 ];
+    }
 
-  double l1 = sqrt( ( s1l1b + s2l1b ) / 3.0 );
-  double l2 = sqrt( ( s1l2b + s2l2b ) / 3.0 );
-  double l3 = sqrt( ( s1l3b + s2l3b ) / 3.0 );
+    // l is the length of the perimeter, measured in metric space
+    real s1l1 = ( c[ 0 ][ 1 ] - c[ 1 ][ 1 ] );
+    real s2l1 = ( c[ 0 ][ 0 ] - c[ 1 ][ 0 ] );
+    real s1l2 = ( c[ 0 ][ 1 ] - c[ 2 ][ 1 ] );
+    real s2l2 = ( c[ 0 ][ 0 ] - c[ 2 ][ 0 ] );
+    real s1l3 = ( c[ 2 ][ 1 ] - c[ 1 ][ 1 ] );
+    real s2l3 = ( c[ 2 ][ 0 ] - c[ 1 ][ 0 ] );
 
-  double l = l1 + l2 + l3;
+    real s2l3b = s2l3 * ( s1l3 * m01 + s2l3 * m00 );
+    real s2l2b = s2l2 * ( s1l2 * m01 + s2l2 * m00 );
+    real s2l1b = s2l1 * ( s1l1 * m01 + s2l1 * m00 );
+    real s1l3b = s1l3 * ( s1l3 * m11 + s2l3 * m01 );
+    real s1l2b = s1l2 * ( s1l2 * m11 + s2l2 * m01 );
+    real s1l1b = s1l1 * ( s1l1 * m11 + s2l1 * m01 );
 
-  // Area in physical space
-  double a = element_area( eid );
+    real l1 = static_cast< real >( std::sqrt( ( s1l1b + s2l1b ) ) / 3 );
+    real l2 = static_cast< real >( std::sqrt( ( s1l2b + s2l2b ) ) / 3 );
+    real l3 = static_cast< real >( std::sqrt( ( s1l3b + s2l3b ) ) / 3 );
 
-  double f = std::min( l / 3.0, 3.0 / l );
+    real l = l1 + l2 + l3;
 
-  // Area in metric space
-  double a_m = a * sqrt( m00 * m11 - m01 * m01 );
+    // Area in physical space
+    real a = element_area( eid );
 
-  // Function
-  double F = f * ( 2.0 - f );
+    real f = static_cast< real >( std::min( l / 3, 3 / l ) );
 
-  // This is the 2D Lipnikov functional.
-  double quality = 12.0 * sqrt( 3.0 ) * a_m / ( l * l);
+    // Area in metric space
+    real a_m = a * static_cast< real >( std::sqrt( m00 * m11 - m01 * m01 ) );
 
-  return quality * F * F * F;
+    // Function
+    real F = f * ( 2 - f );
+
+    // This is the 2D Lipnikov functional.
+    real constexpr sqrt3 = static_cast< real >( std::sqrt( 3 ) );
+    real quality = 12 * sqrt3 * a_m / ( l * l);
+
+    return quality * F * F * F;
+}
+
+/* Element area in physical (Euclidean) space. Recall that the area of a
+ * triangle ABC is calculated as area=0.5*(AB⋅AC), i.e. half the inner product
+ * of two of the element's edges (e.g. AB and AC). The result is corrected by
+ * the orientation factor ±1.0, so that the area is always a positive number.
+ */
+real
+Mesh::element_area( uint32_t eid ) const{
+
+    uint32_t const eid_off = 3 * eid;
+    uint32_t const c0_off = 2 * ENList[ eid_off     ];
+    uint32_t const c1_off = 2 * ENList[ eid_off + 1 ];
+    uint32_t const c2_off = 2 * ENList[ eid_off + 2 ];
+
+    return orientation * static_cast< real >( 0.5 ) * (
+        ( coords[ c0_off + 1 ] - coords[ c2_off + 1 ] ) *
+        ( coords[ c0_off     ] - coords[ c1_off     ] ) -
+        ( coords[ c0_off + 1 ] - coords[ c1_off + 1 ] ) *
+        ( coords[ c0_off     ] - coords[ c2_off     ] )
+    );
 }
 
 #endif /* MESH_HPP_ */
