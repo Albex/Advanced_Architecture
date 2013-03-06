@@ -1,4 +1,4 @@
-\documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
+\documentclass[fleqn,11pt]{SelfArx} % Document font size and equations flushed left
 
 \setlength{\columnsep}{0.55cm} % Distance between the two columns of text
 \setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
@@ -21,7 +21,7 @@
 
 \Authors{Romain Brault\textsuperscript{1} and Alexandre Camus\textsuperscript{2} and  Giorgos Flourentzos\textsuperscript{3}} % Authors
 
-\affiliation{\textsuperscript{1} \hfill \textsuperscript{2}AC5612 \hfill \textsuperscript{3}}
+\affiliation{\textsuperscript{1}RB812 \hfill \textsuperscript{2}AC5612 \hfill \textsuperscript{3}GF210}
 
 \Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
 \newcommand{\keywordname}{} % Defines the keywords heading name
@@ -48,6 +48,7 @@
 % Fonts packages (if needed)
 %\usepackage[nott,fullsumlimits]{kpfonts}
 %\usepackage{lmodern}
+\renewcommand{\ttdefault}{txtt}
 
 \usepackage{cite}
 
@@ -55,17 +56,7 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\Abstract{The ABSTRACT is to be in fully-justified italicized text, 
-   between two horizontal lines,
-   in one-column format, 
-   below the author and affiliation information. 
-   Use the word ``Abstract'' as the title, in 9-point Times, boldface type, 
-   left-aligned to the text, initially capitalized. 
-   The abstract is to be in 9-point, single-spaced type.
-   The abstract may be up to 3 inches (7.62 cm) long. \\
-   Leave one blank line after the abstract, 
-   then add the subject categories according to the ACM Classification Index 
-   (see http://www.acm.org/class/1998/).}
+\Abstract{Coding is a question of how to compute things, but also how to compute it the fastest. These are often two questions that can't be resolve at once. First, coding a program that gives the expected result, is the first obstacle to face. But it is not the biggest. Once this is done, optimizing the written code might take a lot of time, depending on if the hardware on which it is running, is taken into account. Here, given a correct program, the aim was to optimize it, given a chosen architecture. This consisted in understanding the code, then optimizing it sequentially and finally trying to improve it by parallelizing or using GPU.}
 
 
 
@@ -102,9 +93,7 @@ breaklines=true}
 
 \subsection{Hardware Considerations}
 
-The chosen hardware is not one of the machine from the Lab. They do not have any interesting GPUs. But one of our laptops is very powerful with an interesting GPU. This is the chosen one.
-
-The table \ref{CPUspec} contains the details of this hardware.
+The chosen hardware is not one of the machine from the Lab. They do not have any interesting GPUs. But one of our laptops is very powerful with an interesting GPU. This is the chosen one. The tables \ref{CPUspec} and \ref{GPUspecs} contains the details of this hardware.
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|r|}
@@ -131,8 +120,6 @@ Max Memory Bandwith & 21 GB/s \\
 \caption{CPU Specifications}
 \label{CPUspec}
 \end{table}
-
-The GPU specifications are shown in the table \ref{GPUspecs}.
 
 \begin{table}[h]
 \centering
@@ -177,7 +164,7 @@ Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC
 %-------------------------------------------------------------------------
 \section{The Sequential Issue}
 
-After running for the first time the program, it appears that 
+After running for the first time the program, it appears that the method \verb+mesh_quality()+ is the most called and so is the most expensive in computation time. Hence its code has been considered as a potential source of optimization.
 
 Reading the code, some sequential issues were found. There are three kinds of problems: the algorithms chosen, the coding style and the data's representation.
 
@@ -191,13 +178,15 @@ The use of the method \verb+pow()+ seems a little too heavy in the method \verb+
 
 Few changes in the style of the code might help the compiler. Some of these changes have been done to speed up the program.
 
-The methods \verb+SVDsolver()+ and \verb+cornerNode()+ and \verb+isSurfaceNode()+ and \verb+element_quality()+ are now written as inline functions. This gives a small boost in performance.
+The methods \verb+element_quality()+ and \verb+isCornerNode()+ and \verb+isSurfaceNode()+ and \verb+svd_solve_2x2()+ are now written as inline functions. This gives a small boost in performance.
 
-In loops changes have been made to avoid recomputation of the invariant (e.g. in \verb+calling_size()+). Instead, this invariant is now stored in a local variable.
+In loops changes have been made to avoid recomputation of the invariant (e.g. calling \verb+.size()+ in a loop). Instead, this invariant is now stored in a local variable.
 
 \subsection{Data's Representation}
 
 The data structure used is fine and one of the most efficient to represent a graph. However, the C++ structures used seem to be a little too big in this case. So instead of using vectors of sets, the program is now using vectors of vectors. This increases a little the global performance.
+
+Similarly, the number of node does not exceed $10^5$ which is less than the maximum integer represented thanks to the \verb+uint32_t+. This type is faster to manipulate than the classic \verb+int+ type. Hence \verb+uint32_t+ has been preferred.
 
 %------------------------------------------------------------------------
 \section{CPU Parallelization}
@@ -221,6 +210,6 @@ But the coloring algorithm might be very expensive in computation time. This dep
 
 \subsection{Sequential improvements}
 
-\subsection{GPU performance}
+\subsection{Parallelization performance}
 
 \end{document}
