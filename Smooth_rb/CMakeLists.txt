@@ -49,9 +49,9 @@ IF(VTK_FOUND)
   message("VTK FOUND")
 	INCLUDE(${VTK_USE_FILE})
 ELSE(VTK_FOUND)
-	MESSAGE(FATAL_ERROR
-		"Cannot build the executable without VTK. Please set the
-		VTK_DIR")
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}"
+    "-L/usr/lib64/vtk -L/usr/local/lib/vtk-5.10 -lvtkIO -lvtkFiltering -lvtkCommon -lvtkzlib -lvtkexpat -lvtksys -ldl"
+  )
 ENDIF(VTK_FOUND)
 
 TARGET_LINK_LIBRARIES(
