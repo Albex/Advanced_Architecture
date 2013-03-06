@@ -1,35 +1,36 @@
-\documentclass{egpubl}
+\documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
 
-% --- for  Annual CONFERENCE
-% \ConferenceSubmission % uncomment for Conference submission
-% \ConferencePaper      % uncomment for (final) Conference Paper
-% \STAR                 % uncomment for STAR contribution
-% \Tutorial             % uncomment for Tutorial contribution
-% \ShortPresentation    % uncomment for (final) Short Conference Presentation
-%
-% --- for  CGF Journal
-% \JournalSubmission    % uncomment for submission to Computer Graphics Forum
-% \JournalPaper         % uncomment for final version of Journal Paper
-%
-% --- for  EG Workshop Proceedings
-% \WsSubmission    % uncomment for submission to EG Workshop
- \WsPaper         % uncomment for final version of EG Workshop contribution
-%
- \electronicVersion % can be used both for the printed and electronic version
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
 
-% !! *please* don't change anything above
-% !! unless you REALLY know what you are doing
-% ------------------------------------------------------------------------
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
 
-% for including postscript figures
-% mind: package option 'draft' will replace PS figure by a filename within a frame
-\ifpdf \usepackage[pdftex]{graphicx} \pdfcompresslevel=9
-\else \usepackage[dvips]{graphicx} \fi
+\newlength{\tocsep} 
+\setlength\tocsep{1.5pc} % Sets the indentation of the sections in the table of contents
+\setcounter{tocdepth}{3} % Show only three levels in the table of contents section: sections, subsections and subsubsections
 
-\PrintedOrElectronic
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
 
-% prepare for electronic version of your document
-\usepackage{t1enc,dfadobe}
+\JournalInfo{\ } % Journal information
+\Archive{\ } % Additional notes (e.g. copyright, DOI, review/research article)
+
+\PaperTitle{Advanced Computer Architecture: The ``Smooth'' Challenge} % Article title
+
+\Authors{Romain Brault\textsuperscript{1} and Alexandre Camus\textsuperscript{2} and  Giorgos Flourentzos\textsuperscript{3}} % Authors
+
+\affiliation{\textsuperscript{1} \hfill \textsuperscript{2}AC5612 \hfill \textsuperscript{3}}
+
+\Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
+\newcommand{\keywordname}{} % Defines the keywords heading name
+
+%----------------------------------------------------------------------------------------
+%	USEFULL TOOLS
+%----------------------------------------------------------------------------------------
+
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
 \usepackage[english]{babel}
@@ -42,46 +43,19 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{listings}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 
 % Fonts packages (if needed)
 %\usepackage[nott,fullsumlimits]{kpfonts}
 %\usepackage{lmodern}
 
-\usepackage{egweblnk}
 \usepackage{cite}
 
-% ---------------------------------------------------------------------
-\title[ACA: The ``Smooth'' Challenge]{Advanced Computer Architecture: The ``Smooth'' Challenge}
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
 
-\author[R. Brault \& A. Camus \& G. Flourentzos]{Romain Brault and Alexandre Camus and  Giorgos Flourentzos}
-
-
-
-% ------------------------------------------------------------------------
-\begin{document}
-
-
-% % listings options
-\lstset{
-basicstyle=\ttfamily,
-keywordstyle=\color{blue},
-identifierstyle=,
-commentstyle=\color[rgb]{.2,.4,.5},
-stringstyle=\ttfamily\color{gray},
-breaklines=true}
-
-% \teaser{
-%  \includegraphics[scale=0.3&]{Imperial__4_colour_process.jpg}
-%  \centering
-%   \caption{New EG Logo}
-% \label{fig:teaser}
-% }
-
-\maketitle
-
-\begin{abstract}
-   The ABSTRACT is to be in fully-justified italicized text, 
+\Abstract{The ABSTRACT is to be in fully-justified italicized text, 
    between two horizontal lines,
    in one-column format, 
    below the author and affiliation information. 
@@ -91,13 +65,35 @@ breaklines=true}
    The abstract may be up to 3 inches (7.62 cm) long. \\
    Leave one blank line after the abstract, 
    then add the subject categories according to the ACM Classification Index 
-   (see http://www.acm.org/class/1998/).
-
-\end{abstract}
+   (see http://www.acm.org/class/1998/).}
 
 
-%\tableofcontents
 
+% ------------------------------------------------------------------------
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	LISTINGS OPTIONS
+%----------------------------------------------------------------------------------------
+
+\lstset{
+basicstyle=\ttfamily,
+keywordstyle=\color{blue},
+identifierstyle=,
+commentstyle=\color[rgb]{.2,.4,.5},
+stringstyle=\ttfamily\color{gray},
+breaklines=true}
+
+%----------------------------------------------------------------------------------------
+
+\flushbottom % Makes all text pages the same height
+
+\maketitle % Print the title and abstract box
+
+\tableofcontents % Print the contents section
+
+\thispagestyle{empty} % Removes page numbering from the first page
 
 %-------------------------------------------------------------------------
 \section{Introduction}
@@ -163,7 +159,7 @@ To summarize, the figure \ref{topo} gives a quick overview of the hardware topol
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.35]{topo.png}
+\includegraphics[width=.48\textwidth]{topo.png}
 \caption{Topology}
 \label{topo}
 \end{figure}
@@ -181,17 +177,17 @@ Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC
 %-------------------------------------------------------------------------
 \section{The Sequential Issue}
 
-\subsection{Analysis}
+After running for the first time the program, it appears that 
 
 Reading the code, some sequential issues were found. There are three kinds of problems: the algorithms chosen, the coding style and the data's representation.
 
-\subsubsection{Algorithm}
+\subsection{Algorithm}
 
 The method used to solve an equations' system was correct but two general to be efficient. The program needs only to solve systems of two equations in two unknowns. The Cramer's rule based on determinants is far more efficient.
 
 The use of the method \verb+pow()+ seems a little too heavy in the method \verb+element_quality()+. As the number of multiplication is known, the use of simple multiplications is more efficient here, e.g. \verb+x*x*x+.
 
-\subsubsection{Code Style}
+\subsection{Code Style}
 
 Few changes in the style of the code might help the compiler. Some of these changes have been done to speed up the program.
 
@@ -199,18 +195,18 @@ The methods \verb+SVDsolver()+ and \verb+cornerNode()+ and \verb+isSurfaceNode()
 
 In loops changes have been made to avoid recomputation of the invariant (e.g. in \verb+calling_size()+). Instead, this invariant is now stored in a local variable.
 
-\subsubsection{Data's Representation}
+\subsection{Data's Representation}
 
-
-
-\subsection{Optimization}
-
-
+The data structure used is fine and one of the most efficient to represent a graph. However, the C++ structures used seem to be a little too big in this case. So instead of using vectors of sets, the program is now using vectors of vectors. This increases a little the global performance.
 
 %------------------------------------------------------------------------
 \section{CPU Parallelization}
 
 \subsection{Analysis}
+
+Parallelization can't be done easily. The program needs to be slightly modified in order to cut the graph in groups of independent nodes. Independent nodes are nodes that can be inspected at the same time while running the program. To group nodes in such groups the graph must be colored. Then each color represents nodes that can be inspected at the same time because they are not adjacent.
+
+But the coloring algorithm might be very expensive in computation time. This depends on the number of colors used and if this number is specified or not. In this very case, the goal of such an algorithm is to minimize the colors used in order to maximize parallel computations.
 
 \subsection{Optimization}
 
@@ -222,5 +218,9 @@ In loops changes have been made to avoid recomputation of the invariant (e.g. in
 \subsection{Optimization}
 
 \section{Results}
+
+\subsection{Sequential improvements}
+
+\subsection{GPU performance}
 
 \end{document}
