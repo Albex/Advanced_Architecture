@@ -32,7 +32,7 @@
 \usepackage{t1enc,dfadobe}
 \usepackage[utf8]{inputenc}
 
-\usepackage[french,english]{babel}
+\usepackage[english]{babel}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -42,6 +42,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{listings}
+\usepackage{hyperref}
 
 % Fonts packages (if needed)
 %\usepackage[nott,fullsumlimits]{kpfonts}
@@ -53,7 +54,7 @@
 % ---------------------------------------------------------------------
 \title[ACA: The ``Smooth'' Challenge]{Advanced Computer Architecture: The ``Smooth'' Challenge}
 
-\author[R. Brault \& A. Camus]{Romain Brault and Alexandre Camus}
+\author[R. Brault \& A. Camus \& G. Flourentzos]{Romain Brault and Alexandre Camus and  Giorgos Flourentzos}
 
 
 
@@ -68,7 +69,7 @@ keywordstyle=\color{blue},
 identifierstyle=,
 commentstyle=\color[rgb]{.2,.4,.5},
 stringstyle=\ttfamily\color{gray},
-language=C++}
+breaklines=true}
 
 % \teaser{
 %  \includegraphics[scale=0.3&]{Imperial__4_colour_process.jpg}
@@ -172,8 +173,7 @@ To summarize, the figure \ref{topo} gives a quick overview of the hardware topol
 The machine used for this coursework runs a Fedora 18 distribution. This is the exact information:
 \begin{lstlisting}
 $ uname -a
-Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC
-2013 x86_64 x86_64 x86_64 GNU/Linux
+Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
 \end{lstlisting}
 
 
@@ -183,7 +183,28 @@ Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC
 
 \subsection{Analysis}
 
+Reading the code, some sequential issues were found. There are three kinds of problems: the algorithms chosen, the coding style and the data's representation.
+
+\subsubsection{Algorithm}
+
+The method used to solve an equations' system was correct but two general to be efficient. The program needs only to solve systems of two equations in two unknowns. The Cramer's rule based on determinants is far more efficient.
+
+The use of the method \verb+pow()+ seems a little too heavy in the method \verb+element_quality()+. As the number of multiplication is known, the use of simple multiplications is more efficient here, e.g. \verb+x*x*x+.
+
+\subsubsection{Code Style}
+
+Few changes in the style of the code might help the compiler. Some of these changes have been done to speed up the program.
+
+The methods \verb+SVDsolver()+ and \verb+cornerNode()+ and \verb+isSurfaceNode()+ and \verb+element_quality()+ are now written as inline functions. This gives a small boost in performance.
+
+In loops changes have been made to avoid recomputation of the invariant (e.g. in \verb+calling_size()+). Instead, this invariant is now stored in a local variable.
+
+\subsubsection{Data's Representation}
+
+
+
 \subsection{Optimization}
+
 
 
 %------------------------------------------------------------------------
@@ -200,5 +221,6 @@ Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC
 
 \subsection{Optimization}
 
+\section{Results}
 
 \end{document}
