@@ -43,7 +43,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{listings}
-%\usepackage{hyperref}
+\usepackage[pdftex=true,hyperindex=true,colorlinks=false,hidelinks]{hyperref}
 
 % Fonts packages (if needed)
 %\usepackage[nott,fullsumlimits]{kpfonts}
@@ -60,7 +60,8 @@
 
 
 
-% ------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------
+
 \begin{document}
 
 
@@ -86,82 +87,89 @@ breaklines=true}
 
 \thispagestyle{empty} % Removes page numbering from the first page
 
-%-------------------------------------------------------------------------
-\section{Introduction}
+%----------------------------------------------------------------------------------------
 
-%% TODO
+\section{Introduction}
 
 \subsection{Hardware Considerations}
 
 The chosen hardware is not one of the machine from the Lab. They do not have any interesting GPUs. But one of our laptops is very powerful with an interesting GPU. This is the chosen one. The tables \ref{CPUspec} and \ref{GPUspecs} contains the details of this hardware.
+
 \begin{table}[h]
-\centering
-\begin{tabular}{|l|r|}
-\hline
-Model Name & Intel Core i7 CPU Q720 \\
-\hline
-Clock Speed & 1.597 GHz \\
-\hline
-Max Turbo Frequency & 2.8 GHz \\
-\hline
-Cache size & 6144 KB \\
-\hline
-CPU cores & 4 \\
-\hline
-CPU Threads & 8 \\
-\hline
-Integrated GPU & No \\
-\hline
-Memory Channels & 2 \\
-\hline
-Max Memory Bandwith & 21 GB/s \\
-\hline
-\end{tabular}
-\caption{CPU Specifications}
-\label{CPUspec}
+	\centering
+
+	\begin{tabular}{|l|r|}
+		\hline
+		Model Name & Intel Core i7 CPU Q720 \\
+		\hline
+		Clock Speed & 1.597 GHz \\
+		\hline
+		Max Turbo Frequency & 2.8 GHz \\
+		\hline
+		Cache size & 6144 KB \\
+		\hline
+		CPU cores & 4 \\
+		\hline
+		CPU Threads & 8 \\
+		\hline
+		Integrated GPU & No \\
+		\hline
+		Memory Channels & 2 \\
+		\hline
+		Max Memory Bandwith & 21 GB/s \\
+		\hline
+	\end{tabular}
+
+	\caption{CPU Specifications}
+	\label{CPUspec}
 \end{table}
 
 \begin{table}[h]
-\centering
-\begin{tabular}{|l|r|}
-\hline
-Model Name & NVIDIA GeForce GTX 260M \\
-\hline
-Clock Speed & 1.375 GHz \\
-\hline
-Multiprocessors & 14 \\
-\hline
-Global CUDA cores & 112 \\
-\hline
-Allocated Memory & 1 GB \\
-\hline
-Memory Clock Speed & 950 MHz \\
-\hline
-\end{tabular}
-\caption{GPU Specifications}
-\label{GPUspecs}
+	\centering
+
+	\begin{tabular}{|l|r|}
+		\hline
+		Model Name & nVidia GeForce GTX 260M \\
+		\hline
+		Clock Speed & 1.375 GHz \\
+		\hline
+		Multiprocessors & 14 \\
+		\hline
+		Total CUDA cores & 112 \\
+		\hline
+		Allocated Memory & 1 GB \\
+		\hline
+		Memory Frequency & 950 MHz \\
+		\hline
+	\end{tabular}
+
+	\caption{GPU Specifications}
+	\label{GPUspecs}
 \end{table}
 
 To summarize, the figure \ref{topo} gives a quick overview of the hardware topology. The GPU is connected on the PCI port \verb+10de:0618+.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=.48\textwidth]{topo.png}
-\caption{Topology}
-\label{topo}
+	\centering
+
+	\includegraphics[width=.48\textwidth]{topo.png}
+
+	\caption{Topology}
+	\label{topo}
 \end{figure}
 
 \subsection{Software Considerations}
 
 The machine used for this coursework runs a Fedora 18 distribution. This is the exact information:
+
 \begin{lstlisting}
 $ uname -a
 Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
 \end{lstlisting}
 
 
+%----------------------------------------------------------------------------------------
 
-%-------------------------------------------------------------------------
 \section{The Sequential Issue}
 
 After running for the first time the program, it appears that the method \verb+mesh_quality()+ is the most called and so is the most expensive in computation time. Hence its code has been considered as a potential source of optimization.
@@ -178,7 +186,7 @@ The use of the method \verb+pow()+ seems a little too heavy in the method \verb+
 
 Few changes in the style of the code might help the compiler. Some of these changes have been done to speed up the program.
 
-The methods \verb+element_quality()+ and \verb+isCornerNode()+ and \verb+isSurfaceNode()+ and \verb+svd_solve_2x2()+ are now written as inline functions. This gives a small boost in performance.
+Inline functions do often help the compiler to optimize the translated assembly language. That is why functions like \verb+isSurfaceNode()+ or \verb+isCornerNode()+ or \verb+element_quality()+ or \verb+svd_solve_2x2()+.
 
 In loops changes have been made to avoid recomputation of the invariant (e.g. calling \verb+.size()+ in a loop). Instead, this invariant is now stored in a local variable.
 
@@ -188,28 +196,36 @@ The data structure used is fine and one of the most efficient to represent a gra
 
 Similarly, the number of node does not exceed $10^5$ which is less than the maximum integer represented thanks to the \verb+uint32_t+. This type is faster to manipulate than the classic \verb+int+ type. Hence \verb+uint32_t+ has been preferred.
 
-%------------------------------------------------------------------------
+In the \verb+element_quality()+ method, the call of an element in a matrix during its multiplication, is very expensive in memory access. So instead of calling the element at each step of the loop, it is better to use an intermediate variable that is assigned into the matrix element at the end.
+
+%----------------------------------------------------------------------------------------
+
 \section{CPU Parallelization}
 
 \subsection{Analysis}
 
 Parallelization can't be done easily. The program needs to be slightly modified in order to cut the graph in groups of independent nodes. Independent nodes are nodes that can be inspected at the same time while running the program. To group nodes in such groups the graph must be colored. Then each color represents nodes that can be inspected at the same time because they are not adjacent.
 
-But the coloring algorithm might be very expensive in computation time. This depends on the number of colors used and if this number is specified or not. In this very case, the goal of such an algorithm is to minimize the colors used in order to maximize parallel computations.
+But the coloring algorithm might be very expensive in computation time. This depends on the number of colors used and if this number is specified or not. In this very case, the goal of such an algorithm is to minimize the colors used in order to maximize parallel computations. Hence a powerful algorithm is needed.
 
 \subsection{Optimization}
 
-%-------------------------------------------------------------------------
+A first try was realized with a very basic algorithm that colors a graph without assuming anything on its structure. But the simple fact of coloring the graph was itself longer than the original program. This confirmed the need of a very powerful algorithm.
+
+%----------------------------------------------------------------------------------------
+
 \section{GPU Acceleration}
 
 \subsection{Analysis}
 
 \subsection{Optimization}
 
+%----------------------------------------------------------------------------------------
+
 \section{Results}
 
-\subsection{Sequential improvements}
+\subsection{Sequential Improvements}
 
-\subsection{Parallelization performance}
+\subsection{Parallelization Performance}
 
 \end{document}
