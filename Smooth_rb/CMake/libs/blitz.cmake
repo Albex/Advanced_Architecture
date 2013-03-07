@@ -59,7 +59,7 @@ if(PKG_CONFIG_blitz_VERSION)
     pkg_check_modules(Blitz REQUIRED blitz)
   else()
     #starting at cmake-2.8.2, the QUIET option can be used
-    pkg_check_modules(Blitz REQUIRED QUIET blitz)
+    pkg_check_modules(Blitz QUIET blitz)
   endif()
 
   # Resolve Blitz library to a precise path
