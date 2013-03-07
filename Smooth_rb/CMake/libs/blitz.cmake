@@ -59,7 +59,7 @@ if(PKG_CONFIG_blitz_VERSION)
     pkg_check_modules(Blitz REQUIRED blitz)
   else()
     #starting at cmake-2.8.2, the QUIET option can be used
-    pkg_check_modules(Blitz QUIET blitz)
+    pkg_check_modules(Blitz REQUIRED QUIET blitz)
   endif()
 
   # Resolve Blitz library to a precise path
@@ -75,7 +75,7 @@ else(PKG_CONFIG_blitz_VERSION)
   # handle the QUIETLY and REQUIRED arguments and set Blitz_FOUND to TRUE if
   # all listed variables are TRUE
   include(FindPackageHandleStandardArgs)
-  set(Blitz_FIND_REQUIRED OFF)
+  set(Blitz_FIND_REQUIRED ON)
   find_package_handle_standard_args(Blitz DEFAULT_MSG Blitz_LIBRARY Blitz_INCLUDE_DIR)
 
   set(Blitz_RESOLVED_LIBRARY ${Blitz_LIBRARY} CACHE INTERNAL "Resolved Blitz library")
@@ -100,28 +100,6 @@ int main() { blitz::sizeType s; blitz::diffType d; }" HAVE_BLITZ_SPECIAL_TYPES)
   include(FindPackageHandleStandardArgs)
   find_package_message(Blitz "Found Blitz++: ${Blitz_LIBRARIES} (>2G-pointees: ${HAVE_BLITZ_SPECIAL_TYPES}; New: ${HAVE_BLITZ_TINYVEC2_H})" "[${Blitz_LIBRARIES}][${Blitz_INCLUDE_DIR}]")
 
-else(Blitz_FOUND)
-
-  set(Blitz_LIBRARY_DIRS " /homes/rb812/blitz/include")
-  set(Blitz_LIBRARIES " /homes/rb812/blitz/lib")
-
-  set(Blitz_RESOLVED_LIBRARY "")
-  resolve_library(${Blitz_LIBRARIES} "${Blitz_LIBRARY_DIRS}" Blitz_RESOLVED_LIBRARY)
-  set(Blitz_RESOLVED_LIBRARY ${Blitz_RESOLVED_LIBRARY} CACHE INTERNAL "Resolved Blitz library")
-
-  set(Blitz_INCLUDE_DIRS ${Blitz_INCLUDE_DIRS} " ${Blitz_INCLUDE_DIR}/blitz/intel/")
-  set(Blitz_INCLUDE_DIRS ${Blitz_INCLUDE_DIRS} " ${Blitz_INCLUDE_DIR}/blitz/gnu/")
-  message( STATUS ${Blitz_INCLUDE_DIRS})
-  # and we try to determine if the the found library supports 64-bits array
-  # positions.
-  include(CheckCXXSourceCompiles)
-  set(CMAKE_REQUIRED_INCLUDES "${Blitz_INCLUDE_DIR}")
-  CHECK_CXX_SOURCE_COMPILES("#include <blitz/blitz.h>
-int main() { blitz::sizeType s; blitz::diffType d; }" HAVE_BLITZ_SPECIAL_TYPES)
-  set(CMAKE_REQUIRED_INCLUDES)
-
-  # and has blitz/tinyvec2.h and not blitz/tinyvec-et.h
-  find_file(HAVE_BLITZ_TINYVEC2_H "blitz/tinyvec2.h" ${Blitz_INCLUDE_DIR})
 endif(Blitz_FOUND)
 
 mark_as_advanced(Blitz_INCLUDE_DIR Blitz_LIBRARY)
