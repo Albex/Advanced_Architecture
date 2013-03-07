@@ -102,4 +102,4 @@ int main() { blitz::sizeType s; blitz::diffType d; }" HAVE_BLITZ_SPECIAL_TYPES)
 
 endif(Blitz_FOUND)
 
-mark_as_advanced(Blitz_INCLUDE_DIR Blitz_LIBRARY)
+mark_as_advanced(Blitz_FOUND Blitz_INCLUDE_DIR Blitz_LIBRARY)
