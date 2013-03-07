@@ -12,7 +12,7 @@ extern "C" {
 }
 
 static double
-get_wtime(){
+get_wtime( ) noexcept {
     struct timeval tic;
 
     long seconds, useconds;
@@ -25,12 +25,12 @@ get_wtime(){
     return seconds + useconds * 1e-06;
 }
 
-int main(int argc, char **argv){
+int main(int argc, char **argv) {
   if( argc != 2 ){
     std::cerr << "Usage: " << argv[ 0 ] << " mesh_file" << std::endl;
   }
 
-  nice( 0 );
+  nice( -20 );
 
   Mesh mesh( argv[ 1 ] );
 

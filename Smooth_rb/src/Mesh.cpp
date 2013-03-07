@@ -8,6 +8,7 @@
 #include <fstream>
 #include <set>
 #include <algorithm>
+#include <colorGraph.hpp>
 
 #include <vtkCell.h>
 #include <vtkCellData.h>
@@ -16,7 +17,7 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkXMLUnstructuredGridReader.h>
 
-Mesh::Mesh( std::string const & filename){
+Mesh::Mesh( std::string const & filename) noexcept {
   // Check whether the provided file exists.
   std::ifstream ifile(filename);
   if(!ifile){
@@ -68,13 +69,19 @@ Mesh::Mesh( std::string const & filename){
   create_adjacency();
   find_surface();
   set_orientation();
+  colors.resize( NEList.size( ) );
+  Coloring( NEList, colors );
+  max_color = blitz::max( colors );
+  std::cout << "N colors: "
+            << max_color
+            << std::endl;
 }
 
 Mesh::~Mesh( void ) {
 
 }
 
-void Mesh::create_adjacency(){
+void Mesh::create_adjacency( void ) noexcept{
   NNList.resize(NNodes);
   NEList.resize(NNodes);
 
@@ -99,7 +106,7 @@ void Mesh::create_adjacency(){
   }
 }
 
-void Mesh::find_surface( void ){
+void Mesh::find_surface( void ) noexcept {
   // Initialise all normal vectors to (0.0,0.0).
   normals.resize( 2 * NNodes, 0.f );
 
@@ -167,7 +174,7 @@ void Mesh::find_surface( void ){
  * should be discarded. The orientation is the same for all mesh elements, so
  * it is enough to calculate it for one mesh element only.
  */
-void Mesh::set_orientation( void ){
+void Mesh::set_orientation( void ) noexcept {
   // Find the orientation for the first element
   const uint32_t * __restrict__ n = &ENList( 0 );
 
@@ -192,7 +199,7 @@ void Mesh::set_orientation( void ){
 
 // Finds the mean quality, averaged over all mesh elements,
 // and the quality of the worst element.
-Quality Mesh::get_mesh_quality( void ) const{
+Quality Mesh::get_mesh_quality( void ) const noexcept {
   Quality q;
 
   real mean_q = 0.0;

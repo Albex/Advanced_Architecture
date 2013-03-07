@@ -3,8 +3,12 @@
 
 #include <SmoothConfig.hpp>
 #include <vector>
+#include <blitz/array.h>
 
-std::vector< int >
-Coloring( std::vector< std::vector< uint32_t > > const & graph );
+void
+Coloring(
+	std::vector< std::vector< uint32_t > > const & graph,
+	blitz::Array< int, 1 > & colors
+) noexcept;
 
 #endif

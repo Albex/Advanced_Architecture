@@ -22,26 +22,29 @@ class Mesh{
 public:
     // Constructor
      Mesh( void ) = delete;
-     Mesh( std::string const & filename);
-    ~Mesh( void );
+     Mesh( std::string const & filename) noexcept;
+    ~Mesh( void ) noexcept;
 
-    INLINE bool isSurfaceNode   ( uint32_t ) const;
-    INLINE bool isCornerNode    ( uint32_t ) const;
-    INLINE real element_area    ( uint32_t ) const;
-    INLINE real element_quality ( int, int ) const;
-    INLINE real element_quality ( uint32_t ) const;
-    Quality     get_mesh_quality( void     ) const;
+    INLINE bool isSurfaceNode   ( uint32_t ) const noexcept;
+    INLINE bool isCornerNode    ( uint32_t ) const noexcept;
+    INLINE real element_area    ( uint32_t ) const noexcept;
+    INLINE real element_quality ( int, int ) const noexcept;
+    INLINE real element_quality ( uint32_t ) const noexcept;
+    Quality     get_mesh_quality( void     ) const noexcept;
 
-    void smooth( uint32_t niter );
+    void smooth( uint32_t niter ) noexcept;
 
 private:
 
-    void create_adjacency( void );
-    void find_surface    ( void );
-    void set_orientation ( void );
+    void create_adjacency( void ) noexcept;
+    void find_surface    ( void ) noexcept;
+    void set_orientation ( void ) noexcept;
 
     uint32_t NNodes;    // Number of mesh vertices.
     uint32_t NElements; // Number of mesh elements.
+    int max_color;
+
+    blitz::Array< int, 1 > colors;
 
     // Element eid is comprised of the vertices
     // ENList[3*eid], ENList[3*eid+1] and ENList[3*eid+2].
@@ -75,12 +78,12 @@ private:
 };
 
 bool
-Mesh::isSurfaceNode( uint32_t vid ) const {
+Mesh::isSurfaceNode( uint32_t vid ) const noexcept {
   return NEList[ vid ].size( ) < NNList[ vid ].size( );
 }
 
 bool
-Mesh::isCornerNode( uint32_t vid ) const{
+Mesh::isCornerNode( uint32_t vid ) const noexcept {
   return
     std::abs( normals( 2 * vid     ) ) == 1.0 &&
     std::abs( normals( 2 * vid + 1 ) ) == 1.0;
@@ -92,13 +95,13 @@ Mesh::isCornerNode( uint32_t vid ) const{
  * for Quasioptimal Mesh Generation, Computational Mathematics and Mathematical
  * Physics, Vol. 39, No. 9, 1999, pp. 1468 - 1486.
  */
-real Mesh::element_quality( int vid, int it ) const {
+real Mesh::element_quality( int vid, int it ) const noexcept {
 
     uint32_t eid = NEList[ vid ][ it ];
     return element_quality( eid );
 }
 
-real Mesh::element_quality( uint32_t eid ) const{
+real Mesh::element_quality( uint32_t eid ) const noexcept {
 
     uint32_t const *n = &ENList( 3 * eid );
 
@@ -162,7 +165,7 @@ real Mesh::element_quality( uint32_t eid ) const{
  * the orientation factor ±1.0, so that the area is always a positive number.
  */
 real
-Mesh::element_area( uint32_t eid ) const{
+Mesh::element_area( uint32_t eid ) const noexcept {
 
     uint32_t const eid_off = 3 * eid;
     uint32_t const c0_off = 2 * ENList( eid_off     );

@@ -14,7 +14,7 @@ svd_solve_2x2(
 	blitz::TinyVector< real, 4 > const & A,
 	blitz::TinyVector< real, 2 >       & p,
 	blitz::TinyVector< real, 2 > const & q
-){
+) noexcept {
 
   real const det = A( 0 ) * A( 3 ) - A( 1 ) * A( 2 );
   p( 0 ) = ( q( 0 ) * A( 3 ) - q( 1 ) * A( 2 ) ) / det;

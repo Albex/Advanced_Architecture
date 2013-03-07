@@ -1,7 +1,7 @@
 #include <colorGraph.hpp>
 
 INLINE static int
-get_colors( std::vector< uint32_t > const & graph_node )
+get_colors( std::vector< uint32_t > const & graph_node ) noexcept
 {
     uint32_t size = graph_node.size( );
     uint32_t C = 0;
@@ -19,13 +19,14 @@ get_colors( std::vector< uint32_t > const & graph_node )
     }
 }
 
-std::vector< int >
-Coloring( std::vector< std::vector< uint32_t > > const & graph )
-{
+void
+Coloring(
+    std::vector< std::vector< uint32_t > > const & graph,
+    blitz::Array< int, 1 > & colors
+) noexcept {
     uint32_t size = graph.size( );
-    std::vector< int > colors( size, -1 );
+    colors = -1;
     for ( uint32_t i = 0; i < size; ++i ) {
-        colors[ i ] = get_colors( graph[ i ] );
+        colors( i ) = get_colors( graph[ i ] );
     }
-    return colors;
 }

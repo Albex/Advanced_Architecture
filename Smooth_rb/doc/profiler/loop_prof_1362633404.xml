@@ -1,0 +1,1982 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loop_prof>
+	<functions>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>574866</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>574866</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[blitz::MemoryBlock<int>::~MemoryBlock()]]></function>
+			<file>
+				<name><![CDATA[/usr/local/include/blitz/memblock.h]]></name>
+				<line>112</line>
+				<path><![CDATA[/usr/local/include/blitz/memblock.h]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>356</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>356</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[blitz::MemoryBlock<unsigned int>::~MemoryBlock()]]></function>
+			<file>
+				<name><![CDATA[/usr/local/include/blitz/memblock.h]]></name>
+				<line>112</line>
+				<path><![CDATA[/usr/local/include/blitz/memblock.h]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>1512</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>1512</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[blitz::MemoryBlock<double>::~MemoryBlock()]]></function>
+			<file>
+				<name><![CDATA[/usr/local/include/blitz/memblock.h]]></name>
+				<line>112</line>
+				<path><![CDATA[/usr/local/include/blitz/memblock.h]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>0.05</ticks_perc>
+			<ticks_abs>5369618</ticks_abs>
+			<self_perc>0.04</self_perc>
+			<self_abs>4792884</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.03</loops_perc>
+			<function><![CDATA[Mesh::~Mesh()]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>80</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</file>
+			<loop_cnt>2</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>96.91</ticks_perc>
+			<ticks_abs>11205183067</ticks_abs>
+			<self_perc>96.91</self_perc>
+			<self_abs>11205183067</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>96.91</loops_perc>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</file>
+			<loop_cnt>9</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.13</ticks_perc>
+			<ticks_abs>15011233</ticks_abs>
+			<self_perc>0.13</self_perc>
+			<self_abs>15011233</self_abs>
+			<call_cnt>2</call_cnt>
+			<exit_cnt>2</exit_cnt>
+			<loops_perc>0.13</loops_perc>
+			<function><![CDATA[Mesh::get_mesh_quality() const]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>202</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</file>
+			<loop_cnt>1</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>36224</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>36224</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[blitz::ReduceMax<int>::T_resulttype blitz::_bz_reduceWithIndexTraversalGeneric<int, blitz::_bz_ArrayExpr<blitz::FastArrayIterator<int, 1> >, blitz::ReduceMax<int> >(blitz::_bz_ArrayExpr<blitz::FastArrayIterator<int, 1> >, blitz::ReduceMax<int>)]]></function>
+			<file>
+				<name><![CDATA[/usr/local/include/blitz/array/reduce.cc]]></name>
+				<line>91</line>
+				<path><![CDATA[/usr/local/include/blitz/array/reduce.cc]]></path>
+			</file>
+			<loop_cnt>1</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>25880</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>25880</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</file>
+			<loop_cnt>21</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.01</ticks_perc>
+			<ticks_abs>805376</ticks_abs>
+			<self_perc>0.01</self_perc>
+			<self_abs>779496</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.01</loops_perc>
+			<function><![CDATA[Coloring(std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > > const&, blitz::Array<int, 1>&)]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></name>
+				<line>26</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></path>
+			</file>
+			<loop_cnt>3</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>2934</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>2934</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[blitz::Array<int, 1>::setupStorage(int)]]></function>
+			<file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</file>
+			<loop_cnt>4</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.15</ticks_perc>
+			<ticks_abs>17466210</ticks_abs>
+			<self_perc>0.15</self_perc>
+			<self_abs>17466210</self_abs>
+			<call_cnt>227877</call_cnt>
+			<exit_cnt>227877</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[std::_Rb_tree_iterator<unsigned int> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique_<unsigned int const&>(std::_Rb_tree_const_iterator<unsigned int>, unsigned int const&)]]></function>
+			<file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1339</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</file>
+			<loop_cnt>1</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.70</ticks_perc>
+			<ticks_abs>81209195</ticks_abs>
+			<self_perc>0.48</self_perc>
+			<self_abs>54956633</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.46</loops_perc>
+			<function><![CDATA[Mesh::find_surface()]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>109</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</file>
+			<loop_cnt>5</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.15</ticks_perc>
+			<ticks_abs>16792252</ticks_abs>
+			<self_perc>0.15</self_perc>
+			<self_abs>16792252</self_abs>
+			<call_cnt>342066</call_cnt>
+			<exit_cnt>342066</exit_cnt>
+			<loops_perc>0.10</loops_perc>
+			<function><![CDATA[std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_erase(std::_Rb_tree_node<unsigned int>*)]]></function>
+			<file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1078</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</file>
+			<loop_cnt>1</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>494971</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>494971</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</file>
+			<loop_cnt>8</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>573478</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>573478</self_abs>
+			<call_cnt>2</call_cnt>
+			<exit_cnt>2</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</file>
+			<loop_cnt>4</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.51</ticks_perc>
+			<ticks_abs>59323776</ticks_abs>
+			<self_perc>0.43</self_perc>
+			<self_abs>50249427</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.39</loops_perc>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</file>
+			<loop_cnt>17</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>16320</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>16320</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[blitz::Array<unsigned int, 1>::setupStorage(int)]]></function>
+			<file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</file>
+			<loop_cnt>4</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>42466</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>42466</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)]]></function>
+			<file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</file>
+			<loop_cnt>4</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>1022</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>1022</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&)]]></function>
+			<file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>399</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>2.91</ticks_perc>
+			<ticks_abs>336087535</ticks_abs>
+			<self_perc>1.68</self_perc>
+			<self_abs>194650222</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.29</loops_perc>
+			<function><![CDATA[Mesh::Mesh(std::string const&)]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>20</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</file>
+			<loop_cnt>3</loop_cnt>
+		</function>
+		<function>
+			<ticks_perc>100.00</ticks_perc>
+			<ticks_abs>11561975241</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>323788</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[main]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/ACA2-2013.cpp]]></name>
+				<line>28</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/ACA2-2013.cpp]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>42</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>42</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[__sti___ZN123_INTERNAL_100__home_romain_Dropbox_Imperial_College_Architecture_Advanced_Architecture_Smooth_rb_src_ACA2_2013_cpp_79c87ebfSt8__ioinitE]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/ACA2-2013.cpp]]></name>
+				<line>0</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/ACA2-2013.cpp]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>48</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>48</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[__sti___ZN119_INTERNAL_97__home_romain_Dropbox_Imperial_College_Architecture_Advanced_Architecture_Smooth_rb_src_Smooth_cpp_35076a2dSt8__ioinitE]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>0</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>36</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>36</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[__sti___ZN124_INTERNAL_101__home_romain_Dropbox_Imperial_College_Architecture_Advanced_Architecture_Smooth_rb_src_colorGraph_cpp_10f60f11St8__ioinitE]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></name>
+				<line>0</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></path>
+			</file>
+		</function>
+		<function>
+			<ticks_perc>0.00</ticks_perc>
+			<ticks_abs>3074</ticks_abs>
+			<self_perc>0.00</self_perc>
+			<self_abs>3074</self_abs>
+			<call_cnt>1</call_cnt>
+			<exit_cnt>1</exit_cnt>
+			<loops_perc>0.00</loops_perc>
+			<function><![CDATA[__sti___ZN117_INTERNAL_95__home_romain_Dropbox_Imperial_College_Architecture_Advanced_Architecture_Smooth_rb_src_Mesh_cpp_0616a530St8__ioinitE]]></function>
+			<file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>0</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</file>
+		</function>
+	</functions>
+	<loops reportlevel="1" >
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>3008186</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>3008186</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::~Mesh()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>80</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>570118</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>570118</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::~Mesh()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>80</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>96.9</ticks_perc>
+			<ticks_abs>11205182757</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>25118</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>15</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>96.9</ticks_perc>
+			<ticks_abs>11205157639</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>61818</self_abs>
+			<entry_cnt>200</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>16</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>96.9</ticks_perc>
+			<ticks_abs>11205095821</ticks_abs>
+			<self_perc>15.5</self_perc>
+			<self_abs>1787986361</self_abs>
+			<entry_cnt>1000</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>18</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>2.1</ticks_perc>
+			<ticks_abs>245945042</ticks_abs>
+			<self_perc>2.1</self_perc>
+			<self_abs>245945042</self_abs>
+			<entry_cnt>1839400</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>177</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>32.9</ticks_perc>
+			<ticks_abs>3800413703</ticks_abs>
+			<self_perc>32.9</self_perc>
+			<self_abs>3800413703</self_abs>
+			<entry_cnt>3855600</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>168</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>2.9</ticks_perc>
+			<ticks_abs>332669643</ticks_abs>
+			<self_perc>2.9</self_perc>
+			<self_abs>332669643</self_abs>
+			<entry_cnt>3552400</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>95</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>7.9</ticks_perc>
+			<ticks_abs>908642439</ticks_abs>
+			<self_perc>7.9</self_perc>
+			<self_abs>908642439</self_abs>
+			<entry_cnt>3789000</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>63</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>2.3</ticks_perc>
+			<ticks_abs>264322245</ticks_abs>
+			<self_perc>2.3</self_perc>
+			<self_abs>264322245</self_abs>
+			<entry_cnt>1839400</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>37</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>33.4</ticks_perc>
+			<ticks_abs>3865116388</ticks_abs>
+			<self_perc>33.4</self_perc>
+			<self_abs>3865116388</self_abs>
+			<entry_cnt>3855600</entry_cnt>
+			<function><![CDATA[Mesh::smooth(unsigned int)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>28</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></name>
+				<line>13</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.1</ticks_perc>
+			<ticks_abs>15009999</ticks_abs>
+			<self_perc>0.1</self_perc>
+			<self_abs>15009999</self_abs>
+			<entry_cnt>2</entry_cnt>
+			<function><![CDATA[Mesh::get_mesh_quality() const]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>208</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>202</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>35876</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>35876</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[blitz::ReduceMax<int>::T_resulttype blitz::_bz_reduceWithIndexTraversalGeneric<int, blitz::_bz_ArrayExpr<blitz::FastArrayIterator<int, 1> >, blitz::ReduceMax<int> >(blitz::_bz_ArrayExpr<blitz::FastArrayIterator<int, 1> >, blitz::ReduceMax<int>)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/reduce.cc]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/array/reduce.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/reduce.cc]]></name>
+				<line>91</line>
+				<path><![CDATA[/usr/local/include/blitz/array/reduce.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>119</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>50</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>50</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>503</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>70</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>70</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>503</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>503</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>16152</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>5368</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>472</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>10784</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>10784</self_abs>
+			<entry_cnt>602</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/local/include/blitz/tvevaluate.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>462</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>462</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>462</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>534</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>& blitz::Array<int, 1>::operator=<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > >(blitz::ETBase<blitz::_bz_ArrayExpr<blitz::_bz_ArrayExprConstant<int> > > const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/globeval.cc]]></name>
+				<line>621</line>
+				<path><![CDATA[/usr/local/include/blitz/globeval.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/ops.cc]]></name>
+				<line>66</line>
+				<path><![CDATA[/usr/local/include/blitz/array/ops.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Coloring(std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > > const&, blitz::Array<int, 1>&)]]></function>
+			<src_file>
+				<name><![CDATA[(unknown)]]></name>
+				<line>0</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/build/(unknown)]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></name>
+				<line>26</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>779202</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>234818</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Coloring(std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > > const&, blitz::Array<int, 1>&)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></name>
+				<line>29</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></name>
+				<line>26</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>544384</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>544384</self_abs>
+			<entry_cnt>19283</entry_cnt>
+			<function><![CDATA[Coloring(std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > > const&, blitz::Array<int, 1>&)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></name>
+				<line>10</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></name>
+				<line>26</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/colorGraph.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::_Rb_tree_iterator<unsigned int> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique_<unsigned int const&>(std::_Rb_tree_const_iterator<unsigned int>, unsigned int const&)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1282</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1339</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.7</ticks_perc>
+			<ticks_abs>79769523</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>338514</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::find_surface()]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>117</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>109</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.7</ticks_perc>
+			<ticks_abs>79431009</ticks_abs>
+			<self_perc>0.1</self_perc>
+			<self_abs>7544362</self_abs>
+			<entry_cnt>19283</entry_cnt>
+			<function><![CDATA[Mesh::find_surface()]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>119</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>109</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.1</ticks_perc>
+			<ticks_abs>15384887</ticks_abs>
+			<self_perc>0.1</self_perc>
+			<self_abs>6598535</self_abs>
+			<entry_cnt>114189</entry_cnt>
+			<function><![CDATA[Mesh::find_surface()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1080</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>109</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.5</ticks_perc>
+			<ticks_abs>56501760</ticks_abs>
+			<self_perc>0.2</self_perc>
+			<self_abs>20730307</self_abs>
+			<entry_cnt>114189</entry_cnt>
+			<function><![CDATA[Mesh::find_surface()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algo.h]]></name>
+				<line>5907</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algo.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>109</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.2</ticks_perc>
+			<ticks_abs>18305243</ticks_abs>
+			<self_perc>0.2</self_perc>
+			<self_abs>18305243</self_abs>
+			<entry_cnt>545069</entry_cnt>
+			<function><![CDATA[Mesh::find_surface()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algo.h]]></name>
+				<line>5907</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algo.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>109</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.1</ticks_perc>
+			<ticks_abs>14079557</ticks_abs>
+			<self_perc>0.1</self_perc>
+			<self_abs>12106422</self_abs>
+			<entry_cnt>166183</entry_cnt>
+			<function><![CDATA[std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_erase(std::_Rb_tree_node<unsigned int>*)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1080</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1078</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></name>
+				<line>496</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1080</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>490840</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>490840</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></name>
+				<line>496</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></name>
+				<line>76</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>117</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>103</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1054</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></name>
+				<line>496</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>534594</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>534594</self_abs>
+			<entry_cnt>2</entry_cnt>
+			<function><![CDATA[std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></name>
+				<line>496</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<std::vector<unsigned int, std::allocator<unsigned int> >, std::allocator<std::vector<unsigned int, std::allocator<unsigned int> > > >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></name>
+				<line>76</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_uninitialized.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.1</ticks_perc>
+			<ticks_abs>10648602</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>216240</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.1</ticks_perc>
+			<ticks_abs>10432362</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>2426462</self_abs>
+			<entry_cnt>19283</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1080</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.1</ticks_perc>
+			<ticks_abs>8851299</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>3292403</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>104</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>1751358</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>1751358</self_abs>
+			<entry_cnt>19283</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>298</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>298</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>298</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>298</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h]]></name>
+				<line>140</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h]]></name>
+				<line>143</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>3807538</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>3807538</self_abs>
+			<entry_cnt>19283</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h]]></name>
+				<line>80</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.3</ticks_perc>
+			<ticks_abs>33319532</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>513969</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>91</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.3</ticks_perc>
+			<ticks_abs>32805563</ticks_abs>
+			<self_perc>0.3</self_perc>
+			<self_abs>30386493</self_abs>
+			<entry_cnt>38063</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>97</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>2419070</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>2419070</self_abs>
+			<entry_cnt>94906</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1282</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></name>
+				<line>1080</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_tree.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[Mesh::create_adjacency()]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></name>
+				<line>104</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_construct.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>84</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<unsigned int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<unsigned int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<unsigned int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[blitz::Array<unsigned int, 1>::setupStorage(int)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>299</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/local/include/blitz/array/methods.cc]]></name>
+				<line>288</line>
+				<path><![CDATA[/usr/local/include/blitz/array/methods.cc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>743</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>743</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>743</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>0</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>0</self_abs>
+			<entry_cnt>0</entry_cnt>
+			<function><![CDATA[std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)]]></function>
+			<src_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></name>
+				<line>743</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/stl_algobase.h]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></name>
+				<line>532</line>
+				<path><![CDATA[/usr/include/c++/4.7.2/bits/vector.tcc]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.2</ticks_perc>
+			<ticks_abs>26372984</ticks_abs>
+			<self_perc>0.2</self_perc>
+			<self_abs>26372984</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::Mesh(std::string const&)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>60</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>20</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.1</ticks_perc>
+			<ticks_abs>5805406</ticks_abs>
+			<self_perc>0.1</self_perc>
+			<self_abs>5805406</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::Mesh(std::string const&)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>50</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>20</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+		<loop>
+			<ticks_perc>0.0</ticks_perc>
+			<ticks_abs>1405092</ticks_abs>
+			<self_perc>0.0</self_perc>
+			<self_abs>1404070</self_abs>
+			<entry_cnt>1</entry_cnt>
+			<function><![CDATA[Mesh::Mesh(std::string const&)]]></function>
+			<src_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>40</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</src_file>
+			<comp_file>
+				<name><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></name>
+				<line>20</line>
+				<path><![CDATA[/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp]]></path>
+			</comp_file>
+		</loop>
+	</loops>
+</loop_prof>

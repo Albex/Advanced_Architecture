@@ -69,7 +69,6 @@ if(PKG_CONFIG_blitz_VERSION)
   set(Blitz_RESOLVED_LIBRARY ${Blitz_RESOLVED_LIBRARY} CACHE INTERNAL "Resolved Blitz library")
 else(PKG_CONFIG_blitz_VERSION)
   find_path(Blitz_INCLUDE_DIR blitz/blitz.h)
-  find_path(Blitz_INCLUDE_DIR blitz/gnu/bzconfig.h)
 
   find_library(Blitz_LIBRARY NAMES blitz)
 
@@ -84,6 +83,9 @@ else(PKG_CONFIG_blitz_VERSION)
 endif(PKG_CONFIG_blitz_VERSION)
 
 if(Blitz_FOUND)
+  set(Blitz_INCLUDE_DIRS ${Blitz_INCLUDE_DIRS} " ${Blitz_INCLUDE_DIR}/blitz/intel/")
+  set(Blitz_INCLUDE_DIRS ${Blitz_INCLUDE_DIRS} " ${Blitz_INCLUDE_DIR}/blitz/gnu/")
+  message( STATUS ${Blitz_INCLUDE_DIRS})
   # and we try to determine if the the found library supports 64-bits array
   # positions.
   include(CheckCXXSourceCompiles)
