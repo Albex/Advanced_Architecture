@@ -1,0 +1,650 @@
+globals.lo: ../src/globals.cpp ../blitz/blitz.h ../blitz/bzconfig.h \
+ ../blitz/intel/bzconfig.h ../blitz/compiler.h /usr/include/c++/4.7.2/cstdlib \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/c++config.h \
+ /usr/include/bits/wordsize.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/os_defines.h \
+ /usr/include/features.h /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/cpu_defines.h \
+ /usr/include/stdlib.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/types.h /usr/include/bits/wordsize.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/wordsize.h \
+ /usr/include/bits/byteswap-16.h /usr/include/xlocale.h /usr/include/sys/types.h \
+ /usr/include/time.h /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/sigset.h /usr/include/time.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/wordsize.h \
+ /usr/include/alloca.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h ../blitz/tuning.h \
+ ../blitz/tau.h /usr/include/c++/4.7.2/string \
+ /usr/include/c++/4.7.2/bits/stringfwd.h \
+ /usr/include/c++/4.7.2/bits/char_traits.h \
+ /usr/include/c++/4.7.2/bits/stl_algobase.h \
+ /usr/include/c++/4.7.2/bits/functexcept.h \
+ /usr/include/c++/4.7.2/bits/exception_defines.h \
+ /usr/include/c++/4.7.2/bits/cpp_type_traits.h \
+ /usr/include/c++/4.7.2/ext/type_traits.h \
+ /usr/include/c++/4.7.2/ext/numeric_traits.h \
+ /usr/include/c++/4.7.2/bits/stl_pair.h /usr/include/c++/4.7.2/bits/move.h \
+ /usr/include/c++/4.7.2/bits/concept_check.h \
+ /usr/include/c++/4.7.2/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.7.2/bits/stl_iterator.h /usr/include/c++/4.7.2/debug/debug.h \
+ /usr/include/c++/4.7.2/bits/postypes.h /usr/include/c++/4.7.2/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdarg.h \
+ /usr/include/bits/wchar.h /usr/include/bits/wordsize.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h \
+ /usr/include/c++/4.7.2/cwchar /usr/include/wchar.h \
+ /usr/include/c++/4.7.2/bits/allocator.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/c++allocator.h \
+ /usr/include/c++/4.7.2/ext/new_allocator.h /usr/include/c++/4.7.2/new \
+ /usr/include/c++/4.7.2/exception \
+ /usr/include/c++/4.7.2/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.7.2/bits/localefwd.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/c++locale.h \
+ /usr/include/c++/4.7.2/clocale /usr/include/locale.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h \
+ /usr/include/bits/locale.h /usr/include/c++/4.7.2/iosfwd \
+ /usr/include/c++/4.7.2/cctype /usr/include/ctype.h \
+ /usr/include/c++/4.7.2/bits/ostream_insert.h \
+ /usr/include/c++/4.7.2/bits/cxxabi_forced.h \
+ /usr/include/c++/4.7.2/bits/stl_function.h \
+ /usr/include/c++/4.7.2/backward/binders.h \
+ /usr/include/c++/4.7.2/bits/range_access.h \
+ /usr/include/c++/4.7.2/bits/basic_string.h \
+ /usr/include/c++/4.7.2/ext/atomicity.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/gthr.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h /usr/include/time.h \
+ /usr/include/bits/sched.h /usr/include/time.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h /usr/include/bits/time.h \
+ /usr/include/bits/timex.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/wordsize.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/atomic_word.h \
+ /usr/include/c++/4.7.2/bits/basic_string.tcc /usr/include/c++/4.7.2/iostream \
+ /usr/include/c++/4.7.2/ostream /usr/include/c++/4.7.2/ios \
+ /usr/include/c++/4.7.2/bits/ios_base.h \
+ /usr/include/c++/4.7.2/bits/locale_classes.h \
+ /usr/include/c++/4.7.2/bits/locale_classes.tcc /usr/include/c++/4.7.2/streambuf \
+ /usr/include/c++/4.7.2/bits/streambuf.tcc \
+ /usr/include/c++/4.7.2/bits/basic_ios.h \
+ /usr/include/c++/4.7.2/bits/locale_facets.h /usr/include/c++/4.7.2/cwctype \
+ /usr/include/wctype.h /usr/include/wchar.h /usr/include/c++/4.7.2/cctype \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/ctype_base.h \
+ /usr/include/c++/4.7.2/bits/streambuf_iterator.h \
+ /usr/include/c++/4.7.2/x86_64-redhat-linux/bits/ctype_inline.h \
+ /usr/include/c++/4.7.2/bits/locale_facets.tcc \
+ /usr/include/c++/4.7.2/bits/basic_ios.tcc \
+ /usr/include/c++/4.7.2/bits/ostream.tcc /usr/include/c++/4.7.2/istream \
+ /usr/include/c++/4.7.2/bits/istream.tcc /usr/include/c++/4.7.2/iomanip \
+ /usr/include/c++/4.7.2/cstdio /usr/include/stdio.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/c++/4.7.2/cmath \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/math.h /usr/include/math.h \
+ /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
+ /usr/include/bits/huge_vall.h /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/complex \
+ /usr/include/c++/4.7.2/complex /usr/include/c++/4.7.2/cmath \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/math.h \
+ /usr/include/c++/4.7.2/sstream /usr/include/c++/4.7.2/bits/sstream.tcc \
+ ../blitz/bzdebug.h /usr/include/c++/4.7.2/cstdlib /usr/include/c++/4.7.2/cassert \
+ /usr/include/assert.h /usr/include/c++/4.7.2/typeinfo ../blitz/array.h \
+ ../blitz/array-impl.h ../blitz/memblock.h ../blitz/simdtypes.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdint.h /usr/include/stdint.h \
+ /usr/include/bits/wordsize.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h ../blitz/memblock.cc \
+ ../blitz/numtrait.h ../blitz/range.h ../blitz/etbase.h ../blitz/array/asexpr.h \
+ ../blitz/et-forward.h ../blitz/prettyprint.h ../blitz/tinyvec2.h \
+ ../blitz/listinit.h ../blitz/array/slice.h ../blitz/range.h \
+ /usr/include/c++/4.7.2/cstring /usr/include/string.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h \
+ /usr/include/c++/4.7.2/climits \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/syslimits.h \
+ /opt/intel/composer_xe_2013.2.146/compiler/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/limits.h /usr/include/limits.h \
+ /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+ /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+ /usr/include/bits/xopen_lim.h /usr/include/bits/stdio_lim.h ../blitz/tvecglobs.h \
+ ../blitz/meta/metaprog.h ../blitz/tvcross.h ../blitz/meta/dot.h \
+ ../blitz/promote.h ../blitz/meta/product.h ../blitz/meta/sum.h \
+ ../blitz/indexexpr.h ../blitz/array/domain.h ../blitz/array/map.h \
+ ../blitz/array/multi.h ../blitz/array/storage.h ../blitz/array.cc \
+ ../blitz/array/iter.h /usr/include/c++/4.7.2/iterator \
+ /usr/include/c++/4.7.2/bits/stream_iterator.h ../blitz/array/fastiter.h \
+ ../blitz/constpointerstack.h ../blitz/array/asexpr.cc ../blitz/array-impl.h \
+ ../blitz/levicivita.h ../blitz/shapecheck.h ../blitz/numinquire.h \
+ /usr/include/c++/4.7.2/limits ../blitz/tinyvec2io.cc ../blitz/array/expr.h \
+ ../blitz/bounds.h ../blitz/array/expr.cc ../blitz/range.cc ../blitz/array/ops.h \
+ ../blitz/ops.h ../blitz/funcs.h /usr/include/c++/4.7.2/cstdlib \
+ ../blitz/array/newet-macros.h ../blitz/array/methods.cc ../blitz/array/ops.cc \
+ ../blitz/update.h ../blitz/globeval.cc ../blitz/ranks.h ../blitz/tvevaluate.h \
+ ../blitz/meta/vecassign.h ../blitz/array/io.cc ../blitz/array/interlace.cc \
+ ../blitz/array/shape.h ../blitz/array/resize.cc ../blitz/minmax.h \
+ ../blitz/array/slicing.cc ../blitz/array/cycle.cc ../blitz/array/complex.cc \
+ ../blitz/array/et.h ../blitz/array/newet.h ../blitz/array/funcs.h \
+ ../blitz/array/reduce.h ../blitz/reduce.h ../blitz/array/reduce.cc \
+ ../blitz/array/functorExpr.h ../blitz/array/zip.h ../blitz/array/where.h \
+ ../blitz/array/indirect.h ../blitz/array/cartesian.h ../blitz/array/stencils.h \
+ ../blitz/array/stencilops.h ../blitz/array/geometry.h ../blitz/tinymat2.h \
+ ../blitz/indexmap-forward.h ../blitz/tm2fastiter.h ../blitz/array/stencils.cc \
+ ../blitz/tinymat2.cc ../blitz/tmevaluate.h ../blitz/tinymat2io.cc \
+ ../blitz/tinyvec2.cc ../blitz/tv2fastiter.h ../blitz/timer.h \
+ /usr/include/sys/resource.h /usr/include/bits/resource.h \
+ /usr/include/bits/time.h ../random/mtparam.cc ../random/mt.h \
+ /usr/include/c++/4.7.2/vector /usr/include/c++/4.7.2/bits/stl_construct.h \
+ /usr/include/c++/4.7.2/ext/alloc_traits.h \
+ /usr/include/c++/4.7.2/bits/stl_uninitialized.h \
+ /usr/include/c++/4.7.2/bits/stl_vector.h \
+ /usr/include/c++/4.7.2/bits/stl_bvector.h /usr/include/c++/4.7.2/bits/vector.tcc
+
+../blitz/blitz.h:
+
+../blitz/bzconfig.h:
+
+../blitz/intel/bzconfig.h:
+
+../blitz/compiler.h:
+
+/usr/include/c++/4.7.2/cstdlib:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/c++config.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/os_defines.h:
+
+/usr/include/features.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/cpu_defines.h:
+
+/usr/include/stdlib.h:
+
+/opt/intel/composer_xe_2013.2.146/compiler/include/stddef.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/bits/byteswap-16.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+../blitz/tuning.h:
+
+../blitz/tau.h:
+
+/usr/include/c++/4.7.2/string:
+
+/usr/include/c++/4.7.2/bits/stringfwd.h:
+
+/usr/include/c++/4.7.2/bits/char_traits.h:
+
+/usr/include/c++/4.7.2/bits/stl_algobase.h:
+
+/usr/include/c++/4.7.2/bits/functexcept.h:
+
+/usr/include/c++/4.7.2/bits/exception_defines.h:
+
+/usr/include/c++/4.7.2/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.7.2/ext/type_traits.h:
+
+/usr/include/c++/4.7.2/ext/numeric_traits.h:
+
+/usr/include/c++/4.7.2/bits/stl_pair.h:
+
+/usr/include/c++/4.7.2/bits/move.h:
+
+/usr/include/c++/4.7.2/bits/concept_check.h:
+
+/usr/include/c++/4.7.2/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.7.2/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.7.2/bits/stl_iterator.h:
+
+/usr/include/c++/4.7.2/debug/debug.h:
+
+/usr/include/c++/4.7.2/bits/postypes.h:
+
+/usr/include/c++/4.7.2/cwchar:
+
+/usr/include/wchar.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdarg.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/c++/4.7.2/bits/allocator.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/c++allocator.h:
+
+/usr/include/c++/4.7.2/ext/new_allocator.h:
+
+/usr/include/c++/4.7.2/new:
+
+/usr/include/c++/4.7.2/exception:
+
+/usr/include/c++/4.7.2/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/4.7.2/bits/localefwd.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/c++locale.h:
+
+/usr/include/c++/4.7.2/clocale:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+/usr/include/c++/4.7.2/iosfwd:
+
+/usr/include/c++/4.7.2/cctype:
+
+/usr/include/ctype.h:
+
+/usr/include/c++/4.7.2/bits/ostream_insert.h:
+
+/usr/include/c++/4.7.2/bits/cxxabi_forced.h:
+
+/usr/include/c++/4.7.2/bits/stl_function.h:
+
+/usr/include/c++/4.7.2/backward/binders.h:
+
+/usr/include/c++/4.7.2/bits/range_access.h:
+
+/usr/include/c++/4.7.2/bits/basic_string.h:
+
+/usr/include/c++/4.7.2/ext/atomicity.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/gthr.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/gthr-default.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/timex.h:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/atomic_word.h:
+
+/usr/include/c++/4.7.2/bits/basic_string.tcc:
+
+/usr/include/c++/4.7.2/iostream:
+
+/usr/include/c++/4.7.2/ostream:
+
+/usr/include/c++/4.7.2/ios:
+
+/usr/include/c++/4.7.2/bits/ios_base.h:
+
+/usr/include/c++/4.7.2/bits/locale_classes.h:
+
+/usr/include/c++/4.7.2/bits/locale_classes.tcc:
+
+/usr/include/c++/4.7.2/streambuf:
+
+/usr/include/c++/4.7.2/bits/streambuf.tcc:
+
+/usr/include/c++/4.7.2/bits/basic_ios.h:
+
+/usr/include/c++/4.7.2/bits/locale_facets.h:
+
+/usr/include/c++/4.7.2/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/ctype_base.h:
+
+/usr/include/c++/4.7.2/bits/streambuf_iterator.h:
+
+/usr/include/c++/4.7.2/x86_64-redhat-linux/bits/ctype_inline.h:
+
+/usr/include/c++/4.7.2/bits/locale_facets.tcc:
+
+/usr/include/c++/4.7.2/bits/basic_ios.tcc:
+
+/usr/include/c++/4.7.2/bits/ostream.tcc:
+
+/usr/include/c++/4.7.2/istream:
+
+/usr/include/c++/4.7.2/bits/istream.tcc:
+
+/usr/include/c++/4.7.2/iomanip:
+
+/usr/include/c++/4.7.2/cstdio:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/c++/4.7.2/cmath:
+
+/opt/intel/composer_xe_2013.2.146/compiler/include/math.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/opt/intel/composer_xe_2013.2.146/compiler/include/complex:
+
+/usr/include/c++/4.7.2/complex:
+
+/usr/include/c++/4.7.2/sstream:
+
+/usr/include/c++/4.7.2/bits/sstream.tcc:
+
+../blitz/bzdebug.h:
+
+/usr/include/c++/4.7.2/cassert:
+
+/usr/include/assert.h:
+
+/usr/include/c++/4.7.2/typeinfo:
+
+../blitz/array.h:
+
+../blitz/array-impl.h:
+
+../blitz/memblock.h:
+
+../blitz/simdtypes.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdint.h:
+
+/usr/include/stdint.h:
+
+../blitz/memblock.cc:
+
+../blitz/numtrait.h:
+
+../blitz/range.h:
+
+../blitz/etbase.h:
+
+../blitz/array/asexpr.h:
+
+../blitz/et-forward.h:
+
+../blitz/prettyprint.h:
+
+../blitz/tinyvec2.h:
+
+../blitz/listinit.h:
+
+../blitz/array/slice.h:
+
+/usr/include/c++/4.7.2/cstring:
+
+/usr/include/string.h:
+
+/usr/include/c++/4.7.2/climits:
+
+/opt/intel/composer_xe_2013.2.146/compiler/include/limits.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/limits.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+../blitz/tvecglobs.h:
+
+../blitz/meta/metaprog.h:
+
+../blitz/tvcross.h:
+
+../blitz/meta/dot.h:
+
+../blitz/promote.h:
+
+../blitz/meta/product.h:
+
+../blitz/meta/sum.h:
+
+../blitz/indexexpr.h:
+
+../blitz/array/domain.h:
+
+../blitz/array/map.h:
+
+../blitz/array/multi.h:
+
+../blitz/array/storage.h:
+
+../blitz/array.cc:
+
+../blitz/array/iter.h:
+
+/usr/include/c++/4.7.2/iterator:
+
+/usr/include/c++/4.7.2/bits/stream_iterator.h:
+
+../blitz/array/fastiter.h:
+
+../blitz/constpointerstack.h:
+
+../blitz/array/asexpr.cc:
+
+../blitz/levicivita.h:
+
+../blitz/shapecheck.h:
+
+../blitz/numinquire.h:
+
+/usr/include/c++/4.7.2/limits:
+
+../blitz/tinyvec2io.cc:
+
+../blitz/array/expr.h:
+
+../blitz/bounds.h:
+
+../blitz/array/expr.cc:
+
+../blitz/range.cc:
+
+../blitz/array/ops.h:
+
+../blitz/ops.h:
+
+../blitz/funcs.h:
+
+../blitz/array/newet-macros.h:
+
+../blitz/array/methods.cc:
+
+../blitz/array/ops.cc:
+
+../blitz/update.h:
+
+../blitz/globeval.cc:
+
+../blitz/ranks.h:
+
+../blitz/tvevaluate.h:
+
+../blitz/meta/vecassign.h:
+
+../blitz/array/io.cc:
+
+../blitz/array/interlace.cc:
+
+../blitz/array/shape.h:
+
+../blitz/array/resize.cc:
+
+../blitz/minmax.h:
+
+../blitz/array/slicing.cc:
+
+../blitz/array/cycle.cc:
+
+../blitz/array/complex.cc:
+
+../blitz/array/et.h:
+
+../blitz/array/newet.h:
+
+../blitz/array/funcs.h:
+
+../blitz/array/reduce.h:
+
+../blitz/reduce.h:
+
+../blitz/array/reduce.cc:
+
+../blitz/array/functorExpr.h:
+
+../blitz/array/zip.h:
+
+../blitz/array/where.h:
+
+../blitz/array/indirect.h:
+
+../blitz/array/cartesian.h:
+
+../blitz/array/stencils.h:
+
+../blitz/array/stencilops.h:
+
+../blitz/array/geometry.h:
+
+../blitz/tinymat2.h:
+
+../blitz/indexmap-forward.h:
+
+../blitz/tm2fastiter.h:
+
+../blitz/array/stencils.cc:
+
+../blitz/tinymat2.cc:
+
+../blitz/tmevaluate.h:
+
+../blitz/tinymat2io.cc:
+
+../blitz/tinyvec2.cc:
+
+../blitz/tv2fastiter.h:
+
+../blitz/timer.h:
+
+/usr/include/sys/resource.h:
+
+/usr/include/bits/resource.h:
+
+../random/mtparam.cc:
+
+../random/mt.h:
+
+/usr/include/c++/4.7.2/vector:
+
+/usr/include/c++/4.7.2/bits/stl_construct.h:
+
+/usr/include/c++/4.7.2/ext/alloc_traits.h:
+
+/usr/include/c++/4.7.2/bits/stl_uninitialized.h:
+
+/usr/include/c++/4.7.2/bits/stl_vector.h:
+
+/usr/include/c++/4.7.2/bits/stl_bvector.h:
+
+/usr/include/c++/4.7.2/bits/vector.tcc:
