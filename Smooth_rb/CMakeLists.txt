@@ -46,6 +46,7 @@ include("${CMAKE_SOURCE_DIR}/CMake/libs/blitz.cmake")
 
 # Require VTK
 set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/usr/lib64/vtk" )
+set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/homes/gr409/public_html/vtk" )
 FIND_PACKAGE(VTK)
 IF(VTK_FOUND)
   message("VTK FOUND")
