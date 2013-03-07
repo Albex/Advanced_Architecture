@@ -43,6 +43,9 @@ target_link_libraries(smooth ${MPI_LIBRARIES})
 set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/homes/rb812/blitz" )
 # Require BLITZ
 include("${CMAKE_SOURCE_DIR}/CMake/libs/blitz.cmake")
+IF(Blitz_FOUND)
+  include_directories(Blitz_INCLUDE_DIR)
+ENDIF(Blitz_FOUND)
 
 # Require VTK
 set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/usr/lib64/vtk" )
