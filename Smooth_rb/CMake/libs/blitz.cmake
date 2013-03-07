@@ -108,6 +108,8 @@ elseif(Blitz_FOUND)
   set(Blitz_LIBRARY "/homes/rb812/blitz")
   set(Blitz_LIBRARY ${Blitz_LIBRARY} " /homes/rb812/blitz/lib")
   set(Blitz_LIBRARY ${Blitz_LIBRARY} " /homes/rb812/blitz/share")
+  message( STATUS ${Blitz_INCLUDE_DIR})
+  message( STATUS ${Blitz_LIBRARY})
 endif(Blitz_FOUND)
 
 mark_as_advanced(Blitz_INCLUDE_DIR Blitz_LIBRARY)
