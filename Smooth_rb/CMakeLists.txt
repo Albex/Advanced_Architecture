@@ -44,6 +44,7 @@ set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/homes/rb812/blitz" )
 # Require BLITZ
 include("${CMAKE_SOURCE_DIR}/CMake/libs/blitz.cmake")
 IF(Blitz_FOUND)
+  message(STATUS ${Blitz_INCLUDE_DIR})
   include_directories(Blitz_INCLUDE_DIR)
 ENDIF(Blitz_FOUND)
 
