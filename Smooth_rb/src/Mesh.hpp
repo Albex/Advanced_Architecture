@@ -45,7 +45,7 @@ private:
 
     // Element eid is comprised of the vertices
     // ENList[3*eid], ENList[3*eid+1] and ENList[3*eid+2].
-    std::vector< uint32_t > ENList;
+    blitz::Array< uint32_t, 1 > ENList;
 
     // Vertex vid has coordinates x=coords[2*vid] and y=coords[2*vid+1].
     std::vector< real > coords;
@@ -100,7 +100,7 @@ real Mesh::element_quality( int vid, int it ) const {
 
 real Mesh::element_quality( uint32_t eid ) const{
 
-    uint32_t const *n = &ENList[ 3*  eid ];
+    uint32_t const *n = &ENList( 3 * eid );
 
     // Pointers to the coordinates of each vertex
     real const *c0 = &coords[ 2 * n[ 0 ] ];
@@ -165,9 +165,9 @@ real
 Mesh::element_area( uint32_t eid ) const{
 
     uint32_t const eid_off = 3 * eid;
-    uint32_t const c0_off = 2 * ENList[ eid_off     ];
-    uint32_t const c1_off = 2 * ENList[ eid_off + 1 ];
-    uint32_t const c2_off = 2 * ENList[ eid_off + 2 ];
+    uint32_t const c0_off = 2 * ENList( eid_off     );
+    uint32_t const c1_off = 2 * ENList( eid_off + 1 );
+    uint32_t const c2_off = 2 * ENList( eid_off + 2 );
 
     return orientation * static_cast< real >( 0.5 ) * (
         ( coords[ c0_off + 1 ] - coords[ c2_off + 1 ] ) *

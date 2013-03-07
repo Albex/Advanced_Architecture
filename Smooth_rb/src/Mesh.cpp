@@ -55,13 +55,13 @@ Mesh::Mesh( std::string const & filename){
   }
 
   // Get the 3 vertices comprising each element.
+  ENList.resize( 3 * NElements );
   for(uint32_t i=0;i<NElements;++i){
     vtkCell * __restrict__ cell = ug->GetCell(i);
     for(int j=0;j<3;j++){
-      ENList.push_back(cell->GetPointId(j));
+      ENList( 3 * i + j ) = cell->GetPointId(j);
     }
   }
-  assert(ENList.size() == 3*NElements);
 
   reader->Delete();
 
@@ -83,7 +83,7 @@ void Mesh::create_adjacency(){
 
   for(uint32_t eid=0; eid<NElements; ++eid){
     // Get a pointer to the three vertices comprising element eid.
-    const uint32_t * __restrict__ n = &ENList[3*eid];
+    const uint32_t * __restrict__ n = &ENList(3*eid);
 
     // For each vertex, add the other two vertices to its node-node adjacency
     // list and element eid to its node-element adjacency list.
@@ -99,17 +99,18 @@ void Mesh::create_adjacency(){
   }
 }
 
-void Mesh::find_surface(){
+void Mesh::find_surface( void ){
   // Initialise all normal vectors to (0.0,0.0).
-  normals.resize(2*NNodes, 0.0);
+  normals.resize( 2 * NNodes, 0.f );
 
   // If an edge is on the surface, then it belongs to only 1 element. We
   // traverse all edges (vid0,vid1) and for each edge we find the intersection
   // of NEList[vid0] and NEList[vid1]. If the intersection size is 1, then
   // this edge belongs to only one element, so it lies on the mesh surface.
-  for(uint32_t vid=0; vid<NNodes; ++vid){
-    for(std::vector<uint32_t>::const_iterator it=NNList[vid].begin();
-      it!=NNList[vid].end(); ++it){
+  for( uint32_t vid = 0 ; vid < NNodes; ++vid ){
+    for( std::vector< uint32_t>::const_iterator it = NNList[ vid ].begin( );
+        it != NNList[ vid ].end( ); ++it 
+    ){
       // In order to avoid processing an edge twice, one in the
       // form of (vid0,vid1) and one in the form of (vid1,vid0),
       // an edge is processed only of vid0 < vid1.
@@ -166,34 +167,32 @@ void Mesh::find_surface(){
  * should be discarded. The orientation is the same for all mesh elements, so
  * it is enough to calculate it for one mesh element only.
  */
-void Mesh::set_orientation(){
+void Mesh::set_orientation( void ){
   // Find the orientation for the first element
-  const uint32_t * __restrict__ n = &ENList[0];
+  const uint32_t * __restrict__ n = &ENList( 0 );
 
   // Pointers to the coordinates of each vertex
-  const real *c0 = &coords[2*n[0]];
-  const real *c1 = &coords[2*n[1]];
-  const real *c2 = &coords[2*n[2]];
+  const real *c0 = &coords[ 2 * n[ 0 ] ];
+  const real *c1 = &coords[ 2 * n[ 1 ] ];
+  const real *c2 = &coords[ 2 * n[ 2 ] ];
 
-  real x1 = (c0[0] - c1[0]);
-  real y1 = (c0[1] - c1[1]);
+  real x1 = ( c0[ 0 ] - c1[ 0 ] );
+  real y1 = ( c0[ 1 ] - c1[ 1 ] );
 
-  real x2 = (c0[0] - c2[0]);
-  real y2 = (c0[1] - c2[1]);
+  real x2 = ( c0[ 0 ] - c2[ 0 ] );
+  real y2 = ( c0[ 1 ] - c2[ 1 ] );
 
-  real A = x1*y2 - x2*y1;
+  real A = x1 * y2 - x2 * y1;
 
-  if(A<0)
-    orientation = -1;
-  else
-    orientation = 1;
+  if ( A < 0 ) orientation = -1;
+  else orientation = 1;
 }
 
 
 
 // Finds the mean quality, averaged over all mesh elements,
 // and the quality of the worst element.
-Quality Mesh::get_mesh_quality() const{
+Quality Mesh::get_mesh_quality( void ) const{
   Quality q;
 
   real mean_q = 0.0;
