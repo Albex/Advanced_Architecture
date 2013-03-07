@@ -46,38 +46,6 @@
 
 typedef double real;
 
-/* Standard C++ Library. */
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <memory>
-#include <limits>
-#include <cassert>
-#include <array>
-#include <cmath>
-#include <cstring>
-#include <limits>
-
-#include <algorithm>
-#include <cassert>
-#include <set>
-#include <vector>
-
-#include <vtkCell.h>
-#include <vtkCellData.h>
-#include <vtkPoints.h>
-#include <vtkPointData.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkXMLUnstructuredGridReader.h>
-
-#include <cstddef>
-#include <blitz/array.h>
-
-#include <cstdlib>
-extern "C" {
-#include <sys/time.h>
-#include <unistd.h>
-}
+#include <cstdint>
 
 #endif

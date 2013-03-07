@@ -8,6 +8,9 @@
 #define MESH_HPP_
 
 #include <SmoothConfig.hpp>
+#include <string>
+#include <vector>
+#include <blitz/array.h>
 
 struct Quality {
     real mean;
@@ -97,78 +100,58 @@ real Mesh::element_quality( int vid, int it ) const {
 
 real Mesh::element_quality( uint32_t eid ) const{
 
-    uint32_t const eid_off = 3 * eid;
+    uint32_t const *n = &ENList[ 3*  eid ];
 
     // Pointers to the coordinates of each vertex
-    const real * __restrict__ c[ 3 ] = {
-        &coords[ 2 * ENList[ eid_off     ] ],
-        &coords[ 2 * ENList[ eid_off + 1 ] ],
-        &coords[ 2 * ENList[ eid_off + 2 ] ]
-    };
+    real const *c0 = &coords[ 2 * n[ 0 ] ];
+    real const *c1 = &coords[ 2 * n[ 1 ] ];
+    real const *c2 = &coords[ 2 * n[ 2 ] ];
 
-    // uint32_t const met_off[ 3 ] = {
-    //     3 * ENList[ eid_off     ],
-    //     3 * ENList[ eid_off + 1 ],
-    //     3 * ENList[ eid_off + 2 ]
-    // };
+    // Pointers to the metric tensor at each vertex
+    real const *m0 = &metric[ 3 * n[ 0 ] ];
+    real const *m1 = &metric[ 3 * n[ 1 ] ];
+    real const *m2 = &metric[ 3 * n[ 2 ] ];
 
-    // // Metric tensor averaged over the element
-    real m00;
-    real m01;
-    real m11;
-    // for ( int i = 0; i < 3; ++i ) {
-    //     m00 += metric( met_off[ i ]     );
-    //     m01 += metric( met_off[ i ] + 1 );
-    //     m11 += metric( met_off[ i ] + 2 );
-    // }
-
-    const real * __restrict__ m[ 3 ] = {
-        &metric[ 3 * ENList[ eid_off     ] ],
-        &metric[ 3 * ENList[ eid_off + 1 ] ],
-        &metric[ 3 * ENList[ eid_off + 2 ] ]
-    };
-
-    for ( int i = 0; i < 3; ++i ) {
-        m00 += m[ i ][ 0 ];
-        m01 += m[ i ][ 1 ];
-        m11 += m[ i ][ 2 ];
-    }
+    // Metric tensor averaged over the element
+    real m00 = ( m0[ 0 ] + m1[ 0 ] + m2[ 0 ] ) / 3;
+    real m01 = ( m0[ 1 ] + m1[ 1 ] + m2[ 1 ] ) / 3;
+    real m11 = ( m0[ 2 ] + m1[ 2 ] + m2[ 2 ] ) / 3;
 
     // l is the length of the perimeter, measured in metric space
-    real s1l1 = ( c[ 0 ][ 1 ] - c[ 1 ][ 1 ] );
-    real s2l1 = ( c[ 0 ][ 0 ] - c[ 1 ][ 0 ] );
-    real s1l2 = ( c[ 0 ][ 1 ] - c[ 2 ][ 1 ] );
-    real s2l2 = ( c[ 0 ][ 0 ] - c[ 2 ][ 0 ] );
-    real s1l3 = ( c[ 2 ][ 1 ] - c[ 1 ][ 1 ] );
-    real s2l3 = ( c[ 2 ][ 0 ] - c[ 1 ][ 0 ] );
+    real s1l1 = ( c0[ 1 ] - c1[ 1 ] );
+    real s2l1 = ( c0[ 0 ] - c1[ 0 ] );
+    real s1l2 = ( c0[ 1 ] - c2[ 1 ] );
+    real s2l2 = ( c0[ 0 ] - c2[ 0 ] );
+    real s1l3 = ( c2[ 1 ] - c1[ 1 ] );
+    real s2l3 = ( c2[ 0 ] - c1[ 0 ] );
 
-    real s2l3b = s2l3 * ( s1l3 * m01 + s2l3 * m00 );
-    real s2l2b = s2l2 * ( s1l2 * m01 + s2l2 * m00 );
-    real s2l1b = s2l1 * ( s1l1 * m01 + s2l1 * m00 );
-    real s1l3b = s1l3 * ( s1l3 * m11 + s2l3 * m01 );
-    real s1l2b = s1l2 * ( s1l2 * m11 + s2l2 * m01 );
-    real s1l1b = s1l1 * ( s1l1 * m11 + s2l1 * m01 );
-
-    real l1 = static_cast< real >( std::sqrt( ( s1l1b + s2l1b ) ) / 3 );
-    real l2 = static_cast< real >( std::sqrt( ( s1l2b + s2l2b ) ) / 3 );
-    real l3 = static_cast< real >( std::sqrt( ( s1l3b + s2l3b ) ) / 3 );
-
-    real l = l1 + l2 + l3;
+    real l =
+        std::sqrt(
+            s1l1 * ( s1l1 * m11 + s2l1 * m01 ) +
+            s2l1 * ( s1l1 * m01 + s2l1 * m00 )
+        ) +
+        std::sqrt(
+            s1l2 * ( s1l2 * m11 + s2l2 * m01 ) +
+            s2l2 * ( s1l2 * m01 + s2l2 * m00 )
+        ) +
+        std::sqrt(
+            s1l3 * ( s1l3 * m11 + s2l3 * m01 ) +
+            s2l3 * ( s1l3 * m01 + s2l3 * m00 )
+        );
 
     // Area in physical space
     real a = element_area( eid );
 
-    real f = static_cast< real >( std::min( l / 3, 3 / l ) );
-
     // Area in metric space
-    real a_m = a * static_cast< real >( std::sqrt( m00 * m11 - m01 * m01 ) );
+    real a_m = a * sqrt( m00 * m11 - m01 * m01 );
 
     // Function
-    real F = f * ( 2 - f );
+    real f = std::min( l / 3.0, 3.0 / l );
+    real F = f * ( 2.0 - f );
 
     // This is the 2D Lipnikov functional.
-    real constexpr sqrt3 = static_cast< real >( std::sqrt( 3 ) );
-    real quality = 12 * sqrt3 * a_m / ( l * l);
+    real constexpr cte = 12.0 * sqrt( 3.0 );
+    real quality = cte * a_m / ( l * l );
 
     return quality * F * F * F;
 }

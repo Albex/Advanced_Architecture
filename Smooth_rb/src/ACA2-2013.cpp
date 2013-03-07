@@ -5,8 +5,14 @@
 //============================================================================
 
 #include <Mesh.hpp>
+#include <cstdlib>
+extern "C" {
+#include <sys/time.h>
+#include <unistd.h>
+}
 
-double get_wtime(){
+static double
+get_wtime(){
     struct timeval tic;
 
     long seconds, useconds;

@@ -5,10 +5,20 @@
 //============================================================================
 
 #include <Mesh.hpp>
+#include <fstream>
+#include <set>
+#include <algorithm>
+
+#include <vtkCell.h>
+#include <vtkCellData.h>
+#include <vtkPoints.h>
+#include <vtkPointData.h>
+#include <vtkUnstructuredGrid.h>
+#include <vtkXMLUnstructuredGridReader.h>
 
 Mesh::Mesh( std::string const & filename){
   // Check whether the provided file exists.
-  ifstream ifile(filename);
+  std::ifstream ifile(filename);
   if(!ifile){
     std::cerr << "File " << filename << " does not exist." << std::endl;
     exit(EXIT_FAILURE);
@@ -189,14 +199,14 @@ Quality Mesh::get_mesh_quality() const{
   real mean_q = 0.0;
   real min_q = 1.0;
 
-  for(uint32_t i=0;i<NElements;++i){
-    real ele_q = element_quality(i);
+  for( uint32_t i = 0 ;i < NElements; ++i ){
+    real ele_q = element_quality( i );
 
     mean_q += ele_q;
-    min_q = std::min(min_q, ele_q);
+    min_q = std::min( min_q, ele_q );
   }
 
-  q.mean = mean_q/NElements;
+  q.mean = mean_q / NElements;
   q.min = min_q;
 
   return q;

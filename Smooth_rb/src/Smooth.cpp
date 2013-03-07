@@ -27,7 +27,12 @@ void Mesh::smooth( uint32_t niter ) {
             for( uint32_t it = 0; it < size; ++it ) {
                 buffer( it ) = element_quality( vid, it );
             }
-            real worst_q = blitz::min( buffer );
+            real worst_q = 1;
+            for( uint32_t it = 0; it < size; ++it ) {
+                if ( buffer( it ) < worst_q ) {
+                    worst_q = buffer( it );
+                }
+            }
 
             /* Find the barycentre (centre of mass) of the cavity. A cavity is
             * defined as the set containing vid and all its adjacent vertices and
@@ -125,7 +130,12 @@ void Mesh::smooth( uint32_t niter ) {
             for( uint32_t it = 0; it < size; ++it ) {
                 buffer( it ) = element_quality( vid, it );
             }
-            real new_worst_q = blitz::min( buffer );
+            real new_worst_q = 1;
+            for( uint32_t it = 0; it < size; ++it ) {
+                if ( buffer( it ) < new_worst_q ) {
+                    new_worst_q = buffer( it );
+                }
+            }
             /* If quality is worse than before, either because of element inversion
             * or just because relocating vid to the barycentre of the cavity does
             * not improve quality, revert the changes.
