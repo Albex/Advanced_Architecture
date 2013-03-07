@@ -4,7 +4,7 @@ INLINE static int
 get_colors( std::vector< uint32_t > const & graph_node )
 {
     uint32_t size = graph_node.size( );
-    int C = 0;
+    uint32_t C = 0;
     while ( true ) {
         uint32_t i;
         for ( i = 0; i < size; ++i ) {
