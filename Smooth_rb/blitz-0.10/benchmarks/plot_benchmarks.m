@@ -31,7 +31,7 @@ if nargin == 0,
 else
 	str=sprintf('blitz-0.10 benchmark on %s (%s)', hostname, computer);
 end
-str=sprintf('%s\nCXX=icpc CXXFLAGS=-ansi -O3 -Zp16 -ip -ansi_alias -DUSE_LIBBLAS', str);
+str=sprintf('%s\nCXX=icpc -O3 CXXFLAGS=-ansi -O3 -Zp16 -ip -ansi_alias -DUSE_LIBBLAS', str);
 str=sprintf('%s\nF77=ifort FFLAGS= -O3 -Zp16 -ip -pad -unroll -fno-alias -safe_cray_ptr', str);
 if length('ifort')
 	str=sprintf('%s\nFC=ifort FCFLAGS= -FR -O3 -Zp16 -ip -pad -unroll -fno-alias -safe_cray_ptr', str);

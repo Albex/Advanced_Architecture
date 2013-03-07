@@ -99,12 +99,13 @@ globals.lo: ../src/globals.cpp ../blitz/blitz.h ../blitz/bzconfig.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/c++/4.7.2/cmath \
+ /usr/include/bits/stdio.h /usr/include/c++/4.7.2/cmath \
  /opt/intel/composer_xe_2013.2.146/compiler/include/math.h /usr/include/math.h \
  /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
  /usr/include/bits/huge_vall.h /usr/include/bits/inf.h /usr/include/bits/nan.h \
  /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathinline.h \
  /opt/intel/composer_xe_2013.2.146/compiler/include/complex \
  /usr/include/c++/4.7.2/complex /usr/include/c++/4.7.2/cmath \
  /opt/intel/composer_xe_2013.2.146/compiler/include/math.h \
@@ -393,6 +394,8 @@ globals.lo: ../src/globals.cpp ../blitz/blitz.h ../blitz/bzconfig.h \
 
 /usr/include/bits/sys_errlist.h:
 
+/usr/include/bits/stdio.h:
+
 /usr/include/c++/4.7.2/cmath:
 
 /opt/intel/composer_xe_2013.2.146/compiler/include/math.h:
@@ -412,6 +415,8 @@ globals.lo: ../src/globals.cpp ../blitz/blitz.h ../blitz/bzconfig.h \
 /usr/include/bits/mathdef.h:
 
 /usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
 
 /opt/intel/composer_xe_2013.2.146/compiler/include/complex:
 

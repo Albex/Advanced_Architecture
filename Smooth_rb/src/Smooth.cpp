@@ -19,7 +19,7 @@ void Mesh::smooth( uint32_t niter ) noexcept {
                 if ( colors( vid ) != color ) continue;
 
                 // If this is a corner node, it cannot be moved.
-                if( isCornerNode( vid ) ) continue;
+                if ( isCornerNode( vid ) ) continue;
 
                 // Find the quality of the worst element adjacent to vid
                 uint32_t const size = NEList[ vid ].size( );
@@ -93,7 +93,7 @@ void Mesh::smooth( uint32_t niter ) noexcept {
                     }
                 }
                 for( uint32_t it = block_size_2; it < size_nnlist; ++it ) {
-                    size_t   const il         = NNList[ vid ][ it ];
+                    size_t   const il    = NNList[ vid ][ it ];
                     uint32_t const m_off = 3 * il;
 
                     // Find the metric in the middle of the edge.

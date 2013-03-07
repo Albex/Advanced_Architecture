@@ -269,13 +269,13 @@
 #define VERSION "0.10"
 
 /* CXX */
-#define _compiler_name "icpc"
+#define _compiler_name "icpc -O3"
 
 /* CXXFLAGS */
 #define _compiler_options "-ansi"
 
 /* date */
-#define _config_date "Tue Mar  5 20:44:50 GMT 2013"
+#define _config_date "Thu Mar  7 19:14:49 GMT 2013"
 
 /* uname -a */
 #define _os_name "Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux"

@@ -1,0 +1,94 @@
+uint32_t const il    = NNList[ vid ][ it + k ];
+uint32_t const m_off = 3 * il;
+
+// Find the metric in the middle of the edge.
+real ml00 = static_cast< real >( 0.5 ) * (
+    metric[ vid_offset     ] +
+    metric[ m_off     ]
+);
+real ml01 = static_cast< real >( 0.5 ) * (
+    metric[ vid_offset + 1 ] +
+    metric[ m_off + 1 ]
+);
+real ml11 = static_cast< real >( 0.5 ) * (
+    metric[ vid_offset + 2 ] +
+    metric[ m_off + 2 ]
+);
+
+real x = coords[ 2 * il     ] - x0;
+real y = coords[ 2 * il + 1 ] - y0;
+
+// Calculate and accumulate the contribution of
+// this vertex to the barycentre of the cavity.
+q( 0 ) += ( ml00 * x + ml01 * y );
+q( 1 ) += ( ml01 * x + ml11 * y );
+
+A( 0 ) += ml00;
+A( 1 ) += ml01;
+A( 3 ) += ml11;
+
+
+blitz::TinyVector< uint32_t, 4 > il;
+il( 0 ) = NNList[ vid ][ it     ];
+il( 1 ) = NNList[ vid ][ it + 1 ];
+il( 2 ) = NNList[ vid ][ it + 2 ];
+il( 3 ) = NNList[ vid ][ it + 3 ];
+
+blitz::TinyVector< uint32_t, 4 > m_off;
+m_off = 3 * il;
+
+blitz::TinyVector< real, 4 > ml00;
+ml00( 0 ) = metric[ vid_offset     ] + metric[ m_off( 0 ) ];
+ml00( 1 ) = metric[ vid_offset     ] + metric[ m_off( 1 ) ];
+ml00( 2 ) = metric[ vid_offset     ] + metric[ m_off( 2 ) ];
+ml00( 3 ) = metric[ vid_offset     ] + metric[ m_off( 3 ) ];
+
+blitz::TinyVector< real, 4 > ml01;
+m_off += 1;
+ml01( 0 ) = metric[ vid_offset + 1 ] + metric[ m_off( 0 ) ];
+ml01( 1 ) = metric[ vid_offset + 1 ] + metric[ m_off( 1 ) ];
+ml01( 2 ) = metric[ vid_offset + 1 ] + metric[ m_off( 2 ) ];
+ml01( 3 ) = metric[ vid_offset + 1 ] + metric[ m_off( 3 ) ];
+
+blitz::TinyVector< real, 4 > ml11;
+m_off += 1;
+ml11( 0 ) = metric[ vid_offset + 2 ] + metric[ m_off( 0 ) ];
+ml11( 1 ) = metric[ vid_offset + 2 ] + metric[ m_off( 1 ) ];
+ml11( 2 ) = metric[ vid_offset + 2 ] + metric[ m_off( 2 ) ];
+ml11( 3 ) = metric[ vid_offset + 2 ] + metric[ m_off( 3 ) ];
+
+ml00 *= 0.5;
+ml01 *= 0.5;
+ml11 *= 0.5;
+
+blitz::TinyVector< real, 4 > x;
+x( 0 ) = coords[ 2 * il( 0 )     ] - x0;
+x( 1 ) = coords[ 2 * il( 1 )     ] - x0;
+x( 2 ) = coords[ 2 * il( 2 )     ] - x0;
+x( 3 ) = coords[ 2 * il( 3 )     ] - x0;
+
+blitz::TinyVector< real, 4 > y;
+y( 0 ) = coords[ 2 * il( 0 ) + 1 ] - y0;
+y( 1 ) = coords[ 2 * il( 1 ) + 1 ] - y0;
+y( 2 ) = coords[ 2 * il( 2 ) + 1 ] - y0;
+y( 3 ) = coords[ 2 * il( 3 ) + 1 ] - y0;
+
+// Calculate and accumulate the contribution of
+// this vertex to the barycentre of the cavity.
+q( 0 ) +=
+( ml00( 0 ) * x( 0 ) + ml01( 0 ) * y( 0 ) ) +
+( ml00( 1 ) * x( 1 ) + ml01( 1 ) * y( 1 ) ) +
+( ml00( 2 ) * x( 2 ) + ml01( 2 ) * y( 2 ) ) +
+( ml00( 3 ) * x( 3 ) + ml01( 3 ) * y( 3 ) );
+q( 1 ) +=
+( ml01( 0 ) * x( 0 ) + ml11( 0 ) * y( 0 ) ) +
+( ml01( 1 ) * x( 1 ) + ml11( 1 ) * y( 1 ) ) +
+( ml01( 2 ) * x( 2 ) + ml11( 2 ) * y( 2 ) ) +
+( ml01( 3 ) * x( 3 ) + ml11( 3 ) * y( 3 ) );
+
+A( 0 ) +=
+ml00( 0 ) + ml00( 1 ) + ml00( 2 )  + ml00( 3 );
+A( 1 ) +=
+ml01( 0 ) + ml01( 1 ) + ml01( 2 )  + ml01( 3 );
+A( 3 ) +=
+ml11( 0 ) + ml11( 1 ) + ml11( 2 )  + ml11( 3 );

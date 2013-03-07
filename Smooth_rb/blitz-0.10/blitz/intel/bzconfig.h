@@ -410,7 +410,7 @@
 
 /* CXX */
 #ifndef BZ__compiler_name 
-#define BZ__compiler_name "icpc" 
+#define BZ__compiler_name "icpc -O3" 
 #endif
 
 /* CXXFLAGS */
@@ -420,7 +420,7 @@
 
 /* date */
 #ifndef BZ__config_date 
-#define BZ__config_date "Tue Mar  5 20:44:50 GMT 2013" 
+#define BZ__config_date "Thu Mar  7 19:14:49 GMT 2013" 
 #endif
 
 /* uname -a */

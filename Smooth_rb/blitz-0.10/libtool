@@ -272,7 +272,7 @@ hardcode_into_libs=yes
 sys_lib_search_path_spec="/usr/lib/gcc/x86_64-redhat-linux/4.7.2 /usr/lib64 /lib64 /opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 /opt/intel/composer_xe_2013.2.146/ipp/lib/intel64 /opt/intel/composer_xe_2013.2.146/mkl/lib/intel64 /opt/intel/composer_xe_2013.2.146/tbb/lib/intel64 "
 
 # Run-time system search path for libraries.
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib64/atlas /usr/include/blitz/ /usr/lib64/blitz/include/blitz/gnu/ /usr/local/cuda-5.0/lib/ /usr/local/cuda-5.0/lib64/ /opt/intel/composer_xe_2013.2.146/compiler/lib/ia32 /opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 /usr/lib64/llvm /usr/lib64/mpich2/lib/ /usr/lib64/mpich2/lib/ /usr/lib64/mysql /usr/lib/nvidia /usr/lib64/nvidia /usr/lib64/octave/3.6.3 /usr/lib64/qt-3.3/lib /usr/lib64/tcl8.5 /usr/lib64/tracker-0.14 /usr/lib64/xulrunner "
+sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib64/atlas /usr/include/blitz/ /usr/lib64/blitz/ /usr/lib64/blitz/include/ /usr/lib64/blitz/include/blitz/gnu/ /usr/local/cuda-5.0/lib/ /usr/local/cuda-5.0/lib64/ /opt/intel/composer_xe_2013.2.146/compiler/lib/ia32 /opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 /usr/lib64/llvm /usr/lib64/mpich2/lib/ /usr/lib64/mpich2/lib/ /usr/lib64/mysql /usr/lib/nvidia /usr/lib64/nvidia /usr/lib64/octave/3.6.3 /usr/lib64/qt-3.3/lib /usr/lib64/tcl8.5 /usr/lib64/tracker-0.14 /usr/lib64/xulrunner "
 
 # Whether dlopen is supported.
 dlopen_support=unknown
@@ -10091,7 +10091,7 @@ reload_cmds="\$LD\$reload_flag -o \$output\$reload_objs"
 old_archive_cmds="\$AR \$AR_FLAGS \$oldlib\$oldobjs~\$RANLIB \$oldlib"
 
 # A language specific compiler.
-CC="icpc"
+CC="icpc -O3"
 
 # Is the compiler the GNU compiler?
 with_gcc=yes
@@ -10220,7 +10220,7 @@ compiler_lib_search_dirs=""
 
 # Dependencies to place before and after the objects being linked to
 # create a shared library.
-predep_objects="-mIPOPT_obj_output_file_name=/tmp/ipo_icpchBcGrR.o -mGLOB_obj_output_file=/tmp/ipo_icpchBcGrR.o"
+predep_objects="-mIPOPT_obj_output_file_name=/tmp/ipo_icpcDYFSJ7.o -mGLOB_obj_output_file=/tmp/ipo_icpcDYFSJ7.o"
 postdep_objects="/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.7.2/crtbeginS.o /usr/lib/gcc/x86_64-redhat-linux/4.7.2/crtendS.o /usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64/crtn.o"
 predeps=""
 postdeps="-L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/mkl/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/tbb/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/mkl/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/tbb/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/ -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/ipp/../compiler/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/ipp/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/mkl/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/tbb/lib/intel64/ -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib -limf -lsvml -lirng -lm -lipgo -ldecimal -lcilkrts -lstdc++ -lgcc -lgcc_s -lintlc -lsvml -lc -lgcc -lgcc_s -lirc_s -ldl -lc"
@@ -10532,7 +10532,7 @@ compiler_lib_search_dirs=""
 
 # Dependencies to place before and after the objects being linked to
 # create a shared library.
-predep_objects="-mIPOPT_obj_output_file_name=/tmp/ipo_ifortT0y9qA.o -mGLOB_obj_output_file=/tmp/ipo_ifortT0y9qA.o"
+predep_objects="-mIPOPT_obj_output_file_name=/tmp/ipo_ifortHPjPVk.o -mGLOB_obj_output_file=/tmp/ipo_ifortHPjPVk.o"
 postdep_objects="/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.7.2/crtbeginS.o /usr/lib/gcc/x86_64-redhat-linux/4.7.2/crtendS.o /usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64/crtn.o"
 predeps=""
 postdeps="-L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/mkl/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/tbb/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/ipp/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/mkl/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/tbb/lib/intel64 -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64 -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/ -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/ipp/../compiler/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/ipp/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/mkl/lib/intel64/ -L/opt/intel/composer_xe_2013.2.146/tbb/lib/intel64/ -L/usr/lib/gcc/x86_64-redhat-linux/4.7.2/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib -lifport -lifcore -limf -lsvml -lm -lipgo -lintlc -lpthread -lsvml -lc -lgcc -lgcc_s -lirc_s -ldl -lc"

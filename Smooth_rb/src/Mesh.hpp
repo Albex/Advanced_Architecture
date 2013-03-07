@@ -49,15 +49,6 @@ private:
     // Element eid is comprised of the vertices
     // ENList[3*eid], ENList[3*eid+1] and ENList[3*eid+2].
     blitz::Array< uint32_t, 1 > ENList;
-
-    // Vertex vid has coordinates x=coords[2*vid] and y=coords[2*vid+1].
-    std::vector< real > coords;
-
-    // The metric tensor at vertex vid is M_00 = metric[3*vid],
-    //                                    M_01 = M_10 = metric[3*vid+1] and
-    //                                    M_11 = metric[3*vid+2].
-    std::vector< real > metric;
-
     /* If vid is on the surface, the normal vector
     * (normals[2*vid],normals[2*vid+1] =
     *                            = (0.0,1.0) if vid is on the top surface
@@ -67,6 +58,15 @@ private:
     * For all other vertices, the normal vector is (0.0,0.0).
     */
     blitz::Array< real, 1 > normals;
+
+
+    // Vertex vid has coordinates x=coords[2*vid] and y=coords[2*vid+1].
+    std::vector< real > coords;
+
+    // The metric tensor at vertex vid is M_00 = metric[3*vid],
+    //                                    M_01 = M_10 = metric[3*vid+1] and
+    //                                    M_11 = metric[3*vid+2].
+    std::vector< real > metric;
 
     // For every vertex i, NNList[i] contains the IDs of all adjacent vertices.
     std::vector< std::vector< uint32_t > > NNList;
