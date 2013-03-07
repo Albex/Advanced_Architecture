@@ -4,12 +4,80 @@
 		"selected_items":
 		[
 			[
-				"te",
-				"temp_sets"
+				"UN",
+				"UNROLL_2"
+			],
+			[
+				"q",
+				"quality"
+			],
+			[
+				"un",
+				"unroll_loop_quality"
+			],
+			[
+				"size",
+				"size"
+			],
+			[
+				"colo",
+				"color"
+			],
+			[
+				"met",
+				"met_off0"
+			],
+			[
+				"wor",
+				"worst_q"
+			],
+			[
+				"s",
+				"size"
+			],
+			[
+				"gra",
+				"graph_node"
 			],
 			[
 				"NN",
-				"NNodes"
+				"NNCount"
+			],
+			[
+				"G",
+				"Graph"
+			],
+			[
+				"Gra",
+				"Graph"
+			],
+			[
+				"Gr",
+				"GraphV"
+			],
+			[
+				"vi",
+				"vid_outer"
+			],
+			[
+				"vid",
+				"vid_outer"
+			],
+			[
+				"N",
+				"NElements"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"eid",
+				"eid_off"
+			],
+			[
+				"te",
+				"temp_sets"
 			],
 			[
 				"re",
@@ -18,10 +86,6 @@
 			[
 				"t",
 				"temp_sets"
-			],
-			[
-				"size",
-				"size_t"
 			],
 			[
 				"m_",
@@ -436,10 +500,6 @@
 				"file_path"
 			],
 			[
-				"un",
-				"uint8_t"
-			],
-			[
 				"m_blo",
 				"m_block_height"
 			],
@@ -454,71 +514,99 @@
 			[
 				"pixe",
 				"pixelBlock"
-			],
-			[
-				"m_data",
-				"m_data_1D"
-			],
-			[
-				"hw",
-				"hwloc-1"
-			],
-			[
-				"det",
-				"dest"
-			],
-			[
-				"ru",
-				"ru_majflt"
-			],
-			[
-				"m_r",
-				"m_rusage_start"
-			],
-			[
-				"m_ma",
-				"m_minor_page_faults"
-			],
-			[
-				"be",
-				"bench"
-			],
-			[
-				"m_sta",
-				"m_core_start"
-			],
-			[
-				"m_core",
-				"m_core_end"
-			],
-			[
-				"m_ep",
-				"m_eplased_time"
-			],
-			[
-				"print",
-				"printCycleCounter"
-			],
-			[
-				"b",
-				"beginend	$1.begin(), $1.end()"
-			],
-			[
-				"sch",
-				"sched_priority"
-			],
-			[
-				"sys",
-				"syscall"
-			],
-			[
-				"def",
-				"defined"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 3026,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Mesh.hpp",
+			"settings":
+			{
+				"buffer_size": 6047,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Mesh.cpp",
+			"settings":
+			{
+				"buffer_size": 7295,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/SVD2x2.hpp",
+			"settings":
+			{
+				"buffer_size": 710,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Smooth.cpp",
+			"settings":
+			{
+				"buffer_size": 9188,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/colorGraph.cpp",
+			"settings":
+			{
+				"buffer_size": 704,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/colorGraph.hpp",
+			"settings":
+			{
+				"buffer_size": 259,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ACA2-2013.cpp",
+			"settings":
+			{
+				"buffer_size": 1463,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SmoothConfig.hpp.in",
+			"settings":
+			{
+				"buffer_size": 1306,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CMake/Compiler/Compiler.cmake",
+			"settings":
+			{
+				"buffer_size": 3200,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CMake/libs/blitz.cmake",
+			"settings":
+			{
+				"buffer_size": 3928,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/User/install_script.sublime-build",
 	"command_palette":
@@ -564,6 +652,11 @@
 	},
 	"file_history":
 	[
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/bin/usr/local/bin/coloring.txt",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.hpp",
+		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/CMakeLists.txt",
+		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/SmoothConfig.hpp.in",
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/CMakeLists.txt",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/CMakeLists.txt",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/CMake/libs/blitz.cmake",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/CMake/Compiler/Compiler.cmake",
@@ -571,7 +664,6 @@
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.cpp",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Mesh.hpp",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.cpp",
-		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/Smooth.hpp",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/src/SVD2x2.hpp",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_1/Mesh.hpp",
 		"/home/romain/Dropbox/Imperial College/Architecture/Advanced_Architecture/Smooth_rb/install.sh",
@@ -622,7 +714,6 @@
 		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res6_100_omp.data",
 		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/hybrid_omp_mpi_8.data",
 		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/hybrid_omp_mpi_7.data",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/CMakeLists.txt",
 		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res8_100_omp.data",
 		"/home/romain/Dropbox/Imperial College/Parallel-Algorithm/doc/data/res8_100.data",
 		"/home/romain/Dropbox/rust/llvm/x86_64-unknown-linux-gnu/lib/CodeGen/AsmPrinter/Release+Asserts/AsmPrinter.d",
@@ -688,10 +779,7 @@
 		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/License.txt",
 		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/README.md",
 		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/install.sh",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/CMake/Compiler/Compiler.cmake",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.cpp",
-		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/part1/mainwindow.hpp",
-		"/home/romain/Downloads/Z9jBLggC.html.part"
+		"/home/romain/Dropbox/Imperial College/Advanced-Graphics/CMake/Compiler/Compiler.cmake"
 	],
 	"find":
 	{
@@ -709,6 +797,76 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"element_area",
+			"isSurfaceNode",
+			"x0",
+			"colors",
+			"met_offset",
+			"it",
+			"push_bac",
+			"metric",
+			"normals",
+			"metric",
+			"colors",
+			"Blitz_INCLUDE_DIR",
+			"FindPackageHandleStandardArgs",
+			"find_package_handle_standard_args",
+			"resol",
+			"metric",
+			"ENList",
+			"c[ 2 ]",
+			"c[ 1 ]",
+			"c[ 0 ]",
+			"double",
+			"const double",
+			"const uint32_t",
+			"c[ 2 ]",
+			"c[ 1 ]",
+			"c[ 0 ]",
+			"mpi",
+			"c[ 2 ]",
+			"c[ 1 ]",
+			"c[ 0 ]",
+			"ENList",
+			"colorN",
+			"MaxDegreeInNN",
+			"FindSuitableY",
+			"NNCount",
+			"UpdateNN",
+			"MaxDegreeInNN",
+			"UpdateNN",
+			"scannedInit",
+			"MAX",
+			"k",
+			"killed",
+			"Killed",
+			"killed",
+			"v ector",
+			"vector< ",
+			"removable",
+			"uint32_t",
+			"int",
+			"NEList",
+			"NNList",
+			"NEList",
+			"coords[",
+			"metric[",
+			"metric",
+			"mesh",
+			"mesj",
+			"coords",
+			";",
+			"mesh.",
+			"metric",
+			"normals",
+			"element_area",
+			"double",
+			"CXX",
+			"CXX_COM",
+			"iostr",
+			"const int",
+			"&",
+			"m0",
 			"size_t",
 			"iscor",
 			"isCornerNode",
@@ -766,77 +924,7 @@
 			"m_rng.rand",
 			"xo",
 			"rng( ",
-			"rng.rand( ",
-			"rnd::Uniform< float > ",
-			"xorS",
-			"xorsj",
-			" = chr::start_time",
-			"SA_RAND_PAR",
-			"RAND_PAR",
-			" = chr::start_time",
-			"SA_INLINE ",
-			"m_s",
-			"m_m_rng",
-			"rng",
-			"m_m_ks",
-			"ks",
-			"m_m_kd",
-			"kd",
-			"nb_m_samples",
-			"samples",
-			"double",
-			"LAST_ERROR",
-			"Finalise",
-			"new",
-			"== 0",
-			"MPI",
-			"real",
-			"func",
-			"P_SIZE",
-			"wblock_index_stop",
-			"wblock_index_start",
-			"cou",
-			"fille",
-			"get",
-			"::num",
-			"::min",
-			"cout",
-			"sam",
-			"cou",
-			";\n",
-			"cou",
-			"cout",
-			"wblock_index_stop",
-			"width_start",
-			"cout",
-			"circleF",
-			"}\n",
-			"sampleEM",
-			"64",
-			"wblock_index_start",
-			"circleFi",
-			"width",
-			"width_start",
-			"reflec",
-			"circle",
-			"15",
-			"cout",
-			"cou",
-			"vect",
-			"/ 3",
-			"part2",
-			"part1",
-			"Time (s)",
-			"temp.data",
-			"argv",
-			"pi",
-			"section",
-			"chapter",
-			"seconds",
-			"we",
-			"Ko",
-			"cache",
-			"cache size"
+			"rng.rand( "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -844,6 +932,27 @@
 		"regex": false,
 		"replace_history":
 		[
+			"m_off",
+			"c2",
+			"c1",
+			"c0",
+			"real",
+			"real const",
+			"uint32_t const",
+			"c2",
+			"c1",
+			"c0",
+			"c2",
+			"c1",
+			"c0",
+			" std::vector",
+			" vector",
+			"std::vector< ",
+			"int",
+			"uint32_t",
+			"",
+			"real",
+			"uint32_t const",
 			"uint32_t",
 			"__restrict__",
 			"mesh.",
@@ -950,28 +1059,7 @@
 			"rename",
 			"PURE",
 			"INLINE",
-			"",
-			"cpu::info::__cpuid",
-			"(",
-			"",
-			"cpu::",
-			"",
-			"cpu::info::feature",
-			"",
-			"cpu::info",
-			"GNU_CXX_COMPILER",
-			"INTEL_CXX_COMPILER",
-			"INTEL_C_COMPILER",
-			"GNU_C_COMPILER",
-			"CXX_COMPILER",
-			"C_COMPILER",
-			"CPUTOOLS",
-			"m_timer_end",
-			"m_timer_start",
-			"policy",
-			"bitmask::get( )",
-			"bitmask::free( );",
-			"this->"
+			""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -982,8 +1070,324 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "CMakeLists.txt",
+					"settings":
+					{
+						"buffer_size": 3026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								998,
+								998
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CMake/CMake.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Mesh.hpp",
+					"settings":
+					{
+						"buffer_size": 6047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4797,
+								4809
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								80
+							],
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1820.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Mesh.cpp",
+					"settings":
+					{
+						"buffer_size": 7295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2220,
+								2220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/SVD2x2.hpp",
+					"settings":
+					{
+						"buffer_size": 710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Smooth.cpp",
+					"settings":
+					{
+						"buffer_size": 9188,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								562,
+								562
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								80
+							],
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 765.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/colorGraph.cpp",
+					"settings":
+					{
+						"buffer_size": 704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								702,
+								702
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								80
+							],
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/colorGraph.hpp",
+					"settings":
+					{
+						"buffer_size": 259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/ACA2-2013.cpp",
+					"settings":
+					{
+						"buffer_size": 1463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								724,
+								724
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "SmoothConfig.hpp.in",
+					"settings":
+					{
+						"buffer_size": 1306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1298,
+								1298
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "CMake/Compiler/Compiler.cmake",
+					"settings":
+					{
+						"buffer_size": 3200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1726,
+								1726
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CMake/CMake.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 158.0,
+						"translation.y": 297.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "CMake/libs/blitz.cmake",
+					"settings":
+					{
+						"buffer_size": 3928,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3027,
+								3027
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CMake/CMake.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1047,6 +1451,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 134.0,
+	"side_bar_width": 342.0,
 	"status_bar_visible": true
 }

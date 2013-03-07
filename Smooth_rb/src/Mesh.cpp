@@ -64,11 +64,11 @@ Mesh::Mesh( std::string const & filename) noexcept {
     }
   }
 
-  reader->Delete();
+  reader->Delete( );
 
-  create_adjacency();
-  find_surface();
-  set_orientation();
+  create_adjacency( );
+  find_surface( );
+  set_orientation( );
   colors.resize( NEList.size( ) );
   Coloring( NEList, colors );
   max_color = blitz::max( colors );
