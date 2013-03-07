@@ -40,18 +40,16 @@ endif()
 
 target_link_libraries(smooth ${MPI_LIBRARIES})
 
+set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/homes/rb812/blitz" )
 # Require BLITZ
 include("${CMAKE_SOURCE_DIR}/CMake/libs/blitz.cmake")
 
 # Require VTK
+set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/usr/lib64/vtk" )
 FIND_PACKAGE(VTK)
 IF(VTK_FOUND)
   message("VTK FOUND")
 	INCLUDE(${VTK_USE_FILE})
-ELSE(VTK_FOUND)
-	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}"
-    "-L/usr/lib64/vtk -L/usr/local/lib/vtk-5.10 -lvtkIO -lvtkFiltering -lvtkCommon -lvtkzlib -lvtkexpat -lvtksys -ldl"
-  )
 ENDIF(VTK_FOUND)
 
 TARGET_LINK_LIBRARIES(
