@@ -46,7 +46,7 @@ include("${CMAKE_SOURCE_DIR}/CMake/libs/blitz.cmake")
 IF(FOUND_BLITZ)
   message("Found Blitz++")
   message(STATUS ${BLITZ_INCLUDE_DIR})
-  include_directories(BLITZ_INCLUDE_DIR)
+  include_directories(${BLITZ_INCLUDE_DIR})
 ENDIF(FOUND_BLITZ)
 
 # Require VTK
