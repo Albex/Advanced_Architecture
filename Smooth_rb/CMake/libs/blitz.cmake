@@ -102,8 +102,8 @@ int main() { blitz::sizeType s; blitz::diffType d; }" HAVE_BLITZ_SPECIAL_TYPES)
 
 else(Blitz_FOUND)
 
-  set(Blitz_INCLUDE_DIR ${Blitz_INCLUDE_DIR} " /homes/rb812/blitz/include")
-  set(Blitz_LIBRARY ${Blitz_LIBRARY} " /homes/rb812/blitz/lib")
+  set(Blitz_INCLUDE_DIR " /homes/rb812/blitz/include")
+  set(Blitz_LIBRARY " /homes/rb812/blitz/lib")
 
   set(Blitz_RESOLVED_LIBRARY "")
   resolve_library(${Blitz_LIBRARIES} "${Blitz_LIBRARY_DIRS}" Blitz_RESOLVED_LIBRARY)
