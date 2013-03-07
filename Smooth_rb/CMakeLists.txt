@@ -43,10 +43,11 @@ target_link_libraries(smooth ${MPI_LIBRARIES})
 set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/homes/rb812/blitz" )
 # Require BLITZ
 include("${CMAKE_SOURCE_DIR}/CMake/libs/blitz.cmake")
-IF(Blitz_FOUND)
-  message(STATUS ${Blitz_INCLUDE_DIR})
-  include_directories(Blitz_INCLUDE_DIR)
-ENDIF(Blitz_FOUND)
+IF(FOUND_BLITZ)
+  message("Found Blitz++")
+  message(STATUS ${BLITZ_INCLUDE_DIR})
+  include_directories(BLITZ_INCLUDE_DIR)
+ENDIF(FOUND_BLITZ)
 
 # Require VTK
 set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/usr/lib64/vtk" )
