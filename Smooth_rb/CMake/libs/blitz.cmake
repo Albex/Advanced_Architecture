@@ -75,7 +75,7 @@ else(PKG_CONFIG_blitz_VERSION)
   # handle the QUIETLY and REQUIRED arguments and set Blitz_FOUND to TRUE if
   # all listed variables are TRUE
   include(FindPackageHandleStandardArgs)
-  set(Blitz_FIND_REQUIRED ON)
+  set(Blitz_FIND_REQUIRED OFF)
   find_package_handle_standard_args(Blitz DEFAULT_MSG Blitz_LIBRARY Blitz_INCLUDE_DIR)
 
   set(Blitz_RESOLVED_LIBRARY ${Blitz_LIBRARY} CACHE INTERNAL "Resolved Blitz library")
