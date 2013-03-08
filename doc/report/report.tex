@@ -58,7 +58,7 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\Abstract{Coding is a question of how to compute things, but also how to compute them the fastest. These are often two questions that can't be resolved at once. First, coding a program that gives the expected result, is the first obstacle to face. But it is not the biggest. Once this is done, optimizing the written code might take a lot of time, depending on if the hardware on which it is running, is taken into account. Here, given a correct program, the aim was to optimize it, given a chosen architecture. This consisted in understanding the code, then optimizing it sequentially and finally trying to improve it by parallelizing over the CPU or GPU.}
+\Abstract{Coding is a question of how to compute things, but also how to compute them the fastest. These are often two questions that can't be resolved at once. Although coding a program that gives the expected result is an obstacle, another problem arises when performance is to be maximized. Once this is done, optimizing the written code might take a lot of time, depending on whether the hardware on which it is running, is taken into account. Here, given a correct program, the aim was to optimize it, given a chosen architecture. This consisted of understanding the code, then optimizing it sequentially and finally trying to improve it by parallelizing through vectorization or offloading the calculation to an accelerator (GPU).}
 
 
 
@@ -95,9 +95,9 @@ breaklines=true}
 \subsection{Context and Objectives}
 \paragraph{}
 Simulation in computer science is usually computationally intensive. Although an algorithm can be theoretically efficient\footnote{With a low complexity.}, a naive implementation, without any hardware consideration reveal to be slower than expected.
-\paragraph{}
+
 This paper start with a basic implementation of a curve smoothing algorithm where the curve -- a mesh -- is represented by a graph. This paper present a various methods to reduce the computation time of the smoothing algorithm on a specific machine, according to the hardware specification. The list of optimizations presented is non exhaustive, however the considered approach reduced the computation time by approximately 1300\% on the given architecture.
-\paragraph{}
+
 The method used to achieved this speed-up is the following:
 \begin{itemize}  \vspace{-4mm}
 \item first optimize on one CPU core, \vspace{-4mm}
@@ -106,29 +106,28 @@ The method used to achieved this speed-up is the following:
 \end{itemize}
 
 \subsection{Software Considerations}
-\paragraph{}
 The hardware considered is one of the Imperial College computing laboratory. All these computer are equipped with an Intel CPU, thus the best performances were obtained using the Intel Compiler\footnote{The speed-up gained by switching from g++ (GNU) to icpc (Intel) is presented section \ref{}.}. However the Imperial College computer do not have the latest version of the Intel Compiler installed on, providing some optimizations and and the use of the new C++ standard (C++11). To obtained the maximum throughput additional library, not installed on Imperial College computer, such as blitz++, were used. A solution to have the best of the latest compiler version, library flexibility and the performances of the Imperial College computers is to cross-compile the code.
-\paragraph{}
+
 Cross-compiling is the action of creating executable code for a platform other than the one on which the compiler is running. This is challenging because the compiler usually tune the code to be as fast as possible on the machine where the code is compiled lowering the performances on the target machine. Additionally, extra care must be payed to the portability of the code.
+
+The code was compiled on a Linux-Fedora 18 64bits station and is to run on a Linux-Ubuntu 12.04 64bits station.
 
 
 \FloatBarrier
 \subsection{Hardware Considerations}
 
-The machine used for this coursework runs a Fedora 18 distribution. This is the exact information:
+Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware characteristics of the compiling machine and the running machine. The compiling machine is much slower than the running machine but is able to generate code optimized for the running machine.
 
 \begin{table}[!h]
 	\centering
 
 	\begin{tabular}{|p{3.5cm}|p{4cm}|}
 		\hline
-		Model Name & Intel Core i7 CPU Q720 \\
+		Model Name & Intel Core i7-QM720 \\
 		\hline
-		Clock Speed & 1.597 GHz \\
+		Clock Speed & 1.6 GHz \\
 		\hline
 		Max Turbo Frequency & 2.8 GHz \\
-		\hline
-		Cache size & 6144 KB \\
 		\hline
 		Cache line size and alignment & 64 B \\
 		\hline
@@ -146,31 +145,39 @@ The machine used for this coursework runs a Fedora 18 distribution. This is the 
 		\hline
 	\end{tabular}
 
-	\caption{CPU Specifications}
-	\label{CPUspec}
+	\caption{CPU Specifications for the compiling station.}
+	\label{CPUspecC}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 
-	\begin{tabular}{|l|r|}
+	\begin{tabular}{|p{3.5cm}|p{4cm}|}
 		\hline
-		Model Name & nVidia GeForce GTX 260M \\
+		Model Name & Intel Core i7-2600 \\
 		\hline
-		Clock Speed & 1.375 GHz \\
+		Clock Speed & 3.4 GHz \\
 		\hline
-		Multiprocessors & 14 \\
+		Max Turbo Frequency & 3.8 GHz \\
 		\hline
-		Total CUDA cores & 112 \\
+		Cache line size and alignment & 64 B \\
 		\hline
-		Allocated Memory & 1 GB \\
+		CPU cores & 4 \\
 		\hline
-		Memory Frequency & 950 MHz \\
+		CPU Threads & 8 \\
+		\hline
+		Integrated GPU & No \\
+		\hline
+		Memory Channels & 2 \\
+		\hline
+		Max Memory Bandwith & 21 GB/s \\
+		\hline
+		Flags & fpu, sse, sse2, sse3, ssse3, sse4\_1, sse4\_2, avx \\
 		\hline
 	\end{tabular}
 
-	\caption{GPU Specifications}
-	\label{GPUspecs}
+	\caption{CPU Specifications for the running station.}
+	\label{CPUspecR}
 \end{table}
 
 \paragraph{}
@@ -179,15 +186,24 @@ To summarize, the figure \ref{topo} gives a quick overview of the hardware topol
 \begin{figure}[h]
 	\centering
 
-	\includegraphics[width=.48\textwidth]{topo.png}
+	\includegraphics[width=.48\textwidth]{run.pdf}
 
-	\caption{Topology}
+	\caption{Topology of the running station.}
+	\label{topo}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+
+	\includegraphics[width=.48\textwidth]{compile.pdf}
+
+	\caption{Topology of the compiling station.}
 	\label{topo}
 \end{figure}
 
 
 %----------------------------------------------------------------------------------------
-
+\FloatBarrier
 \section{The Sequential Issue}
 
 After running for the first time the program, it appears that the method \verb+mesh_quality()+ is the most called and so is the most expensive in computation time. Hence its code has been considered as a potential source of optimization.

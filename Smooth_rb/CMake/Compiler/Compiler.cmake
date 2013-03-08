@@ -34,7 +34,7 @@ IF(${CMAKE_CXX_COMPILER} MATCHES icpc)
     SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG" CACHE STRING
         ${CMAKE_FLAGS_HELP} FORCE)
 #-prof-use -profile-loops
-    SET(CMAKE_CXX_FLAGS_RELEASE "-farray-notation -Ofast -xavx -no-prec-div -vec-report=1 -opt-prefetch=2 -no-prec-sqrt -i-static -fno-alias -fno-exceptions -ipo -DNDEBUG" CACHE STRING
+    SET(CMAKE_CXX_FLAGS_RELEASE "-farray-notation -Ofast -xavx -no-prec-div -vec-report=1 -no-prec-sqrt -i-static -fno-alias -fno-exceptions -ipo -DNDEBUG" CACHE STRING
         ${CMAKE_FLAGS_HELP} FORCE)
     SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g"   CACHE STRING
         ${CMAKE_FLAGS_HELP} FORCE)
