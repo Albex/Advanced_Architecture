@@ -1,18 +1,17 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
-\contentsline {subsection}{\numberline {1.1}Hardware Considerations}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.1}Context and Objectives}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Software Considerations}{1}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Hardware Considerations}{2}{subsection.1.3}
+\contentsline {paragraph}{}{2}{paragraph*.3}
 \contentsline {section}{\numberline {2}The Sequential Issue}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Algorithm}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Code Style}{2}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Data's Representation}{2}{subsection.2.3}
-\contentsline {section}{\numberline {3}CPU Parallelization}{2}{section.3}
-\contentsline {subsection}{\numberline {3.1}Analysis}{2}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Optimization}{2}{subsection.3.2}
-\contentsline {section}{\numberline {4}GPU Acceleration}{2}{section.4}
-\contentsline {subsection}{\numberline {4.1}Analysis}{2}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Optimization}{2}{subsection.4.2}
-\contentsline {section}{\numberline {5}Results}{2}{section.5}
-\contentsline {subsection}{\numberline {5.1}Sequential Improvements}{2}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Parallelization Performance}{2}{subsection.5.2}
+\contentsline {section}{\numberline {3}CPU Parallelization}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Analysis}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Optimization}{3}{subsection.3.2}
+\contentsline {section}{\numberline {4}Results}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}Sequential Improvements}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Parallelization Performance}{3}{subsection.4.2}
 \contentsfinish 
