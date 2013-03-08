@@ -6,12 +6,12 @@
 \contentsline {paragraph}{}{2}{paragraph*.3}
 \contentsline {section}{\numberline {2}The Sequential Issue}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Algorithm}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Code Style}{2}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Data's Representation}{2}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.2}Code Style}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Data's Representation}{3}{subsection.2.3}
 \contentsline {section}{\numberline {3}CPU Parallelization}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Analysis}{3}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Optimization}{3}{subsection.3.2}
-\contentsline {section}{\numberline {4}Results}{3}{section.4}
-\contentsline {subsection}{\numberline {4.1}Sequential Improvements}{3}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Parallelization Performance}{3}{subsection.4.2}
+\contentsline {section}{\numberline {4}Results}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Sequential Improvements}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Parallelization Performance}{4}{subsection.4.2}
 \contentsfinish 
