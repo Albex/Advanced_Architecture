@@ -213,12 +213,17 @@ Figure \ref{topoR} and \ref{topoC} gives the hardware topology of the compile ma
 %----------------------------------------------------------------------------------------
 \FloatBarrier
 \section{The Sequential Issue}
-First the code was compiled with the g++ compiler optimised at level 3, and analyzed with Intel VTunes profiler to identify the bottlenecks. The initial speed for was $6.91$ the small size graph, $54.0$s for the medium and $510$s for the large one. It appears that the initial program spend about 80\% of its time in the function \verb+mesh_quality()+.
-
-
-After running for the first time the program, it appears that the method \verb+mesh_quality()+ is the most called and so is the most expensive in computation time. Hence its code has been considered as a potential source of optimization.
+First the code was compiled with the g++ compiler optimised at level 3, and analyzed with Intel VTunes profiler to identify the bottlenecks. The initial speed for was $6.91$ the small size graph, $54.0$s for the medium and $510$s for the large one. It appears that the initial program spend about 80\% of its time in the function \verb+mesh_quality()+. Hence its code has been considered as a potential source of optimization.
 
 Reading the code, some sequential issues were found. There are three kinds of problems: the algorithms chosen, the coding style and the data's representation.
+
+\subsection{Code Style}
+
+Few changes in the style of the code might help the compiler to optimise \verb+mesh_quality()+. First of all, the code has been rewritten in order to be more oriented object than before. Basically all the attributes of the \verb+Mesh+ class have been set to private and the \verb+smooth+ function is now a method of this class. This did not really increase the performance but improved the readability. Additionally increase the modularity of the code allows the compiler to do more optimizations as all the classes or function are not spread across multiple files. It might also help the compiler to improve its compiled code as it is used to read object oriented code. 
+
+Inline functions do often help the compiler to optimize the translated assembly language. That is why functions like \verb+isSurfaceNode()+ or \verb+isCornerNode()+ or \verb+element_quality()+ or \verb+svd_solve_2x2()+.
+
+In loops changes have been made to avoid recomputation of the invariant (e.g. calling \verb+.size()+ in a loop). Instead, this invariant is now stored in a local variable.
 
 \subsection{Algorithm}
 
@@ -241,16 +246,6 @@ x_2 &= \dfrac{(a_{1,1} \times b_2) - (a_{2,1} \times b_1)}{(a_{1,1} \times a_{2,
 \end{theorem}
 
 The use of the method \verb+pow()+ seems a little too heavy in the method \verb+element_quality()+. As the number of multiplication is known, the use of simple multiplications is more efficient here, e.g. \verb+x*x*x+.
-
-\subsection{Code Style}
-
-Few changes in the style of the code might help the compiler. Some of these changes have been done to speed up the program.
-
-First of all, the code has been slightly rewritten in order to be more oriented object than before. Basically all the attributes of the \verb+Mesh+ class have been set to private and the \verb+smooth+ function is now a method of this class. This did not really increase the performance. But this was for a better readability. It might also help the compiler to improve its compiled code as it is used to read object oriented code. 
-
-Inline functions do often help the compiler to optimize the translated assembly language. That is why functions like \verb+isSurfaceNode()+ or \verb+isCornerNode()+ or \verb+element_quality()+ or \verb+svd_solve_2x2()+.
-
-In loops changes have been made to avoid recomputation of the invariant (e.g. calling \verb+.size()+ in a loop). Instead, this invariant is now stored in a local variable.
 
 \subsection{Data's Representation}
 
