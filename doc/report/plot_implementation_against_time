@@ -1,0 +1,5 @@
+set style fill solid;
+set boxwidth 0.5;
+plot "implementation_against_time" using 1:3:xtic(2) title "small.vtu" with boxes, \
+"implementation_against_time" using 1:4:xtic(2) title "medium.vtu" with boxes, \
+"implementation_against_time" using 1:5:xtic(2) title "large.vtu" with boxes
