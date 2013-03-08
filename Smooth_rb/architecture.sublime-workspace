@@ -603,7 +603,7 @@
 			"file": "CMake/Compiler/Compiler.cmake",
 			"settings":
 			{
-				"buffer_size": 3246,
+				"buffer_size": 3220,
 				"line_ending": "Unix"
 			}
 		},
@@ -1078,7 +1078,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -1104,7 +1104,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 561.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1121,8 +1121,8 @@
 						"selection":
 						[
 							[
-								3901,
-								3901
+								4809,
+								4809
 							]
 						],
 						"settings":
@@ -1136,7 +1136,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1385.0,
+						"translation.y": 1637.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1192,7 +1192,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 252.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1236,8 +1236,8 @@
 						"selection":
 						[
 							[
-								8192,
-								8192
+								5775,
+								5775
 							]
 						],
 						"settings":
@@ -1251,7 +1251,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1923.0,
+						"translation.y": 1419.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1373,15 +1373,15 @@
 					"file": "CMake/Compiler/Compiler.cmake",
 					"settings":
 					{
-						"buffer_size": 3246,
+						"buffer_size": 3220,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1729,
-								1729
+								1832,
+								1832
 							]
 						],
 						"settings":
@@ -1391,7 +1391,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 194.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1419,7 +1419,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 12.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1499,6 +1499,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 342.0,
+	"side_bar_width": 50.0,
 	"status_bar_visible": true
 }

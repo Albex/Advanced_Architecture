@@ -1,5 +1,9 @@
 \documentclass[fleqn,11pt]{SelfArx} % Document font size and equations flushed left
 
+\usepackage{etex}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
 \setlength{\columnsep}{0.55cm} % Distance between the two columns of text
 \setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
 
@@ -10,9 +14,9 @@
 \setlength\tocsep{1.5pc} % Sets the indentation of the sections in the table of contents
 \setcounter{tocdepth}{3} % Show only three levels in the table of contents section: sections, subsections and subsubsections
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \JournalInfo{\ } % Journal information
 \Archive{\ } % Additional notes (e.g. copyright, DOI, review/research article)
@@ -26,9 +30,9 @@
 \Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
 \newcommand{\keywordname}{} % Defines the keywords heading name
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 %	USEFULL TOOLS
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -61,20 +65,20 @@
 
 \usepackage{cite}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 %	ABSTRACT
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \Abstract{Coding is a question of how to compute things, but also how to compute them the fastest. These are often two questions that can't be resolved at once. Although coding a program that gives the expected result is an obstacle, another problem arises when performance is to be maximized. Once this is done, optimizing the written code might take a lot of time, depending on whether the hardware on which it is running, is taken into account. Here, given a correct program, the aim was to optimize it, given a chosen architecture. This consisted of understanding the code, then optimizing it sequentially and finally trying to improve it by parallelizing through vectorization or offloading the calculation to an accelerator (GPU).}
 
-% ---------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------------------------------
 
 \begin{document}
 
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 %	LISTINGS OPTIONS
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \lstset{
 basicstyle=\ttfamily,
@@ -85,7 +89,7 @@ stringstyle=\ttfamily\color{gray},
 breaklines=true,
 language=c++}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \flushbottom % Makes all text pages the same height
 
@@ -95,35 +99,33 @@ language=c++}
 
 \thispagestyle{empty} % Removes page numbering from the first page
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \section{Introduction}
 \subsection{Context and Objectives}
 
-Simulation in computer science is usually computationally intensive. Although an algorithm can be theoretically efficient\footnote{With a low complexity.}, a naive implementation, without any hardware consideration reveal to be slower than expected.
+Simulation in computer science is usually computationally intensive. Although an algorithm can be theoretically efficient\footnote{With a low complexity.}, an unoptimized implementation, without any hardware consideration reveals to be slower than expected.
 
-This paper start with a basic implementation of a curve smoothing algorithm where the curve -- a mesh -- is represented by a graph. This paper present a various methods to reduce the computation time of the smoothing algorithm on a specific machine, according to the hardware specification. The list of optimizations presented is non exhaustive, however the considered approach reduced the computation time by approximately 1300\% on the given architecture.
+This paper starts with a study of a basic implementation of a curve smoothing algorithm where the curve --- a mesh --- is represented by a graph. It presents various methods to reduce the computation time of the smoothing algorithm on a specific machine, according to the hardware specifications. The list of optimizations presented is non-exhaustive, however the considered approach reduced the computation time by approximately 1300\% on the given architecture.
 
-The method used to achieved this speed-up is the following:
+The method used to achieve this speed-up is the following:
 \begin{itemize}  \vspace{-4mm}
 \item first optimize on one CPU core, \vspace{-4mm}
 \item then parallelize over one node (here a single computer), \vspace{-4mm}
-\item eventually used hardware accelerator such as GPU.
+\item eventually use a hardware accelerator such as a GPU.
 \end{itemize}
 
 \subsection{Software Considerations}
 
-The hardware considered is one of the Imperial College computing laboratory. All these computer are equipped with an Intel CPU, thus the best performances were obtained using the Intel Compiler\footnote{The speed-up gained by switching from g++ (GNU) to icpc (Intel) is presented section \ref{}.}. However the Imperial College computer do not have the latest version of the Intel Compiler installed on, providing some optimizations and and the use of the new C++ standard (C++11). To obtained the maximum throughput additional library, not installed on Imperial College computer, such as blitz++, were used. A solution to have the best of the latest compiler version, library flexibility and the performances of the Imperial College computers is to cross-compile the code.
+The hardware considered is one of the Imperial College computing laboratory. All these computers are equipped with an Intel CPU, thus the best performance is obtained using the Intel Compiler\footnote{The speed-up gained by switching from g++ (GNU) to icpc (Intel) is presented in section \ref{}.}. However the Imperial College computers do not have the latest version of the Intel Compiler installed; providing some optimizations and the use of the new C++ standard (C++11). To obtain the maximum throughput an additional library not installed on Imperial College computers --- Blitz++ --- was used. In order to use the latest software available, the source code was compiled on a personal laptop which featured the latest Intel compiler version and the needed library. Then the executable was deployed on the target machine; this process being called Cross Compiling. To aid the cross compiling step the original makefile was generated through a CMake script.
 
-Cross-compiling is the action of creating executable code for a platform other than the one on which the compiler is running. This is challenging because the compiler usually tune the code to be as fast as possible on the machine where the code is compiled lowering the performances on the target machine. Additionally, extra care must be payed to the portability of the code.
-
-The code was compiled on a Linux-Fedora 18 64bits station and is to run on a Linux-Ubuntu 12.04 64bits station.
+Cross-compiling is challenging because the compiler usually tunes the code to be as fast as possible on the machine where the code is compiled, lowering the performance on the target machine. Extra care must be paid to the binary portability of the code. The code was compiled on a Linux-Fedora 18 64bits computer and is to run on a Linux-Ubuntu 12.04 64bits computer.
 
 
 \FloatBarrier
 \subsection{Hardware Considerations}
 
-Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware characteristics of the compiling machine and the running machine. The compiling machine is much slower than the running machine but is able to generate code optimized for the running machine.
+Tables \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware characteristics of the build machine and the target machine. The build machine is much slower than the target machine but is able to generate code optimized for the target machine.
 
 \begin{table}[!h]
 	\centering
@@ -189,12 +191,12 @@ Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware character
 
 \paragraph{}
 
-Figure \ref{topoR} and \ref{topoC} gives the hardware topology of the compile machine the run machine. Both used an intel i7 on one socket with almost the same topology; the only difference being the size of the L3 cache of 8M on the running machine compared to 6M on the compile machine. The other main advantage of the Imperial College computer over the laptop is presence of AVX instructions. Therefore all the optimizations to tune the code on the laptop should be efficient on the Imperial College computer, except that the laptop should generate an AVX code. As a result the code could not run on the laptop which has generated the code, but will be more efficient on the Imperial College computer.
+Figures \ref{topoR} and \ref{topoC} give the hardware topology of the build machine the target machine. Both use an Intel i7 placed on one socket with almost the same topology; the only difference being the size of the L3 cache which is 8M on the target machine compared to 6M on the build machine. The other main advantage of the Imperial College computer over the build architecture is the presence of AVX instructions. Therefore all the optimizations to tune the code on the laptop should be efficient on the Imperial College computer, except that the laptop should generate a binary including AVX instructions. As a result the binary could not run on the laptop which has generated the code, but it will be more efficient on the target machine.
 
 \begin{figure}
 	\centering
 
-	\includegraphics[width=.48\textwidth]{run.pdf}
+	\includegraphics[width=.48\textwidth]{picture/run.pdf}
 
 	\caption{Topology of the running station.}
 	\label{topoR}
@@ -203,31 +205,33 @@ Figure \ref{topoR} and \ref{topoC} gives the hardware topology of the compile ma
 \begin{figure}
 	\centering
 
-	\includegraphics[width=.48\textwidth]{compile.pdf}
+	\includegraphics[width=.48\textwidth]{picture/compile.pdf}
 
 	\caption{Topology of the compiling station.}
 	\label{topoC}
 \end{figure}
 
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 \FloatBarrier
 \section{The Sequential Issue}
-First the code was compiled with the g++ compiler optimised at level 3, and analyzed with Intel VTunes profiler to identify the bottlenecks. The initial speed for was $6.91$ the small size graph, $54.0$s for the medium and $510$s for the large one. It appears that the initial program spend about 80\% of its time in the function \verb+mesh_quality()+. Hence its code has been considered as a potential source of optimization.
+First the code was compiled with the g++ compiler, optimized at level 3, and analyzed with it Intel VTune Amplifier profiler to identify the bottlenecks. The initial run-time was $6.91$s for the small size graph, $54.0$s for the medium and $510$s for the large one. It appears that the initial program spent about 80\% of its time in the function \verb+mesh_quality()+. Hence that part of the code has been considered as a source of optimization.
 
-Reading the code, some sequential issues were found. There are three kinds of problems: the algorithms chosen, the coding style and the data's representation.
+A first approach to optimize the program was to change the compiler flags. The Intel profiler indicates that the program was spending a lot of time in computing square root and divisions. Thus a flag to reduced the precision of these operation was set.
 
-\subsection{Code Style}
+By reading the code, sequential issues were found. There are three kinds of problems: the source code structure, the algorithms chosen and the data representation.
 
-Few changes in the style of the code might help the compiler to optimise \verb+mesh_quality()+. First of all, the code has been rewritten in order to be more oriented object than before. Basically all the attributes of the \verb+Mesh+ class have been set to private and the \verb+smooth+ function is now a method of this class. This did not really increase the performance but improved the readability. Additionally increase the modularity of the code allows the compiler to do more optimizations as all the classes or function are not spread across multiple files. It might also help the compiler to improve its compiled code as it is used to read object oriented code. 
+\subsection{Source Code Structure}
 
-Inline functions do often help the compiler to optimize the translated assembly language. That is why functions like \verb+isSurfaceNode()+ or \verb+isCornerNode()+ or \verb+element_quality()+ or \verb+svd_solve_2x2()+.
+A few changes in the structure of the code helped the compiler to optimize \verb+mesh_quality()+. Firstly, the code has been rewritten in order to be more object-oriented. All the attributes of the \verb+Mesh+ class have been set to private and the \verb+smooth+ function is now a method of this class. This did not really increase the performance but improved readability and maintainability. Additionally increasing the modularity of the code allows the compiler to do more optimizations as long as all the classes or functions are not spread across multiple files. It might also help the compiler to improve its generated code as it expects to process object-oriented code. 
 
-In loops changes have been made to avoid recomputation of the invariant (e.g. calling \verb+.size()+ in a loop). Instead, this invariant is now stored in a local variable.
+Inline functions eliminate the overhead of function calls. Many small functions that frequently called in \verb+mesh_quality()+ and \verb+smooth()+ were good candidates for inlining. That is why functions as \verb+isSurfaceNode()+, \verb+isCornerNode()+, \verb+element_quality()+ or eventually \verb+svd_solve_2x2()+ were inlined.
+
+In loops, changes have been made to avoid recomputation of the invariant (e.g. calling \verb+.size()+ in a loop). Instead, this invariant is now stored in a local variable.
 
 \subsection{Algorithm}
 
-The method used to solve an equations' system was correct but two general to be efficient. The program needs only to solve systems of two equations in two unknowns. The Cramer's rule based on determinants is far more efficient. The Cramer's rule is as following:
+The method used to solve the system of equations was too general to be efficient since the program needs only to solve systems of two equations in two unknowns. The Cramer's rule based on determinants is far more efficient in this case. It is defined as following:
 
 \begin{theorem}
 \hrule \vspace*{1pt}
@@ -245,33 +249,31 @@ x_2 &= \dfrac{(a_{1,1} \times b_2) - (a_{2,1} \times b_1)}{(a_{1,1} \times a_{2,
 \hrule
 \end{theorem}
 
-The use of the method \verb+pow()+ seems a little too heavy in the method \verb+element_quality()+. As the number of multiplication is known, the use of simple multiplications is more efficient here, e.g. \verb+x*x*x+.
+The use of the function \verb+pow()+ proved to be too heavy in the method \verb+element_quality()+. Because the number of multiplications is known at compile time, the use of three multiplications is more efficient here, e.g. \verb+x*x*x+.
 
-\subsection{Data's Representation}
+\subsection{Data Representation}
 
-The data structure used is fine and one of the most efficient to represent a graph. However, the C++ structures used seem to be a little too big in this case. So instead of using vectors of sets, the program is now using vectors of vectors. This increases a little the global performance.
+The data structure used to represent graphs --- an adjacency list --- is fine and the most efficient for the considered smoothing algorithm. However, the C++ structures used seem to be a little too big in this case. The original program used a vector of set to represent the adjacency lists. The notion of a set to represent the edges facilitate the edition and construction of the graph. However the graph structure remains unchanged during processing, thus the set was replaced by a vector after construction. A vector is a simpler data structure which reduce element access time.
 
-Similarly, the number of node does not exceed $10^5$ which is less than the maximum integer represented thanks to the \verb+uint32_t+. This type is faster to manipulate than the classic \verb+int+ type. Hence \verb+uint32_t+ has been preferred.
+Similarly, the number of nodes does not exceed $10^6$ for the large graph which is less than the maximum integer value represented by \verb+uint32_t+ instead of a \verb+size_t+. \verb+uint32_t+ is lighter\footnote{4 bytes vs 8 bytes.} and faster to manipulate and was therefore preferred.
 
-In the \verb+element_quality()+ method, the call of an element in a matrix during its multiplication, is very expensive in memory access. So instead of calling the element at each step of the loop, it is better to use an intermediate variable that is assigned into the matrix element at the end.
+Finally the type of the vectors \verb+normals+ and \verb+ENList+ was changed: the {Blitz++ library}\footnote{\url{http://blitz.sourceforge.net/}} provides useful array representations with performance comparable to Fortran implementations. After testing it on the different vectors in the program, it appears that the type \verb+blitz::Array+ of this library was more efficient for the vectors that are linearly accessed. \verb+normals+ and \verb+ENList+ have this property\footnote{The results of the sequential optimization are presented \ref{}.}.
 
-Finally the vectors \verb+normals+ and \verb+ENList+ are not anymore vectors. The {Blitz library}\footnote{\url{http://blitz.sourceforge.net/}} provides useful arrays' types with a speed comparable to Fortran implementations. After testing it on the different vectors in the program, it appears that the type \verb+Array+ of this library was more efficient for vectors that are linearly accessed. \verb+normals+ and \verb+ENList+ have this property. So they are now implemented thanks to \verb+Array+ type.
-
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
 \section{CPU Parallelization}
 
 \subsection{Analysis}
 
-Parallelization can't be done easily. The program needs to be slightly modified in order to cut the graph in groups of independent nodes. Independent nodes are nodes that can be inspected at the same time while running the program. To group nodes in such groups the graph must be colored. Then each color represents nodes that can be inspected at the same time because they are not adjacent.
+After comprehensive experiments aimed at making the sequential code run as fast as possible the approach of parallelization was taken. For the given program three loops were candidates for parallelization. Usually the most outer loop is preferred but in this case dependencies inhibit the parallelization of this loop. Parallelizing a loop requires an important constant time to prepare the threads. The two most inner loops were therefore rejected because they are too small and called to many times to outweigh the burden of the parallel initialization. Eventually the middle loop iterating over nodes of the graph has been parallelized. However all the nodes cannot be inspected at the same time while running the program. To achieve that, the loop needs to be modified in order to cut the graph in groups of independent nodes. In order to group nodes in batches the graph must be colored. Then each color represents nodes that can be inspected at the same time because they are not adjacent.
 
-But the coloring algorithm might be very expensive in computation time. This depends on the number of colors used and if this number is specified or not. In this very case, the goal of such an algorithm is to minimize the colors used in order to maximize parallel computations. Hence a powerful algorithm is needed.
+Graph coloring is very expensive in terms of computation time. An implementation which strives to find the least amount of colors takes too much time, as the structure of the graph is unknown.
 
 \subsection{Optimization}
 
-A first try was realized with a very complex algorithm that colors a graph with minimum of colors needed. But the simple fact of coloring the graph was itself longer than the original program (hundreds of minutes). This confirmed that the graph is complex and parallelizing the program will surely reduce the run time.
+A first try was realized with a very complex algorithm that colors a graph with the minimum number of colors needed. The time cost of coloring the graph with this algorithm was higher than the original total execution time (hundreds of minutes) and is not constant (it depends on the number of nodes).
 
-So the coloring algorithm finally chosen was very basic. It just tries to color the graph without minimizing the number of colors used. It succeeds in coloring the graphs with 4 or 5 colors. Algorithms \ref{coloring} and \ref{getcolors} are its implementation in pseudocode.
+The coloring algorithm finally chosen was very basic. This greedy implementation tries to color the graph without necessarily minimizing the number of colors. It succeeds in coloring the graphs with 4 or 5 colors. Algorithms \ref{coloring} and \ref{getcolors}, given in pseudocode, show the implementation of the greedy coloring algorithm.
 
 \begin{algorithm}[h]
 \SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
@@ -313,14 +315,122 @@ $C := 0$\;
 \label{getcolors}
 \end{algorithm}
 
-Then each color represents a set of nodes that are computable in parallel. Actually this is simply done by adding a \verb+for+ loop on the colors before the loop that inspects all the nodes of the graph. The color of each node is compared to the current color. If they are different the node is skipped. The parallelization is then simply done on the loop that inspects all the nodes.
+Then the parallelization has been performed by adding a \verb+for+ loop on the colors before the loop that inspects all the nodes of the graph. The color of each node is compared to the current color. If they are different the node is skipped. The parallelization is then simply done on the loop that inspects all the nodes.
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------------------------------------
 
-\section{Results}
+\cleardoublepage
+\onecolumn
 
-\subsection{Sequential Improvements}
+\definecolor{colsmall}{HTML}{D7191C}
+\definecolor{collarge}{HTML}{ABDDA4}
+\definecolor{colmedium}{HTML}{2B83BA}
 
-\subsection{Parallelization Performance}
+\subsection{Efficiency}
+\begin{figure}[!h]
+    \centering
+	\begin{tikzpicture}
+	\begin{axis}[
+		xbar stacked,
+		legend style={
+		    legend columns=4,
+		    at={(0.5,-0.175)},
+		    anchor=north,
+		    draw=none
+		},
+		ytick=data,
+		tick label style={font=\footnotesize},
+		legend style={font=\footnotesize},
+		label style={font=\footnotesize},
+		width=0.9\textwidth,
+		bar width=10mm,
+		xlabel={Time in Seconds},
+		yticklabels={icpc parallel opt., icpc opt., icpc no opt., g++ no opt.},
+		xmin=0,
+		xmax=520,
+		area legend,
+		y=12mm,
+		enlarge y limits={abs=0.625},
+	]
+	\addplot[colsmall,fill=colsmall] coordinates
+	{(0.51839,0) (2.0347,1) (3.2656,2) (6.9819,3) };
+	\addplot[colmedium,fill=colmedium] coordinates
+	{(3.54201,0) (14.253,1) (22.09,2) (47.0362,3)};
+	\addplot[collarge,fill=collarge] coordinates
+	{(33.230,0) (137.769,1) (212.05,2) (455.57,3)  };
+	\legend{small.vtu,medium.vtu,large.vtu}
+	\end{axis}
+	\end{tikzpicture}
+    \caption{Run time graph for different level of optimizations}
+    \label{graph:EffOMP}
+\end{figure}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|c|c|c}
+ & small.vtu & medium.vtu & large.vtu \\  \hline
+g++ no opt. & 509.59 & 54.018 & 6.9819 \\
+icpc no opt. & 240.66 & 25.352 & 3.2656 \\
+icpc opt.. & 37.812 & 4.0604 & 0.51839 \\
+parallel opt. & 154.057 & 16.288 & 2.0347 \\
+icpc parallel opt. & 37.812 & 4.0604 & 0.51839 \\
+\end{tabular}
+\caption{Run time table for different level of optimizations.}
+\end{table}
+
+\FloatBarrier
+\subsection{Parallel consideration}
+\begin{figure}[!h]
+    \center
+    \begin{tikzpicture}
+        \pgfplotsset{compat=1.5}
+        \begin{loglogaxis}[
+            log ticks with fixed point,
+            log basis y=10,
+            width=0.75\textwidth,
+            ylabel={Run time (seconds).},
+            xlabel={Number of OpenMP tasks ($n$).},
+            xmin=1,
+            xmax=16,
+            ymin=0.5,
+            ymax=180,
+            xtick={1,2,4,8,16},
+            legend entries={small.vtu, medium.vtu, large.vtu},
+            legend cell align=left,
+            legend style={legend pos=north east}
+        ]
+        \addplot[
+            color=black, thick, mark=+
+        ] table [
+            x=proc, y=time1
+        ] {./data/threads_against_time};
+        \addplot[
+            color=red, thick, mark==+
+        ] table [
+            x=proc, y=time2
+        ] {./data/threads_against_time};
+        \addplot+[
+            color=blue, thick, mark=+
+        ] table [
+            x=proc, y=time3
+        ] {./data/threads_against_time};
+        \end{loglogaxis}
+    \end{tikzpicture}
+    \caption{Run time graph for smoothing for different number of threads (icpc parallel opt.)}
+    \label{graph:timeMPI}
+\end{figure}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|c|c|c}
+Number of OpenMP tasks & small.vtu & medium.vtu & large.vtu \\  \hline
+1 & 2.0347 & 16.288 & 154.057 \\
+2 & 1.0457 & 8.5758 & 79.154 \\
+4 & 0.55083 & 4.4787 & 42.104 \\
+8 & 0.51839 & 4.0604 & 37.812 \\
+16 & 0.81551 & 5.0838 & 43.458 \\
+\end{tabular}
+\caption{Run time table for smoothing the graph for different number of threads with (icpc parallel opt.)}
+\end{table}
 
 \end{document}
