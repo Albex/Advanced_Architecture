@@ -1,7 +1,5 @@
 \documentclass[fleqn,11pt]{SelfArx} % Document font size and equations flushed left
 
-\usepackage{placeins}
-
 \setlength{\columnsep}{0.55cm} % Distance between the two columns of text
 \setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
 
@@ -47,6 +45,11 @@
 \usepackage{listings}
 \usepackage[pdftex=true,hyperindex=true,colorlinks=false,hidelinks]{hyperref}
 
+\usepackage{tabularx}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+
+\usepackage{placeins}
+
 % Fonts packages (if needed)
 %\usepackage[nott,fullsumlimits]{kpfonts}
 %\usepackage{lmodern}
@@ -59,8 +62,6 @@
 %----------------------------------------------------------------------------------------
 
 \Abstract{Coding is a question of how to compute things, but also how to compute them the fastest. These are often two questions that can't be resolved at once. Although coding a program that gives the expected result is an obstacle, another problem arises when performance is to be maximized. Once this is done, optimizing the written code might take a lot of time, depending on whether the hardware on which it is running, is taken into account. Here, given a correct program, the aim was to optimize it, given a chosen architecture. This consisted of understanding the code, then optimizing it sequentially and finally trying to improve it by parallelizing through vectorization or offloading the calculation to an accelerator (GPU).}
-
-
 
 % ---------------------------------------------------------------------------------------
 
@@ -77,7 +78,8 @@ keywordstyle=\color{blue},
 identifierstyle=,
 commentstyle=\color[rgb]{.2,.4,.5},
 stringstyle=\ttfamily\color{gray},
-breaklines=true}
+breaklines=true,
+language=c++}
 
 %----------------------------------------------------------------------------------------
 
@@ -93,7 +95,7 @@ breaklines=true}
 
 \section{Introduction}
 \subsection{Context and Objectives}
-\paragraph{}
+
 Simulation in computer science is usually computationally intensive. Although an algorithm can be theoretically efficient\footnote{With a low complexity.}, a naive implementation, without any hardware consideration reveal to be slower than expected.
 
 This paper start with a basic implementation of a curve smoothing algorithm where the curve -- a mesh -- is represented by a graph. This paper present a various methods to reduce the computation time of the smoothing algorithm on a specific machine, according to the hardware specification. The list of optimizations presented is non exhaustive, however the considered approach reduced the computation time by approximately 1300\% on the given architecture.
@@ -106,6 +108,7 @@ The method used to achieved this speed-up is the following:
 \end{itemize}
 
 \subsection{Software Considerations}
+
 The hardware considered is one of the Imperial College computing laboratory. All these computer are equipped with an Intel CPU, thus the best performances were obtained using the Intel Compiler\footnote{The speed-up gained by switching from g++ (GNU) to icpc (Intel) is presented section \ref{}.}. However the Imperial College computer do not have the latest version of the Intel Compiler installed on, providing some optimizations and and the use of the new C++ standard (C++11). To obtained the maximum throughput additional library, not installed on Imperial College computer, such as blitz++, were used. A solution to have the best of the latest compiler version, library flexibility and the performances of the Imperial College computers is to cross-compile the code.
 
 Cross-compiling is the action of creating executable code for a platform other than the one on which the compiler is running. This is challenging because the compiler usually tune the code to be as fast as possible on the machine where the code is compiled lowering the performances on the target machine. Additionally, extra care must be payed to the portability of the code.
@@ -121,7 +124,7 @@ Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware character
 \begin{table}[!h]
 	\centering
 
-	\begin{tabular}{|p{3.5cm}|p{4cm}|}
+	\begin{tabularx}{0.48\textwidth}{|m{3.5cm}|>{\raggedleft\arraybackslash}m{4cm}|}
 		\hline
 		Model Name & Intel Core i7-QM720 \\
 		\hline
@@ -143,7 +146,7 @@ Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware character
 		\hline
 		Flags & fpu, sse, sse2, sse3, ssse3, sse4\_1, sse4\_2 \\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 
 	\caption{CPU Specifications for the compiling station.}
 	\label{CPUspecC}
@@ -244,13 +247,51 @@ But the coloring algorithm might be very expensive in computation time. This dep
 
 \subsection{Optimization}
 
-A first try was realized with a very basic algorithm that colors a graph without assuming anything on its structure. But the simple fact of coloring the graph was itself longer than the original program. This confirmed the need of a very powerful algorithm.
+A first try was realized with a very complex algorithm that colors a graph with minimum of colors needed. But the simple fact of coloring the graph was itself longer than the original program (hundreds of minutes). This confirmed that the graph is complex and parallelizing the program will surely reduce the run time.
 
-%----------------------------------------------------------------------------------------
+So the coloring algorithm finally chosen was very basic. It just tries to color the graph without minimizing the number of colors used. It succeeds in coloring the graphs with 4 or 5 colors. Algorithms \ref{coloring} and \ref{getcolors} are its implementation in pseudocode.
 
-\section{GPU Acceleration}
+\begin{algorithm}
+\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
-\subsection{Analysis}
+\Input{the graph $G$}
+\Output{$C$ the array containing the colors}
+\BlankLine
+
+creating $C$, the output of size: number of node\;
+intializing each element of $C$ to $-1$\;
+\For{$i \leqslant \text{number of node}$}{
+	$C[i] \leftarrow get\_colors( G[i] )$\;
+}
+\Return C\;
+
+\caption{The \texttt{coloring} Algorithm}
+\label{coloring}
+\end{algorithm}
+
+\begin{algorithm}
+\SetAlgoLined
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+\Input{the array $A$ of all neighbours of one node}
+\Output{return the color $C$ which is not used by other neighbours}
+\BlankLine
+
+$C := 0$\;
+\While{}{
+	\For{$i \leqslant \text{number of neighbours}$}{
+		\If{$C = A[i]$}{$C := C + 1$\; \textbf{break}\;}
+	}
+	\If{$i = \text{number of neighbours}$}{\Return C\;}
+}
+
+\caption{The \texttt{get\_colors} Algorithm}
+\label{getcolors}
+\end{algorithm}
+
+Then each color represents a set of nodes that are computable in parallel. Actually this is simply done by adding a \verb+for+ loop on the colors before the loop that inspects all the nodes of the graph. The color of each node is compared to the current color. If they are different the node is skipped. The parallelization is then simply done on the loop that inspects all the nodes.
 
 %----------------------------------------------------------------------------------------
 
