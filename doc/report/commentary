@@ -1,0 +1,17 @@
+Results
+
+In this section, the results based on the optimizations described before will be presented, followed by a brief discussion of their nature.
+
+[INSERT implementation VS time GRAPH]
+
+From the figure above, it is clear to deduce that the tools alone play an important role in the runtime of the program. The Intel compiler outperforms the corresponding GCC compilation of the given code. After the optimization of the sequential code, a further increase in performance is clearly visible. As previously discussed, this step involved refining the code in order to take advantage of faster matrix calculations, caching of intermediate values, inlining functions in order to reduce unnecessary function calls and altering the data structures used in order to streamline access time and data locality.
+
+The largest performance however was gained by parallelizing execution using OpenMP. This has allowed for a further 4x boost in performance, for a cumulative 13x performance increase when compared to the original implementation and toolchain. The best result was obtained by having 8 threads running in parallel. In the figure below, a comparison of different levels of parallelism is made for the sake of completeness.
+
+[INSERT threads VS time GRAPH]
+
+In search of the number of threads that would yield the best performance, a variety of numbers multiple of 2 were tested. It appears that when the number of threads is less than 8, the full power of the processor is not used. As the specification in [FIGURE] suggests, in order to fully utilize the power of the processor, 8 threads must be used. This is because the processor consists of 4 hyperthreaded cores, where each can handle two threads at a time.
+
+Using too many threads on the other hand can be equally disastrous, however, as this will incur additional cost in terms of context switching whilst at the same time providing no more parallelization.
+
+Based on the graph shown above in [FIGURE], a diagram plotting the efficiency of the different thread configurations is presented. Alt
