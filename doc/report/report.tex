@@ -1,5 +1,7 @@
 \documentclass[fleqn,11pt]{SelfArx} % Document font size and equations flushed left
 
+\usepackage{placeins}
+
 \setlength{\columnsep}{0.55cm} % Distance between the two columns of text
 \setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
 
@@ -19,7 +21,7 @@
 
 \PaperTitle{Advanced Computer Architecture: The ``Smooth'' Challenge} % Article title
 
-\Authors{Romain Brault\textsuperscript{1} and Alexandre Camus\textsuperscript{2} and  Giorgos Flourentzos\textsuperscript{3}} % Authors
+\Authors{Romain Brault\textsuperscript{1}, Alexandre Camus\textsuperscript{2},  Giorgos Flourentzos\textsuperscript{3}} % Authors
 
 \affiliation{\textsuperscript{1}RB812 \hfill \textsuperscript{2}AC5612 \hfill \textsuperscript{3}GF210}
 
@@ -56,7 +58,7 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\Abstract{Coding is a question of how to compute things, but also how to compute it the fastest. These are often two questions that can't be resolve at once. First, coding a program that gives the expected result, is the first obstacle to face. But it is not the biggest. Once this is done, optimizing the written code might take a lot of time, depending on if the hardware on which it is running, is taken into account. Here, given a correct program, the aim was to optimize it, given a chosen architecture. This consisted in understanding the code, then optimizing it sequentially and finally trying to improve it by parallelizing or using GPU.}
+\Abstract{Coding is a question of how to compute things, but also how to compute them the fastest. These are often two questions that can't be resolved at once. First, coding a program that gives the expected result, is the first obstacle to face. But it is not the biggest. Once this is done, optimizing the written code might take a lot of time, depending on if the hardware on which it is running, is taken into account. Here, given a correct program, the aim was to optimize it, given a chosen architecture. This consisted in understanding the code, then optimizing it sequentially and finally trying to improve it by parallelizing over the CPU or GPU.}
 
 
 
@@ -90,15 +92,35 @@ breaklines=true}
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
+\subsection{Context and Objectives}
+\paragraph{}
+Simulation in computer science is usually computationally intensive. Although an algorithm can be theoretically efficient\footnote{With a low complexity.}, a naive implementation, without any hardware consideration reveal to be slower than expected.
+\paragraph{}
+This paper start with a basic implementation of a curve smoothing algorithm where the curve -- a mesh -- is represented by a graph. This paper present a various methods to reduce the computation time of the smoothing algorithm on a specific machine, according to the hardware specification. The list of optimizations presented is non exhaustive, however the considered approach reduced the computation time by approximately 1300\% on the given architecture.
+\paragraph{}
+The method used to achieved this speed-up is the following:
+\begin{itemize}  \vspace{-4mm}
+\item first optimize on one CPU core, \vspace{-4mm}
+\item then parallelize over one node (here a single computer), \vspace{-4mm}
+\item eventually used hardware accelerator such as GPU.
+\end{itemize}
 
+\subsection{Software Considerations}
+\paragraph{}
+The hardware considered is one of the Imperial College computing laboratory. All these computer are equipped with an Intel CPU, thus the best performances were obtained using the Intel Compiler\footnote{The speed-up gained by switching from g++ (GNU) to icpc (Intel) is presented section \ref{}.}. However the Imperial College computer do not have the latest version of the Intel Compiler installed on, providing some optimizations and and the use of the new C++ standard (C++11). To obtained the maximum throughput additional library, not installed on Imperial College computer, such as blitz++, were used. A solution to have the best of the latest compiler version, library flexibility and the performances of the Imperial College computers is to cross-compile the code.
+\paragraph{}
+Cross-compiling is the action of creating executable code for a platform other than the one on which the compiler is running. This is challenging because the compiler usually tune the code to be as fast as possible on the machine where the code is compiled lowering the performances on the target machine. Additionally, extra care must be payed to the portability of the code.
+
+
+\FloatBarrier
 \subsection{Hardware Considerations}
 
-The chosen hardware is not one of the machine from the Lab. They do not have any interesting GPUs. But one of our laptops is very powerful with an interesting GPU. This is the chosen one. The tables \ref{CPUspec} and \ref{GPUspecs} contains the details of this hardware.
+The machine used for this coursework runs a Fedora 18 distribution. This is the exact information:
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 
-	\begin{tabular}{|l|r|}
+	\begin{tabular}{|p{3.5cm}|p{4cm}|}
 		\hline
 		Model Name & Intel Core i7 CPU Q720 \\
 		\hline
@@ -107,6 +129,8 @@ The chosen hardware is not one of the machine from the Lab. They do not have any
 		Max Turbo Frequency & 2.8 GHz \\
 		\hline
 		Cache size & 6144 KB \\
+		\hline
+		Cache line size and alignment & 64 B \\
 		\hline
 		CPU cores & 4 \\
 		\hline
@@ -117,6 +141,8 @@ The chosen hardware is not one of the machine from the Lab. They do not have any
 		Memory Channels & 2 \\
 		\hline
 		Max Memory Bandwith & 21 GB/s \\
+		\hline
+		Flags & fpu, sse, sse2, sse3, ssse3, sse4\_1, sse4\_2 \\
 		\hline
 	\end{tabular}
 
@@ -147,6 +173,7 @@ The chosen hardware is not one of the machine from the Lab. They do not have any
 	\label{GPUspecs}
 \end{table}
 
+\paragraph{}
 To summarize, the figure \ref{topo} gives a quick overview of the hardware topology. The GPU is connected on the PCI port \verb+10de:0618+.
 
 \begin{figure}[h]
@@ -157,15 +184,6 @@ To summarize, the figure \ref{topo} gives a quick overview of the hardware topol
 	\caption{Topology}
 	\label{topo}
 \end{figure}
-
-\subsection{Software Considerations}
-
-The machine used for this coursework runs a Fedora 18 distribution. This is the exact information:
-
-\begin{lstlisting}
-$ uname -a
-Linux localhost.localdomain 3.8.1-201.fc18.x86_64 #1 SMP Thu Feb 28 19:23:08 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
-\end{lstlisting}
 
 
 %----------------------------------------------------------------------------------------
@@ -217,8 +235,6 @@ A first try was realized with a very basic algorithm that colors a graph without
 \section{GPU Acceleration}
 
 \subsection{Analysis}
-
-\subsection{Optimization}
 
 %----------------------------------------------------------------------------------------
 
