@@ -1,0 +1,3 @@
+plot "threads_against_efficiency" using 1:2 with lines title "small.vtu", \
+"threads_against_efficiency" using 1:3 with lines title "medium.vtu", \
+"threads_against_efficiency" using 1:4 with lines title "large.vtu"
