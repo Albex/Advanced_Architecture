@@ -14,4 +14,8 @@ In search of the number of threads that would yield the best performance, a vari
 
 Using too many threads on the other hand can be equally disastrous, however, as this will incur additional cost in terms of context switching whilst at the same time providing no more parallelization.
 
-Based on the graph shown above in [FIGURE], a diagram plotting the efficiency of the different thread configurations is presented. Alt
+Based on the graph shown above in [FIGURE], a diagram plotting the efficiency of the different thread configurations is presented. Although slightly beyond the scope of this project, it is interesting enough to compare the best performance configuration against the most efficient configuration.
+
+[INSERT efficiency VS threads GRAPH]
+
+As was suggested by the graph in [FIGURE], the best configuration purely in terms of performance is 8 threads. However, in terms of efficieny, the graph above suggests otherwise. It appears that the best configuration for efficiency is 4, and this must be attributed to the fact that the processor only has 4 cores. Despite the fact that hyperthreading is available which allows the maximum number of threads to be 8, the hyperthreaded threads share the same core and cache, which makes them sub-optimal when compared to threads running on individual cores.
