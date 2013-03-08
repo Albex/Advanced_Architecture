@@ -14,7 +14,7 @@ void Mesh::smooth( uint32_t niter ) noexcept {
     // For the specified number of iterations, loop over all mesh vertices.
     for( uint32_t iter = 0; iter < niter; ++iter ) {
         for ( int color = 0; color < max_color; ++color ) {
-#pragma omp parallel for schedule( static )
+#pragma omp parallel for
             for( uint32_t vid = 0; vid < NNodes; ++vid ) {
                 if ( colors( vid ) != color ) continue;
 
@@ -61,6 +61,7 @@ void Mesh::smooth( uint32_t niter ) noexcept {
                 uint32_t const size_nnlist = NNList[ vid ].size( );
                 uint32_t block_size_2 = ( size_nnlist / UNROLL_2 ) * UNROLL_2;
                 for( uint32_t it = 0; it < block_size_2; it += UNROLL_2 ) {
+#pragma unroll( UNROLL_2 )
                     for ( uint32_t k = 0; k < UNROLL_2; ++k ) {
                         uint32_t const il    = NNList[ vid ][ it + k ];
                         uint32_t const m_off = 3 * il;
