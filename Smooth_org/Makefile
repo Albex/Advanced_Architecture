@@ -1,9 +1,9 @@
-CXX=icpc
+CXX=g++
 CC=icc
 
 # use -lipo instead of -ipo for gcc
 
-CXXFLAGS = -openmp -Wno-deprecated -Wcheck -Wall -fno-common -std=c++0x -fno-gnu-keywords -parallel -Ofast -xavx -no-prec-div -vec-report=1 -no-prec-sqrt -i-static -fno-alias -fno-exceptions -ipo -I/usr/local/include/vtk-5.10
+CXXFLAGS = -O3 -g -I/usr/local/include/vtk-5.10
 
 OBJS = ACA2-2013.o Mesh.o Smooth.o SVD2x2.o
 

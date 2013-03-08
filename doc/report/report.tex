@@ -124,7 +124,7 @@ Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware character
 \begin{table}[!h]
 	\centering
 
-	\begin{tabularx}{0.48\textwidth}{|m{3.5cm}|>{\raggedleft\arraybackslash}m{4cm}|}
+	\begin{tabularx}{0.477\textwidth}{|m{3.5cm}|>{\raggedleft\arraybackslash}m{4cm}|}
 		\hline
 		Model Name & Intel Core i7-QM720 \\
 		\hline
@@ -155,7 +155,7 @@ Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware character
 \begin{table}[!h]
 	\centering
 
-	\begin{tabular}{|p{3.5cm}|p{4cm}|}
+	\begin{tabularx}{0.477\textwidth}{|m{3.5cm}|>{\raggedleft\arraybackslash}m{4cm}|}
 		\hline
 		Model Name & Intel Core i7-2600 \\
 		\hline
@@ -177,22 +177,21 @@ Table \ref{CPUspecC} and \ref{CPUspecR} show respectively the hardware character
 		\hline
 		Flags & fpu, sse, sse2, sse3, ssse3, sse4\_1, sse4\_2, avx \\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 
 	\caption{CPU Specifications for the running station.}
 	\label{CPUspecR}
 \end{table}
 
 \paragraph{}
-To summarize, the figure \ref{topo} gives a quick overview of the hardware topology. The GPU is connected on the PCI port \verb+10de:0618+.
-
+Figure \ref{topoR} and \ref{topoC} gives the hardware topology of the compile machine the run machine. Both used an intel i7 on one socket with almost the same topology; the only difference being the size of the L3 cache of 8M on the running machine compared to 6M on the compile machine. The other main advantage of the Imperial College computer over the laptop is presence of AVX instructions. Therefore all the optimizations to tune the code on the laptop should be efficient on the Imperial College computer, except that the laptop should generate an avx code. As a result the code could not run on the laptop which has generated the code, but will be more efficient on the Imperial College computer.
 \begin{figure}[h]
 	\centering
 
 	\includegraphics[width=.48\textwidth]{run.pdf}
 
 	\caption{Topology of the running station.}
-	\label{topo}
+	\label{topoR}
 \end{figure}
 
 \begin{figure}[h]
@@ -201,13 +200,17 @@ To summarize, the figure \ref{topo} gives a quick overview of the hardware topol
 	\includegraphics[width=.48\textwidth]{compile.pdf}
 
 	\caption{Topology of the compiling station.}
-	\label{topo}
+	\label{topoC}
 \end{figure}
 
 
 %----------------------------------------------------------------------------------------
 \FloatBarrier
 \section{The Sequential Issue}
+First the code was compiled with the g++ compiler optimised at level 3, and analyzed with Intel VTunes profiler to identify the bottlenecks. The initial speed for the small size graph was $ $.
+
+It appears that the initial program spend
+
 
 After running for the first time the program, it appears that the method \verb+mesh_quality()+ is the most called and so is the most expensive in computation time. Hence its code has been considered as a potential source of optimization.
 
