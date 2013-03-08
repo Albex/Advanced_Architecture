@@ -19,3 +19,7 @@ Based on the graph shown above in [FIGURE], a diagram plotting the efficiency of
 [INSERT efficiency VS threads GRAPH]
 
 As was suggested by the graph in [FIGURE], the best configuration purely in terms of performance is 8 threads. However, in terms of efficieny, the graph above suggests otherwise. It appears that the best configuration for efficiency is 4, and this must be attributed to the fact that the processor only has 4 cores. Despite the fact that hyperthreading is available which allows the maximum number of threads to be 8, the hyperthreaded threads share the same core and cache, which makes them sub-optimal when compared to threads running on individual cores.
+
+Conclusion
+
+To summarize the main points of the experiment, it can be shown that good tools make room for a lot of improvement in performance, and the right choice of tools for the right architecture is very important. In addition, more efficient and well-designed code that targets a particular architecture can make a difference even when the code is to be run in a sequencial manner. However, for a vast improvement parallelization is key. Performance is critical to large calculations and massive processing, but efficiency can be thought of being of equal importance as well. It is often the case that the best configuration for performance might not be the same for efficiency.
