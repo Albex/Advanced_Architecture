@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {3}CPU Parallelization}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Analysis}{3}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Optimization}{3}{subsection.3.2}
-\contentsline {section}{\numberline {4}Results}{3}{section.4}
-\contentsline {subsection}{\numberline {4.1}Sequential Improvements}{3}{subsection.4.1}
+\contentsline {section}{\numberline {4}Results}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Sequential Improvements}{4}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Parallelization Performance}{4}{subsection.4.2}
 \contentsfinish 

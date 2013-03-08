@@ -38,6 +38,10 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
 
 \usepackage{enumerate}
 \usepackage{caption}
@@ -215,7 +219,23 @@ Reading the code, some sequential issues were found. There are three kinds of pr
 
 \subsection{Algorithm}
 
-The method used to solve an equations' system was correct but two general to be efficient. The program needs only to solve systems of two equations in two unknowns. The Cramer's rule based on determinants is far more efficient.
+The method used to solve an equations' system was correct but two general to be efficient. The program needs only to solve systems of two equations in two unknowns. The Cramer's rule based on determinants is far more efficient. The Cramer's rule is as following:
+
+\begin{theorem}
+\hrule \vspace*{1pt}
+Given an equations system $Ax = b$, where $A$ is a squared matrix of size $n$, and $x$ and $b$ two $n$-vertical vectors.
+
+If $\det A \neq 0$ then the system has exactly one solution. Its solution is:
+\[x_i = \dfrac{\det A_i}{\det A}\]
+where $x = (x_1,\dots,x_i)^T$ and $A_i$ is the matrix formed by replacing the $i$-th column of $A$  by the column vector $b$. 
+
+In this case ($2\times2$), the result is:
+\begin{align*}
+x_1 &= \dfrac{(b_1 \times a_{2,2}) - (b_2 \times a_{1,2})}{(a_{1,1} \times a_{2,2}) - (a_{2,1} \times a_{1,2})} \\
+x_2 &= \dfrac{(a_{1,1} \times b_2) - (a_{2,1} \times b_1)}{(a_{1,1} \times a_{2,2}) - (a_{2,1} \times a_{1,2})}
+\end{align*}
+\hrule
+\end{theorem}
 
 The use of the method \verb+pow()+ seems a little too heavy in the method \verb+element_quality()+. As the number of multiplication is known, the use of simple multiplications is more efficient here, e.g. \verb+x*x*x+.
 
