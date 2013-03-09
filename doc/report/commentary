@@ -1,0 +1,25 @@
+Results
+
+In this section, the results based on the optimizations described before will be presented, followed by a brief discussion of their nature.
+
+[INSERT implementation VS time GRAPH]
+
+From the figure above, it is clear to deduce that the tools alone play an important role in the runtime of the program. The Intel compiler outperforms the corresponding GCC compilation of the given code. After the optimization of the sequential code, a further increase in performance is clearly visible. As previously discussed, this step involved refining the code in order to take advantage of faster matrix calculations, caching of intermediate values, inlining functions in order to reduce unnecessary function calls and altering the data structures used in order to streamline access time and data locality.
+
+The largest performance however was gained by parallelizing execution using OpenMP. This has allowed for a further 4x boost in performance, for a cumulative 13x performance increase when compared to the original implementation and toolchain. The best result was obtained by having 8 threads running in parallel. In the figure below, a comparison of different levels of parallelism is made for the sake of completeness.
+
+[INSERT threads VS time GRAPH]
+
+In search of the number of threads that would yield the best performance, a variety of numbers multiple of 2 were tested. It appears that when the number of threads is less than 8, the full power of the processor is not used. As the specification in [FIGURE] suggests, in order to fully utilize the power of the processor, 8 threads must be used. This is because the processor consists of 4 hyperthreaded cores, where each can handle two threads at a time.
+
+Using too many threads on the other hand can be equally disastrous, however, as this will incur additional cost in terms of context switching whilst at the same time providing no more parallelization.
+
+Based on the graph shown above in [FIGURE], a diagram plotting the efficiency of the different thread configurations is presented. Although slightly beyond the scope of this project, it is interesting enough to compare the best performance configuration against the most efficient configuration.
+
+[INSERT efficiency VS threads GRAPH]
+
+As was suggested by the graph in [FIGURE], the best configuration purely in terms of performance is 8 threads. However, in terms of efficieny, the graph above suggests otherwise. It appears that the best configuration for efficiency is 4, and this must be attributed to the fact that the processor only has 4 cores. Despite the fact that hyperthreading is available which allows the maximum number of threads to be 8, the hyperthreaded threads share the same core and cache, which makes them sub-optimal when compared to threads running on individual cores.
+
+Conclusion
+
+To summarize the main points of the experiment, it can be shown that good tools make room for a lot of improvement in performance, and the right choice of tools for the right architecture is very important. In addition, more efficient and well-designed code that targets a particular architecture can make a difference even when the code is to be run in a sequencial manner. However, for a vast improvement parallelization is key. Performance is critical to large calculations and massive processing, but efficiency can be thought of being of equal importance as well. It is often the case that the best configuration for performance might not be the same for efficiency.

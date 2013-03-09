@@ -117,7 +117,7 @@ The method used to achieve this speed-up is the following:
 
 \subsection{Software Considerations}
 
-The hardware considered is one of the Imperial College computing laboratory. All these computers are equipped with an Intel CPU, thus the best performance is obtained using the Intel Compiler\footnote{The speed-up gained by switching from g++ (GNU) to icpc (Intel) is presented in section \ref{}.}. However the Imperial College computers do not have the latest version of the Intel Compiler installed; providing some optimizations and the use of the new C++ standard (C++11). To obtain the maximum throughput an additional library not installed on Imperial College computers --- Blitz++ --- was used. In order to use the latest software available, the source code was compiled on a personal laptop which featured the latest Intel compiler version and the needed library. Then the executable was deployed on the target machine; this process being called Cross Compiling. To aid the cross compiling step the original makefile was generated through a CMake script.
+The hardware considered is one of the Imperial College computing laboratory. All these computers are equipped with an Intel CPU, thus the best performance is obtained using the Intel Compiler\footnote{The speed-up gained by switching from g++ (GNU) to icpc (Intel) is presented in section \ref{seq}.}. However the Imperial College computers do not have the latest version of the Intel Compiler installed; providing some optimizations and the use of the new C++ standard (C++11). To obtain the maximum throughput an additional library not installed on Imperial College computers --- Blitz++ --- was used. In order to use the latest software available, the source code was compiled on a personal laptop which featured the latest Intel compiler version and the needed library. Then the executable was deployed on the target machine; this process being called Cross Compiling. To aid the cross compiling step the original makefile was generated through a CMake script.
 
 Cross-compiling is challenging because the compiler usually tunes the code to be as fast as possible on the machine where the code is compiled, lowering the performance on the target machine. Extra care must be paid to the binary portability of the code. The code was compiled on a Linux-Fedora 18 64bits computer and is to run on a Linux-Ubuntu 12.04 64bits computer.
 
@@ -217,7 +217,7 @@ Figures \ref{topoR} and \ref{topoC} give the hardware topology of the build mach
 \section{The Sequential Issue}
 First the code was compiled with the g++ compiler, optimized at level 3, and analyzed with it Intel VTune Amplifier profiler to identify the bottlenecks. The initial run-time was $6.91$s for the small size graph, $54.0$s for the medium and $510$s for the large one. It appears that the initial program spent about 80\% of its time in the function \verb+mesh_quality()+. Hence that part of the code has been considered as a source of optimization.
 
-A first approach to optimize the program was to change the compiler flags. The Intel profiler indicates that the program was spending a lot of time in computing square root and divisions. Thus a flag to reduced the precision of these operation was set.
+A first approach to optimize the program was to change the compiler flags. The Intel profiler indicates that the program was spending a lot of time in computing square root and divisions. Thus a flag to reduce the precision of these operations has been set. Also when the code is split in multiple object files the compiler cannot optimize across these files, unless the flag "ipo" is set.
 
 By reading the code, sequential issues were found. There are three kinds of problems: the source code structure, the algorithms chosen and the data representation.
 
@@ -257,7 +257,7 @@ The data structure used to represent graphs --- an adjacency list --- is fine an
 
 Similarly, the number of nodes does not exceed $10^6$ for the large graph which is less than the maximum integer value represented by \verb+uint32_t+ instead of a \verb+size_t+. \verb+uint32_t+ is lighter\footnote{4 bytes vs 8 bytes.} and faster to manipulate and was therefore preferred.
 
-Finally the type of the vectors \verb+normals+ and \verb+ENList+ was changed: the {Blitz++ library}\footnote{\url{http://blitz.sourceforge.net/}} provides useful array representations with performance comparable to Fortran implementations. After testing it on the different vectors in the program, it appears that the type \verb+blitz::Array+ of this library was more efficient for the vectors that are linearly accessed. \verb+normals+ and \verb+ENList+ have this property\footnote{The results of the sequential optimization are presented \ref{}.}.
+Finally the type of the vectors \verb+normals+ and \verb+ENList+ was changed: the {Blitz++ library}\footnote{\url{http://blitz.sourceforge.net/}} provides useful array representations with performance comparable to Fortran implementations. After testing it on the different vectors in the program, it appears that the type \verb+blitz::Array+ of this library was more efficient for the vectors that are linearly accessed. \verb+normals+ and \verb+ENList+ have this property\footnote{The results of the sequential optimization are presented \ref{seq}.}.
 
 %------------------------------------------------------------------------------------------------------------------------------------
 
@@ -291,7 +291,7 @@ intializing each element of $C$ to $-1$\;
 }
 \Return C\;
 
-\caption{The \texttt{coloring} Algorithm}
+\caption{The \texttt{coloring} Algorithm.}
 \label{coloring}
 \end{algorithm}
 
@@ -311,7 +311,7 @@ $C := 0$\;
 	\If{$i = \text{number of neighbours}$}{\Return C\;}
 }
 
-\caption{The \texttt{get\_colors} Algorithm}
+\caption{The \texttt{get\_colors} Algorithm.}
 \label{getcolors}
 \end{algorithm}
 
@@ -321,12 +321,14 @@ Then the parallelization has been performed by adding a \verb+for+ loop on the c
 
 \cleardoublepage
 \onecolumn
-
+\section{Results}
 \definecolor{colsmall}{HTML}{D7191C}
 \definecolor{collarge}{HTML}{ABDDA4}
 \definecolor{colmedium}{HTML}{2B83BA}
 
 \subsection{Efficiency}
+\label{seq}
+In this section, the results based on the optimizations described before will be presented, followed by a brief discussion of their nature.
 \begin{figure}[!h]
     \centering
 	\begin{tikzpicture}
@@ -365,6 +367,8 @@ Then the parallelization has been performed by adding a \verb+for+ loop on the c
     \label{graph:EffOMP}
 \end{figure}
 
+From the figure \ref{graph:EffOMP}, it is clear to deduce that the tools alone play an important role in the runtime of the program. The Intel compiler outperforms the corresponding GCC compilation of the given code. After the optimization of the sequential code, a further increase in performance is clearly visible. As previously discussed, this step involved refining the code in order to take advantage of faster matrix calculations, caching of intermediate values, inlining functions in order to reduce unnecessary function calls and altering the data structures used in order to streamline access time and data locality.
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{l|c|c|c}
@@ -377,6 +381,9 @@ icpc parallel opt. & 37.812 & 4.0604 & 0.51839 \\
 \end{tabular}
 \caption{Run time table for different level of optimizations.}
 \end{table}
+
+The largest performance however was gained by parallelizing execution using OpenMP. This has allowed for a further 4x boost in performance, for a cumulative 13x performance increase when compared to the original implementation and toolchain. The best result was obtained by having 8 threads running in parallel. In the figure below, a comparison of different levels of parallelism is made for the sake of completeness.
+
 
 \FloatBarrier
 \subsection{Parallel consideration}
@@ -420,6 +427,12 @@ icpc parallel opt. & 37.812 & 4.0604 & 0.51839 \\
     \label{graph:timeMPI}
 \end{figure}
 
+In search of the number of threads that would yield the best performance, a variety of numbers multiple of 2 were tested. It appears that when the number of threads is less than 8, the full power of the processor is not used. As the specification in table \ref{CPUspecR} suggests, in order to fully utilize the power of the processor, 8 threads must be used. This is because the processor consists of 4 hyperthreaded cores, where each can handle two threads at a time.
+
+Using too many threads on the other hand can be equally disastrous, however, as this will incur additional cost in terms of context switching whilst at the same time providing no more parallelization.
+
+Based on the graph shown above in \ref{graph:timeMPI}, a diagram plotting the efficiency of the different thread configurations is presented. Although slightly beyond the scope of this project, it is interesting enough to compare the best performance configuration against the most efficient configuration.
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{l|c|c|c}
@@ -432,5 +445,64 @@ Number of OpenMP tasks & small.vtu & medium.vtu & large.vtu \\  \hline
 \end{tabular}
 \caption{Run time table for smoothing the graph for different number of threads with (icpc parallel opt.)}
 \end{table}
+
+\subsection{Parallel consideration}
+\begin{figure}[!h]
+    \center
+    \begin{tikzpicture}
+        \pgfplotsset{compat=1.5}
+        \begin{semilogxaxis}[
+            log ticks with fixed point,
+            log basis y=10,
+            width=0.75\textwidth,
+            ylabel={Run time (seconds).},
+            xlabel={Number of OpenMP tasks ($n$).},
+            xmin=1,
+            xmax=16,
+            ymin=15,
+            ymax=110,
+            xtick={1,2,4,8,16},
+            legend entries={small.vtu, medium.vtu, large.vtu},
+            legend cell align=left,
+            legend style={legend pos=north east}
+        ]
+        \addplot[
+            color=black, thick, mark=+
+        ] table [
+            x=proc, y=time1
+        ] {./data/threads_against_efficiency};
+        \addplot[
+            color=red, thick, mark==+
+        ] table [
+            x=proc, y=time2
+        ] {./data/threads_against_efficiency};
+        \addplot+[
+            color=blue, thick, mark=+
+        ] table [
+            x=proc, y=time3
+        ] {./data/threads_against_efficiency};
+        \end{semilogxaxis}
+    \end{tikzpicture}
+    \caption{Run time graph for smoothing for different number of threads (icpc parallel opt.)}
+    \label{graph:timeMPI2}
+\end{figure}
+
+As was suggested by the graph in \ref{graph:timeMPI}, the best configuration purely in terms of performance is 8 threads. However, in terms of efficiency, the graph above suggests otherwise. It appears that the best configuration for efficiency is 4, and this must be attributed to the fact that the processor only has 4 cores. Despite the fact that hyperthreading is available which allows the maximum number of threads to be 8, the hyperthreaded threads share the same core and cache, which makes them sub-optimal when compared to threads running on individual cores.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|c|c|c}
+Number of OpenMP tasks & small.vtu & medium.vtu & large.vtu \\  \hline
+1 & 100\% & 100\% & 100\% \\
+2 & 97.29\% & 94.96\% & 97.31\% \\
+4 & 92.35\% & 90.92\% & 91.47\% \\
+8 & 49.06\% & 50.14\% & 50.93\% \\
+16 & 15.59\% & 20.02\% & 22.16\% \\
+\end{tabular}
+\caption{Efficiency for smoothing the graph for different number of threads with (icpc parallel opt.)}
+\end{table}
+
+\section{Conclusion}
+To summarize the main points of the experiment, it can be shown that good tools make room for a lot of improvement in performance, and the right choice of tools for the right architecture is very important. In addition, more efficient and well-designed code that targets a particular architecture can make a difference even when the code is to be run in a sequencial manner. However, for a vast improvement parallelization is key. Performance is critical to large calculations and massive processing, but efficiency can be thought of being of equal importance as well. It is often the case that the best configuration for performance might not be the same for efficiency.
 
 \end{document}
