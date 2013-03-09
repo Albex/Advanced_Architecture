@@ -38,7 +38,7 @@
 				letterpaper]{geometry}%
 \RequirePackage[labelfont={bf,sf},%
                 labelsep=period,%
-                justification=raggedright]{caption}
+                justification=centering]{caption}
 % ---------------------------------------------------------------------
 \RequirePackage{fancyhdr}  % Needed to define custom headers/footers
 \RequirePackage{lastpage}  % Number of pages in the document
