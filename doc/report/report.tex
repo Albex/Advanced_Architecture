@@ -50,8 +50,7 @@
 \usepackage[pdftex=true,hyperindex=true,colorlinks=false,hidelinks]{hyperref}
 
 \usepackage{tabularx}
-\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
-
+\usepackage[lined,boxed,algonl]{algorithm2e}
 
 \usepackage{etex}
 \usepackage{tikz}
@@ -275,9 +274,14 @@ Graph coloring is very expensive in terms of computation time. An implementation
 A first try was realized with a very complex algorithm that colors a graph with the minimum number of colors needed. The time cost of coloring the graph with this algorithm was higher than the original total execution time (hundreds of minutes) and is not constant (it depends on the number of nodes).
 
 \begin{algorithm}[!h]
-\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
-\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+\SetKwData{Left}{left}
+\SetKwData{This}{this}
+\SetKwData{Up}{up}
+\SetKwFunction{Union}{Union}
+\SetKwFunction{FindCompress}{FindCompress}
+\SetKwInOut{Input}{input}
+\SetKwInOut{Output}{output}
+\caption{The \texttt{coloring} Algorithm.}
 
 \Input{the graph $G$}
 \Output{$C$ the array containing the colors}
@@ -290,13 +294,12 @@ intializing each element of $C$ to $-1$\;
 }
 \Return C\;
 
-\caption{The \texttt{coloring} Algorithm.}
 \label{coloring}
 \end{algorithm}
 
 The coloring algorithm finally chosen was very basic. This greedy implementation tries to color the graph without necessarily minimizing the number of colors. It succeeds in coloring the graphs with 4 or 5 colors. Algorithms \ref{coloring} and \ref{getcolors}, given in pseudocode, show the implementation of the greedy coloring algorithm.
 
-\begin{algorithm}[h]
+\begin{algorithm}[!h]
 \SetAlgoLined
 \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
